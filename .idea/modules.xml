@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/luggage_claims_system.iml" filepath="$PROJECT_DIR$/luggage_claims_system.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.spring.boot.luggage_claims_system.hirbernia_sina.iml" filepath="$PROJECT_DIR$/.idea/modules/com.spring.boot.luggage_claims_system.hirbernia_sina.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.spring.boot.luggage_claims_system.hirbernia_sina.main.iml" filepath="$PROJECT_DIR$/.idea/modules/com.spring.boot.luggage_claims_system.hirbernia_sina.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.spring.boot.luggage_claims_system.hirbernia_sina.test.iml" filepath="$PROJECT_DIR$/.idea/modules/com.spring.boot.luggage_claims_system.hirbernia_sina.test.iml" />
     </modules>
   </component>
 </project>
