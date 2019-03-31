@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,16 +10,16 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Register - Hibernia-Sino Insurance Company</title>
+    <title>Claim Status - Hibernia-Sino Insurance Company</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="../css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/offcanvas.css" rel="stylesheet">
+    <link href="../css/offcanvas.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -33,7 +34,7 @@
 
   <body>
     <nav class="navbar navbar-fixed-top navbar-inverse">
-      <div class="container1">
+      <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
@@ -41,16 +42,37 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><img id="logo" src="css/logo.jpeg"></a>
+          <a class="navbar-brand" href="/index"><img id="logo" src="../css/logo.jpeg"></a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><a href="#Home">Home</a></li>
+            <li><a href="/index">Home</a></li>
             <li><a href="#about">About us</a></li>
             <li><a href="#shop">Shop products</a></li>
-            <li><a href="#claim">Claim settlements</a></li>
+            <li class="active"><a href="#claim">Claim settlements</a></li>
             <li><a href="#contact">Contact us</a></li>
             <li><a href="#news">News</a></li>
+            <li><a></a></li>
+            <li><a></a></li>
+            <li><a></a></li>
+            <li><a></a></li>
+            <li><a></a></li>
+            <li><a></a></li>
+            <li><a></a></li>
+            <li><a></a></li>
+            <li><a></a></li>
+            <li><a></a></li>
+            <li><a></a></li>
+            <li><a></a></li>
+            <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Me <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#claim">My Claims</a></li>
+                    <li><a href="#purchase">My purchase</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#profile">My profile</a></li>
+                  </ul>
+                </li>
           </ul>
         </div><!-- /.nav-collapse -->
       </div><!-- /.container -->
@@ -64,48 +86,19 @@
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
           </p>
-          <div class="jumbotron" id="edit">
-            <h1 class="head1">Regsiter</h1>
-            <p class="head2">Please write down informations requried below to register your account.</p>
+          <div class="jumbotron" id="statustop">
+            <h1>Claim status</h1>
           </div>
           <div class="row">
-              <form method = "post" enctype="multipart/form-data" class="form-signin">
-        <h2 class="form-signin-heading">Please write informations</h2>
-        <p>Upload your profile photo：</p>
-　　　　 <div id="test-image-preview"></div>
-　　　　 <p>
-　　　　<input type="file" id="test-image-file" name="test" accept="image/gif, image/jpeg, image/png, image/jpg">
-　　　　</p>
-        <p>Username</p>
-        <label for="inputUsername" class="sr-only">Username</label>
-        <input type="text" id="inputUsername" class="form-control" placeholder="Username" required>
-        <p>Password </p>
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Input your password" required>
-        <p>Password again</p>
-        <label for="inputPasswordAgain" class="sr-only">Password2</label>
-        <input type="password" id="inputPasswordAgain" class="form-control" placeholder="Input password again..." required>
-        <p>Email Address</p>
-        <label for="inputEmail" class="sr-only">Email</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-        <p>Policy Holder</p>
-        <label for="inputPolicyHolder" class="sr-only">PolicyHolder</label>
-        <input type="text" id="inputPolicyHolder" class="form-control" placeholder="Policy Holder" required>
-        <p>Passport No.</p>
-        <label for="inputPassport" class="sr-only"> PassportNo</label>
-        <input type="text" id="inputPassport" class="form-control" placeholder="Passport No.">
-        <p>Phone No.</p>
-        <label for="inputPhone" class="sr-only"> Phone</label>
-        <input type="text" id="inputPhone" class="form-control" placeholder="Phone No.">
+            <p>Insurance No.: 100000</p>
+            <p>Policy Holder: someonw</p>
+            <p>Phone No.: 000000000000</p>
+            <p>Description: ^^^^^^^</p>
+            <p>Status: found</p>
+            <p><a class="btn btn-default" href="#editclaim" role="button">Back to previous page &raquo;</a></p>
+          </div><!--/row-->
         <p></p>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
-      </form>
-          </div><!--/row-->
-          <p></p>
-          </div><!--/row-->
-        
-
-        
+      </div><!--/row-->
 
       <hr>
 
@@ -121,9 +114,9 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<js/jquery.min.js"><\/script>')</script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="js/ie10-viewport-bug-workaround.js"></script>
-    <script src="js/offcanvas.js"></script>
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+    <script src="../js/offcanvas.js"></script>
   </body>
 </html>

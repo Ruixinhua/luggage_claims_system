@@ -9,7 +9,7 @@
 - Customer need to fill in following information to claim a luggage
 
   - customer name: string type, size 50.
-  - customer ID: string type, size 20
+  - customer ID: string type, size 20, it is about identity card information 
   - claim no: string, size 20
   - customer phone number: string type, size 20, need to add area code(e.g. +86)
   - customer email address: string type, size 50, used to receive the result 
@@ -26,12 +26,16 @@
 - If the detail is not enough to provide the evidence of the luggage lost claim, more information needed. The customer will receive a mail contain a link to add more details.(in most case)
 
 ### Customer Information
-
-> id, primary key, string
+> id, primary key, int
+>
+> identity, not null, string
 >
 > name, not null, string
 >
 > phone number, not null, string
+>
+> email address, not null, string
+>
 
 ### Claim Details
 
@@ -75,7 +79,7 @@
 
 ### Employee Information
 
-> employee id, primary key, string
+> employee id, primary key, long
 >
 > employee name, string
 >
