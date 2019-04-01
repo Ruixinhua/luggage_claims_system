@@ -26,6 +26,9 @@ footer {
 #seetop{
 background-image: url('seetop.jpeg');
 }
+.link{
+  margin-bottom: 15px;
+}
 .navbar{
   background-color:#003366;
   color:#eeeeee;
