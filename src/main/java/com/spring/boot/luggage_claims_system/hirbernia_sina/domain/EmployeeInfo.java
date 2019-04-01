@@ -9,6 +9,7 @@ import javax.validation.constraints.Size;
  * @date 2019-03-26 21:26
  */
 @Entity
+@Table(name = "employee")
 public class EmployeeInfo {
 
     @Id // primary key
@@ -128,7 +129,7 @@ public class EmployeeInfo {
 
     @Override
     public String toString(){
-        return String.format("Employee[id=%d, passport=%s,name=%s, nickname=%s, emailAddress=%s, phoneNumber=%s]",
-                id, passport, name, nickname, emailAddress, phoneNumber);
+        return String.format("Employee[id=%d, passport=%s,name=%s, nickname=%s, emailAddress=%s,password=%s phoneNumber=%s]",
+                id, passport, name, nickname, emailAddress, password, phoneNumber);
     }
 }

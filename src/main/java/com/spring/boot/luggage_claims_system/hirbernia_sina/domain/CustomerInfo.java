@@ -7,6 +7,7 @@ import javax.persistence.*;
  * @date 2019-03-26 19:23
  */
 @Entity
+@Table(name = "customer")
 public class CustomerInfo {
 
     @Id // primary key

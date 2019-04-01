@@ -3,6 +3,7 @@ package com.spring.boot.luggage_claims_system.hirbernia_sina.domain;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import java.io.Serializable;
 
 /**
@@ -10,6 +11,7 @@ import java.io.Serializable;
  * @date 2019-03-26 21:26
  */
 @Entity
+@Table(name = "claim")
 public class ClaimInfo implements Serializable {
 
     @Id //primary key
