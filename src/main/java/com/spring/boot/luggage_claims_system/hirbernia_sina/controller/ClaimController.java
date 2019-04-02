@@ -9,11 +9,10 @@ import com.spring.boot.luggage_claims_system.hirbernia_sina.repository.CustomerR
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+
+import javax.validation.Valid;
 
 /**
  * @author Liu Dairui
@@ -40,7 +39,7 @@ public class ClaimController {
     }
 
     @PostMapping("/finish")
-    public String create(@ModelAttribute(value = "write")WriteInfo writeInfo){
+    public String create(@Valid @RequestBody WriteInfo writeInfo){
         System.out.println(writeInfo);
         CustomerInfo customerInfo = new CustomerInfo(null,writeInfo.getPassport(),writeInfo.getFirstName(),
                 writeInfo.getLastName(),writeInfo.getPhoneNumber(),writeInfo.getEmailAddress());
