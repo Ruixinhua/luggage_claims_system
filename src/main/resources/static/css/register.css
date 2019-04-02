@@ -22,7 +22,7 @@ img{
     box-shadow: 0 0 10px 10px #EDEDED outset;
     position: absolute;
     left: 50%;
-    top: 60%;
+    top: 50%;
     transform: translate(-50%, -50%);
     max-width: 400px;
     padding: 15px;

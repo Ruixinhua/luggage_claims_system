@@ -40,9 +40,9 @@
 <body>
 
 <div class="container">
-    <img id="logo" src= "../css/logo.jpeg">
+    <!--<img id="logo" src= "../css/logo.jpeg">-->
     <form class="form-signin" action="/employee/result" method="post" th:object="${employee}">
-        <h2 class="form-signin-heading">Please register</h2>
+        <h2 class="form-signin-hxeading">Please register</h2>
         <label for="inputEmail" class="sr-only">Email address</label>
         <input type="email" id="inputEmail" class="form-control" placeholder="Email address" name="emailAddress" th:value="*{emailAddress}" required autofocus>
         <label for="inputPassword" class="sr-only">Password</label>
@@ -58,16 +58,16 @@
         <label for="inputPassport" class="sr-only">Passport No.</label>
         <input type="text" id="inputPassport" class="form-control" placeholder="Passport No." name="passport" th:value="*{passport}">
 
-        <div class="checkbox">
-            <label>
-                <input type="checkbox" value="remember-me">I agree to the <a href="#">
-                Terms of Service </a>
-                & <a href="#">
-                Privacy Policy </a>
-            </label>
-        </div>
+        <!--<div class="checkbox">-->
+            <!--<label>-->
+                <!--<input type="checkbox" value="remember-me">I agree to the <a href="#">-->
+                <!--Terms of Service </a>-->
+                <!--& <a href="#">-->
+                <!--Privacy Policy </a>-->
+            <!--</label>-->
+        <!--</div>-->
         <button class="btn btn-lg btn-primary btn-block" type="submit" id="register">Register</button>
-        <button class="btn btn-lg btn-primary btn-block" type="button" id="login" >I already have an account</button>
+        <button class="btn btn-lg btn-primary btn-block" type="button" id="login">I already have an account</button>
         <div id="hintInformation" class="alertdanger"></div>
     </form>
 
@@ -89,6 +89,10 @@
     // });
 
     $(document).ready(function() {
+        $('#login').click(function (e) {
+            e.preventDefault();
+            $(window).attr('location','/employee/signin');
+        })
         $("#register").click(function (e) {
             e.preventDefault();
             var email_pattern = /^([A-Za-z0-9_\-\.\u4e00-\u9fa5])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,8})$/;

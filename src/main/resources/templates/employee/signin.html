@@ -24,6 +24,7 @@
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="../js/ie-emulation-modes-warning.js"></script>
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -35,7 +36,7 @@
   <body>
 
     <div class="container">
-      <img id="logo" src= "../css/logo.jpeg">
+      <!--<img id="logo" src= "../css/logo.jpeg">-->
       <form class="form-signin" action="/employee/signin" th:object="${employee}">
         <h2 class="form-signin-heading">Please sign in</h2>
         <label for="inputEmail" class="sr-only">Email address</label>
@@ -44,12 +45,12 @@
         <input type="password" id="inputPassword" class="form-control" name="password" th:value="*{passport}" placeholder="Password" required>
         <div class="checkbox">
           <label>
-            <input type="checkbox" value="remember-me"> Remember me
+            <!--<input type="checkbox" value="remember-me"> Remember me-->
           </label>
         </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" id="login">Sign in</button>
+        <button class="btn btn-lg btn-primary btn-block" type="button" id="register">Create an account</button>
       </form>
-      <a href="/employee/register"><button class="btn btn-lg btn-primary btn-block"> Register</button></a>
 
     </div> <!-- /container -->
       <footer>
@@ -58,5 +59,18 @@
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
+  <script>
+      $(document).ready(function() {
+          $('#register').click(function (e) {
+              e.preventDefault();
+              $(window).attr('location', '/employee/register');
+          })
+          // $("#login").click(function (e) {
+          //     e.preventDefault();
+          //     $('form').submit();
+          //
+          // })
+      });
+  </script>
   </body>
 </html>
