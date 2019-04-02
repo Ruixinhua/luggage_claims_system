@@ -7,27 +7,28 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="css/logo.jpeg">
+    <link rel="icon" href="../../static/css/logo.jpeg">
 
     <title>My Claims - Hibernia-Sino Insurance Company</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../static/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="../../static/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/offcanvas.css" rel="stylesheet">
+    <link href="../../static/css/offcanvas.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="js/ie-emulation-modes-warning.js"></script>
+    <!--[if lt IE 9]>
+    <script src="../../static/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../../static/js/ie-emulation-modes-warning.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-      <script src="js/html5shiv.min.js"></script>
-      <script src="js/respond.min.js"></script>
+    <script src="../../static/js/html5shiv.min.js"></script>
+    <script src="../../static/js/respond.min.js"></script>
     <![endif]-->
   </head>
 
@@ -41,11 +42,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><img id="logo" src="css/logo.jpeg"></a>
+          <a class="navbar-brand" href="#"><img id="logo" src="../../static/css/logo.jpeg"></a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><a href="homepage.html">Home</a></li>
+            <li><a href="/index">Home</a></li>
             <li><a href="#about">About us</a></li>
             <li><a href="#shop">Shop products</a></li>
             <li><a href="claims.html">Claim settlements</a></li>
@@ -90,60 +91,22 @@
             <p>Please choose the claims that you have announced.</p>
           </div>
           <div class="row">
-            <div class="col-xs-6 col-lg-4" id="info">
-              <h2>Flight Insurance</h2>
-              <p>Type: Luggage Insurance A</p>
-              <p>Flight No.: CA1003</p>
-              <p>Serial No.: 12345</p>
-              <p>Valid From:8/10/2018</p>
-              <p>Valid To:8/15/2018</p>
-              <p><a class="btn btn-default" href="claimdetail.html" role="button">See details &raquo;</a></p>
-            </div><!--/.col-xs-6.col-lg-4-->
-            <div class="col-xs-6 col-lg-4" id="info">
-              <h2>Flight Insurance</h2>
-              <p>Type: Luggage Insurance B</p>
-              <p>Flight No.: CA1003</p>
-              <p>Serial No.: 12345</p>
-              <p>Valid From:8/10/2018</p>
-              <p>Valid To:8/15/2018</p>
-              <p><a class="btn btn-default" href="claimdetail.html" role="button">See details &raquo;</a></p>
-            </div><!--/.col-xs-6.col-lg-4-->
-           <div class="col-xs-6 col-lg-4" id="info">
-             <h2>Flight Insurance</h2>
-              <p>Type: Luggage Insurance B</p>
-              <p>Flight No.: CA1003</p>
-              <p>Serial No.: 12345</p>
-              <p>Valid From:8/10/2018</p>
-              <p>Valid To:8/15/2018</p>
-              <p><a class="btn btn-default" href="claimdetail.html" role="button">See details &raquo;</a></p>
-            </div><!--/.col-xs-6.col-lg-4-->
-            <div class="col-xs-6 col-lg-4" id="info">
-              <h2>Flight Insurance</h2>
-              <p>Type: Luggage Insurance B</p>
-              <p>Flight No.: CA1003</p>
-              <p>Serial No.: 12345</p>
-              <p>Valid From:8/10/2018</p>
-              <p>Valid To:8/15/2018</p>
-              <p><a class="btn btn-default" href="claimdetail.html" role="button">See details &raquo;</a></p>
-            </div><!--/.col-xs-6.col-lg-4-->
-            <div class="col-xs-6 col-lg-4" id="info">
-              <h2>Flight Insurance</h2>
-              <p>Type: Luggage Insurance B</p>
-              <p>Flight No.: CA1003</p>
-              <p>Serial No.: 12345</p>
-              <p>Valid From:8/10/2018</p>
-              <p>Valid To:8/15/2018</p>
-              <p><a class="btn btn-default" href="claimdetail.html" role="button">See details &raquo;</a></p>
-            </div><!--/.col-xs-6.col-lg-4-->
-            <div class="col-xs-6 col-lg-4" id="info">
-              <h2>Flight Insurance</h2>
-              <p>Type: Luggage Insurance B</p>
-              <p>Flight No.: CA1003</p>
-              <p>Serial No.: 12345</p>
-              <p>Valid From:8/10/2018</p>
-              <p>Valid To:8/15/2018</p>
-              <p><a class="btn btn-default" href="claimdetail.html" role="button">See details &raquo;</a></p>
-            </div><!--/.col-xs-6.col-lg-4-->
+          <ul>
+            <li th:each="claim: ${claimList}">
+              <div class="col-xs-6 col-lg-4" id="info">
+                <h2 th:text="${claim.insuranceName}">Flight Insurance</h2>
+                <p th:text="${claim.insuranceType}">Type: Luggage Insurance A</p>
+                <p th:text="${claim.flightNo}">Flight No.: CA1003</p>
+                <p th:text="${claim.serialNo}">Serial No.: 12345</p>
+                <p th:text="${claim.validFrom}">Valid From:8/10/2018</p>
+                <p th:text="${claim.validTo}">Valid To:8/15/2018</p>
+                <p th:text="${claim.status}">Status: Done</p>
+                <p><a class="btn btn-default" href="../employee/claimdetail.html" role="button">See details &raquo;</a></p>
+              </div><!--/.col-xs-6.col-lg-4-->
+            </li>
+          </ul>
+
+
           </div><!--/row-->
         <p></p>
       </div><!--/row-->
@@ -160,11 +123,11 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="js/jquery.min.js"></script>
+    <script src="../../static/js/jquery.min.js"></script>
     <script>window.jQuery || document.write('<js/jquery.min.js"><\/script>')</script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="../../static/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="js/ie10-viewport-bug-workaround.js"></script>
-    <script src="js/offcanvas.js"></script>
+    <script src="../../static/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="../../static/js/offcanvas.js"></script>
   </body>
 </html>
