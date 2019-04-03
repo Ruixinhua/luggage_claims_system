@@ -98,6 +98,8 @@
           <div class="row">
             <form class="form-signin" enctype="multipart/form-data" id="form1" action="/claim/finish" method="post" th:object="${write}">
               <h2 class="form-signin-heading">Please write informations</h2>
+                <span id="basic-addon0">&nbsp;</span>
+                <span style="font-size: 12px;color: red" th:text="${error}" aria-describedby="basic-addon0"></span>
               <p>First Name</p>
               <label for="inputFirstName" class="sr-only">First Name</label>
               <div class="box">

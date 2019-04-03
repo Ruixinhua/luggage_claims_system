@@ -9,6 +9,7 @@ import com.spring.boot.luggage_claims_system.hirbernia_sina.repository.CustomerR
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -39,7 +40,12 @@ public class ClaimController {
     }
 
     @PostMapping("/finish")
-    public String create(@Valid @RequestBody WriteInfo writeInfo){
+    public String create(@Valid @ModelAttribute("write") WriteInfo writeInfo, BindingResult bindingResult, Model model){
+        if(bindingResult.hasErrors()){
+            model.addAttribute("write", writeInfo);
+            model.addAttribute("error", bindingResult.getFieldError().getDefaultMessage());
+            return "claim/write";
+        }
         System.out.println(writeInfo);
         CustomerInfo customerInfo = new CustomerInfo(null,writeInfo.getPassport(),writeInfo.getFirstName(),
                 writeInfo.getLastName(),writeInfo.getPhoneNumber(),writeInfo.getEmailAddress());
@@ -52,4 +58,8 @@ public class ClaimController {
         return "claim/finish";
     }
 
+    @GetMapping("/finish")
+    public String finish(Model model){
+        return "claim/finish";
+    }
 }

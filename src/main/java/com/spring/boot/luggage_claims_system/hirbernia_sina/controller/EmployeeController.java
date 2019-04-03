@@ -5,7 +5,10 @@ package com.spring.boot.luggage_claims_system.hirbernia_sina.controller;
         import org.springframework.beans.factory.annotation.Autowired;
         import org.springframework.stereotype.Controller;
         import org.springframework.ui.Model;
+        import org.springframework.validation.BindingResult;
         import org.springframework.web.bind.annotation.*;
+
+        import javax.validation.Valid;
 
 /**
  * @author Liu Dairui
@@ -27,20 +30,23 @@ public class EmployeeController {
     }
 
     @PostMapping("/result")
-    public String postRegister(@ModelAttribute(value = "employee")EmployeeInfo employeeInfo,
-                               @ModelAttribute(value = "passwordCheck")String passwordCheck,Model model){
+    public String postRegister(@Valid @ModelAttribute(value = "employee")EmployeeInfo employeeInfo,
+                               BindingResult bindingResult, @ModelAttribute(value = "passwordCheck")String passwordCheck,
+                               Model model){
 //        System.out.println(employeeInfo);
 //        System.out.println(passwordCheck);
-        if (employeeInfo.getPassword().equals(passwordCheck)){
-            model.addAttribute("employee", employeeInfo);
-            employeeRepository.save(employeeInfo);
-            return "employee/result";
-        }else{
+        if(bindingResult.hasErrors()){
+            model.addAttribute("error",bindingResult.getFieldError().getDefaultMessage());
+            return "employee/register";
+        }
+        if (!employeeInfo.getPassword().equals(passwordCheck)){
             model.addAttribute("employee", employeeInfo);
             model.addAttribute("passwordCheck", "");
             return "employee/register";
         }
-
+        model.addAttribute("employee", employeeInfo);
+        employeeRepository.save(employeeInfo);
+        return "employee/result";
     }
 
     @GetMapping("/signin")
@@ -60,15 +66,19 @@ public class EmployeeController {
         if(employeeDB != null){
             if(employeeDB.getPassword().equals(employeeInfo.getPassword())){
                 System.out.println("The password is correct");
+                model.addAttribute("error","");
                 return "employee/employee";
             }else{
                 System.out.println("The password is not correct");
                 model.addAttribute("employee", employeeInfo);
+                model.addAttribute("error","The password is not correct");
                 return "employee/signin";
             }
         }
         System.out.println("The employee is not exist");
         model.addAttribute("employee", employeeInfo);
+        model.addAttribute("error","The employee is not exist");
+
         return "employee/signin";
     }
 }
