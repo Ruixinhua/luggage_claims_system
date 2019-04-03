@@ -1,11 +1,11 @@
 package com.spring.boot.luggage_claims_system.hirbernia_sina.controller;
 
-import com.spring.boot.luggage_claims_system.hirbernia_sina.domain.EmployeeInfo;
-import com.spring.boot.luggage_claims_system.hirbernia_sina.repository.EmployeeRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+        import com.spring.boot.luggage_claims_system.hirbernia_sina.domain.EmployeeInfo;
+        import com.spring.boot.luggage_claims_system.hirbernia_sina.repository.EmployeeRepository;
+        import org.springframework.beans.factory.annotation.Autowired;
+        import org.springframework.stereotype.Controller;
+        import org.springframework.ui.Model;
+        import org.springframework.web.bind.annotation.*;
 
 /**
  * @author Liu Dairui
@@ -28,7 +28,7 @@ public class EmployeeController {
 
     @PostMapping("/result")
     public String postRegister(@ModelAttribute(value = "employee")EmployeeInfo employeeInfo,
-                         @ModelAttribute(value = "passwordCheck")String passwordCheck,Model model){
+                               @ModelAttribute(value = "passwordCheck")String passwordCheck,Model model){
 //        System.out.println(employeeInfo);
 //        System.out.println(passwordCheck);
         if (employeeInfo.getPassword().equals(passwordCheck)){
@@ -52,7 +52,23 @@ public class EmployeeController {
 
     @PostMapping("/signin")
     public String postLogin(@ModelAttribute(value = "employee")EmployeeInfo employeeInfo, Model model){
-        System.out.println(employeeInfo);
-        return "employee/employee";
+//        System.out.println(employeeInfo);
+        EmployeeInfo employeeDB = employeeRepository.findByEmailAddress(employeeInfo.getEmailAddress());
+//        System.out.println("employee receive: "+employeeInfo);
+//        System.out.println("employee in DB: "+employeeDB);
+        // TODO: add feedback
+        if(employeeDB != null){
+            if(employeeDB.getPassword().equals(employeeInfo.getPassword())){
+                System.out.println("The password is correct");
+                return "employee/employee";
+            }else{
+                System.out.println("The password is not correct");
+                model.addAttribute("employee", employeeInfo);
+                return "employee/signin";
+            }
+        }
+        System.out.println("The employee is not exist");
+        model.addAttribute("employee", employeeInfo);
+        return "employee/signin";
     }
 }
