@@ -43,6 +43,8 @@
     <!--<img id="logo" src= "../css/logo.jpeg">-->
     <form class="form-signin" action="/employee/result" method="post" th:object="${employee}">
         <h2 class="form-signin-hxeading">Please register</h2>
+        <span id="basic-addon0">&nbsp;</span>
+        <span style="font-size: 12px;color: red" th:text="${error}" aria-describedby="basic-addon0"></span>
         <label for="inputEmail" class="sr-only">Email address</label>
         <input type="email" id="inputEmail" class="form-control" placeholder="Email address" name="emailAddress" th:value="*{emailAddress}" required autofocus>
         <label for="inputPassword" class="sr-only">Password</label>
@@ -67,11 +69,11 @@
             <!--</label>-->
         <!--</div>-->
         <button class="btn btn-lg btn-primary btn-block" type="submit" id="register">Register</button>
-        <button class="btn btn-lg btn-primary btn-block" type="button" id="login">I already have an account</button>
+        <button class="btn btn-lg btn-primary btn-block" type="button" id="login" >I already have an account</button>
         <div id="hintInformation" class="alertdanger"></div>
     </form>
-
 </div> <!-- /container -->
+
 <footer>
     <p class="foot">&copy; 2019 Hibernia-Sino Insurance Company, Inc.</p>
 </footer>

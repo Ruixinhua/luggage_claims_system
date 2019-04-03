@@ -1,14 +1,17 @@
 package com.spring.boot.luggage_claims_system.hirbernia_sina.controller;
 
-        import com.spring.boot.luggage_claims_system.hirbernia_sina.domain.EmployeeInfo;
-        import com.spring.boot.luggage_claims_system.hirbernia_sina.repository.EmployeeRepository;
-        import org.springframework.beans.factory.annotation.Autowired;
-        import org.springframework.stereotype.Controller;
-        import org.springframework.ui.Model;
-        import org.springframework.validation.BindingResult;
-        import org.springframework.web.bind.annotation.*;
+import com.spring.boot.luggage_claims_system.hirbernia_sina.domain.ClaimInfo;
+import com.spring.boot.luggage_claims_system.hirbernia_sina.domain.EmployeeInfo;
+import com.spring.boot.luggage_claims_system.hirbernia_sina.repository.ClaimRepository;
+import com.spring.boot.luggage_claims_system.hirbernia_sina.repository.EmployeeRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
 
-        import javax.validation.Valid;
+import javax.validation.Valid;
+import java.util.List;
 
 /**
  * @author Liu Dairui
@@ -20,6 +23,8 @@ public class EmployeeController {
 
     @Autowired
     private EmployeeRepository employeeRepository;
+    @Autowired
+    private ClaimRepository claimRepository;
 
     @GetMapping("/register")
     public String getRegister(Model model){
@@ -63,22 +68,31 @@ public class EmployeeController {
 //        System.out.println("employee receive: "+employeeInfo);
 //        System.out.println("employee in DB: "+employeeDB);
         // TODO: add feedback
-        if(employeeDB != null){
-            if(employeeDB.getPassword().equals(employeeInfo.getPassword())){
-                System.out.println("The password is correct");
-                model.addAttribute("error","");
-                return "employee/employee";
-            }else{
-                System.out.println("The password is not correct");
-                model.addAttribute("employee", employeeInfo);
-                model.addAttribute("error","The password is not correct");
-                return "employee/signin";
-            }
+        if(employeeDB == null){
+            System.out.println("The password is not correct");
+            model.addAttribute("employee", employeeInfo);
+            model.addAttribute("error","The employee is not exist");
+            return "employee/signin";
         }
-        System.out.println("The employee is not exist");
-        model.addAttribute("employee", employeeInfo);
-        model.addAttribute("error","The employee is not exist");
+        if(!employeeDB.getPassword().equals(employeeInfo.getPassword())){
+            System.out.println("The employee is not exist");
+            model.addAttribute("employee", employeeInfo);
+            model.addAttribute("error","The password is not correct");
+            return "employee/signin";
+        }
+        List<ClaimInfo> claims = claimRepository.findAll();
+        model.addAttribute("employee", employeeDB);
+        model.addAttribute("claimList", claims);
+        return "employee/employee";
 
-        return "employee/signin";
     }
+//
+//    @GetMapping(value = "/{id}")
+//    public String employee(@PathVariable("id") Long id, Model model){
+//        EmployeeInfo employeeInfo = employeeRepository.getOne(id);
+//        List<ClaimInfo> claims = claimRepository.findAll();
+//        model.addAttribute("employee", employeeInfo);
+//        model.addAttribute("claimList", claims);
+//        return "employee/employee";
+//    }
 }
