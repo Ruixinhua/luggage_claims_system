@@ -1,122 +1,213 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="../../favicon.ico">
 
-    <title>Claim Status - Hibernia-Sino Insurance Company</title>
+  <title>Workload - Hibernia-Sino Insurance Company</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap core CSS -->
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <link href="../css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <link href="../css/offcanvas.css" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="../css/dashboard.css" rel="stylesheet">
 
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="js/ie-emulation-modes-warning.js"></script>
+  <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+  <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+  <script src="js/ie-emulation-modes-warning.js"></script>
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
 
-  <body>
-    <nav class="navbar navbar-fixed-top navbar-inverse">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/index"><img id="logo" src="../css/logo.jpeg"></a>
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+
+  <div class="container-fluid">
+
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/index"><img id="logo" src="../css/logo.jpeg"></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#dashboard" id="bar1">Dashboard</a></li>
+        <li><a href="#settings" id="bar2">Settings</a></li>
+        <li><a href="#profile" id="bar3">Profile</a></li>
+      </ul>
+      <form class="navbar-form navbar-right">
+        <input type="text" class="form-control" placeholder="Search...">
+      </form>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <div class="row">
+
+  </div>
+  <div class="col-sm-3 col-md-2 sidebar">
+    <ul class="list list-group" id="daohang">
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        solved
+        <span class="badge badge-primary badge-pill">14</span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        processing
+        <span class="badge badge-primary badge-pill">2</span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        pending
+        <span class="badge badge-primary badge-pill">1</span>
+      </li>
+    </ul>
+  </div>
+  <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+    <h2 class="sub-header">Claim Detail</h2>
+    <form class="detail-form">
+      <div class="form-group row">
+        <label for="customerId" class="col-sm-2 col-form-label">Customer ID:</label>
+        <div class="col-sm-10">
+          <input type="text" readonly class="form-control-plaintext empty" id="customerId" value="email@example.com">
         </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="/index">Home</a></li>
-            <li><a href="#about">About us</a></li>
-            <li><a href="#shop">Shop products</a></li>
-            <li class="active"><a href="#claim">Claim settlements</a></li>
-            <li><a href="#contact">Contact us</a></li>
-            <li><a href="#news">News</a></li>
-            <li><a></a></li>
-            <li><a></a></li>
-            <li><a></a></li>
-            <li><a></a></li>
-            <li><a></a></li>
-            <li><a></a></li>
-            <li><a></a></li>
-            <li><a></a></li>
-            <li><a></a></li>
-            <li><a></a></li>
-            <li><a></a></li>
-            <li><a></a></li>
-            <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Me <span class="caret"></span></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="#claim">My Claims</a></li>
-                    <li><a href="#purchase">My purchase</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li><a href="#profile">My profile</a></li>
-                  </ul>
-                </li>
-          </ul>
-        </div><!-- /.nav-collapse -->
-      </div><!-- /.container -->
-    </nav><!-- /.navbar -->
+      </div>
+      <div class="form-group row">
+        <label for="passportNo" class="col-sm-2 col-form-label">Passport Number:</label>
+        <div class="col-sm-10">
+          <input type="text" readonly class="form-control-plaintext empty" id="passportNo" value="email@example.com">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="firstName" class="col-sm-2 col-form-label">First Name:</label>
+        <div class="col-sm-10">
+          <input type="text" readonly class="form-control-plaintext empty" id="firstName" value="email@example.com">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="lastName" class="col-sm-2 col-form-label">Last Name:</label>
+        <div class="col-sm-10">
+          <input type="text" readonly class="form-control-plaintext empty" id="lastName" value="email@example.com">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="PhoneNo" class="col-sm-2 col-form-label">Phone Number:</label>
+        <div class="col-sm-10">
+          <input type="text" readonly class="form-control-plaintext empty" id="PhoneNo" value="email@example.com">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="emailAddress" class="col-sm-2 col-form-label">Email Address:</label>
+        <div class="col-sm-10">
+          <input type="text" readonly class="form-control-plaintext empty" id="emailAddress" value="email@example.com">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="claimId" class="col-sm-2 col-form-label">Claim ID:</label>
+        <div class="col-sm-10">
+          <input type="text" readonly class="form-control-plaintext empty" id="claimId" value="email@example.com">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="billingAddress" class="col-sm-2 col-form-label">Billing Address:</label>
+        <div class="col-sm-10">
+          <input type="text" readonly class="form-control-plaintext empty" id="billingAddress" value="email@example.com">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="flightNo" class="col-sm-2 col-form-label">Flight Number:</label>
+        <div class="col-sm-10">
+          <input type="text" readonly class="form-control-plaintext empty" id="flightNo" value="email@example.com">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="luggageType" class="col-sm-2 col-form-label">Luggage Type:</label>
+        <div class="col-sm-10">
+          <input type="text" readonly class="form-control-plaintext empty" id="luggageType" value="email@example.com">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="detail" class="col-sm-2 col-form-label">Detail:</label>
+        <div class="col-sm-10">
+          <textarea type="text" readonly class="form-control-plaintext empty" id="detail">This is detail</textarea>
+        </div>
+      </div>
+    </form>
 
-    <div class="container">
 
-      <div class="row row-offcanvas row-offcanvas-right">
+    <hr/>
+    <form class="detail-form">
 
-        
-          <p class="pull-right visible-xs">
-            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
-          </p>
-          <div class="jumbotron" id="statustop">
-            <h1>Claim status</h1>
-          </div>
-          <div class="row">
-            <p>Insurance No.: 100000</p>
-            <p>Policy Holder: someonw</p>
-            <p>Phone No.: 000000000000</p>
-            <p>Description: ^^^^^^^</p>
-            <p>Status: found</p>
-            <p><a class="btn btn-default" href="#editclaim" role="button">Back to previous page &raquo;</a></p>
-          </div><!--/row-->
-        <p></p>
-      </div><!--/row-->
+      <div class="form-group">
+        <label for="select1">Feedback:</label>
+        <select class="form-control" id="select1">
+          <option value="1">Approve</option>
+          <option value="2">Deny</option>
+          <option value="3">To be confirmed</option>
+        </select>
+      </div>
+      <div class="form-group" id = "reasonarea">
+        <label for="reason">Reason</label>
+        <textarea class="form-control" id="reason" rows="3"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="button" class="btn btn-primary">Back</button>
+    </form>
 
-      <hr>
+  </div>
+</div>
+</div>
 
-      <footer>
-        <p>&copy; 2019 Hibernia-Sino Insurance Company, Inc.</p>
-      </footer>
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script>window.jQuery || document.write('<js/jquery.min.js"><\/script>')</script>
+<script src="../js/bootstrap.min.js"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="../js/ie10-viewport-bug-workaround.js"></script>
+<script src="../js/offcanvas.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#daohang li").each(function(){
+            $(this).mouseover(function(){
+                $(this).addClass("active");
+            });
+            $(this).mouseout(function(){
+                $(this).removeClass("active");
+            });
+        });
+        $("#reasonarea").hide();
+        $("#select1").change(function(){
+            console.log($("#select1").val());
+            if($("#select1").val() == '2'|| $("#select1").val() == '3'){
+                $("#reasonarea").fadeIn();
+            }else{
+                $("#reasonarea").fadeOut();
+            }
+        });
 
-    </div><!--/.container-->
+    });
 
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<js/jquery.min.js"><\/script>')</script>
-    <script src="../js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../js/ie10-viewport-bug-workaround.js"></script>
-    <script src="../js/offcanvas.js"></script>
-  </body>
+</script>
+</body>
 </html>
+
