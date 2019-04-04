@@ -28,6 +28,10 @@ public class ClaimController {
     @Autowired
     private CustomerRepository customerRepository;
 
+    @GetMapping
+    public String claim(){
+        return "redirect:/claim/write";
+    }
     /**
      *
      * @param model
@@ -55,11 +59,8 @@ public class ClaimController {
                 writeInfo.getFlightNo(),"",0L,writeInfo.getDetails());
         System.out.println(claimInfo);
         claimRepository.save(claimInfo);
+        model.addAttribute("customer",customerInfo);
         return "claim/finish";
     }
 
-    @GetMapping("/finish")
-    public String finish(Model model){
-        return "claim/finish";
-    }
 }

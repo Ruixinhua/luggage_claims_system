@@ -24,12 +24,4 @@ public class MainController {
         return "index";
     }
 
-    /**
-     *
-     * @return
-     */
-    @GetMapping("/employee")
-    public String createClaim(){
-        return "employee/employee";
-    }
 }

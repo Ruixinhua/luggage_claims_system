@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -92,7 +92,7 @@
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
         </p>
         <div class="jumbotron" id="edit">
-            <h1 class="head1">You have successfully lodged a claim</h1>
+            <h1 class="head1">Congratulations,<span th:text="${customer.firstName} +' '+ ${customer.lastName}"></span> !You have successfully lodged a claim</h1>
             <p class="head2">We are handling your claim, and we will call you back in 3 to 7 working-days.</p>
         </div>
         <div class="row">

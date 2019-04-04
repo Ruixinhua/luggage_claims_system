@@ -26,6 +26,11 @@ public class EmployeeController {
     @Autowired
     private ClaimRepository claimRepository;
 
+    @GetMapping
+    public String employeeRegister(){
+        return "redirect:/employee/register";
+    }
+
     @GetMapping("/register")
     public String getRegister(Model model){
         model.addAttribute("employee", new EmployeeInfo(null, null,null,
