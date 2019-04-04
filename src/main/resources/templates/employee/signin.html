@@ -19,7 +19,7 @@
     <link href="../css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="../css/signin.css" rel="stylesheet">
+    <link href="../css/signin.css?time=20150518" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -40,16 +40,18 @@
       <form class="form-signin" action="/employee/signin" th:object="${employee}" method="post">
         <h2 class="form-signin-heading">Please sign in</h2>
           <span id="basic-addon0">&nbsp;</span>
-          <span style="font-size: 12px;color: red" th:text="${error}" aria-describedby="basic-addon0"></span>
+          <!--<span style="font-size: 12px;color: red" th:text="${error}" aria-describedby="basic-addon0"></span>-->
         <label for="inputEmail" class="sr-only">Email address</label>
         <input type="email" id="inputEmail" class="form-control" name="emailAddress" th:value="*{emailAddress}" placeholder="Email address" required autofocus>
         <label for="inputPassword" class="sr-only">Password</label>
         <input type="password" id="inputPassword" class="form-control" name="password" th:value="*{password}" placeholder="Password" required>
-        <div class="checkbox">
-          <label>
+        <!--<div class="checkbox">-->
+          <!--<label>-->
             <!--<input type="checkbox" value="remember-me"> Remember me-->
-          </label>
-        </div>
+          <!--</label>-->
+        <!--</div>-->
+        <div id="hintInformation" class="alertdanger" th:text="${error}"></div>
+
         <button class="btn btn-lg btn-primary btn-block" type="submit" id="login">Sign in</button>
         <button class="btn btn-lg btn-primary btn-block" type="button" id="register">Create an account</button>
       </form>
@@ -60,9 +62,18 @@
       </footer>
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="js/ie10-viewport-bug-workaround.js"></script>
+    <script src="js/ie10-viewport-bug-workaround.js" th:inline="javascript"></script>
   <script>
       $(document).ready(function() {
+          $(function (){
+              var name = "[[${error}]]";
+              if(name != ""){
+
+                  $("#hintInformation").fadeIn();
+                  $("#hintInformation").html(name);
+                  $("#hintInformation").fadeOut(6000);
+              }
+                      });
           $('#register').click(function (e) {
               e.preventDefault();
               $(window).attr('location', '/employee/register');
