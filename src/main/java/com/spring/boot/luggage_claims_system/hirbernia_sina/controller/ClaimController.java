@@ -63,7 +63,7 @@ public class ClaimController {
         return "claim/finish";
     }
 
-    @GetMapping("/detail")
+    @GetMapping("/details")
     public String claimDetail(@RequestParam ("serialNo") Long serialNo, Model model){
         ClaimInfo claimInfo = claimRepository.getOne(serialNo);
         CustomerInfo customerInfo = customerRepository.getOne(claimInfo.getCustomerId());
