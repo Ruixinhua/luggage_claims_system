@@ -1,7 +1,9 @@
 
-		var LANGUAGE_CODE = "zh";
+		var LANGUAGE_CODE = "en";
 
 		function loadProperties(type) {
+			//alert("load "+type);
+			$.cookie('langcode', type,{ expires: 30 });
 			jQuery.i18n.properties({
 				name: 'strings', 
 				path: 'js/i18n', 
@@ -10,12 +12,24 @@
 				cache: false,
 				encoding: 'UTF-8',
 				callback: function () {    
-					var arr = $("[i18nid]");
+					var arr = $("[i18nid]");		
 					for (var i = 0; i < arr.length; i++) {
-						var tempID = arr[i].id;
-						arr[i].innerHTML=$.i18n.prop(arr[i].getAttribute('i18nid'));
-						//$('#' + tempID).html($.i18n.prop(arr[i].getAttribute('i18nid')));
+							LangId=arr[i].getAttribute('i18nid');
+							arr[i].innerText=$.i18n.prop(LangId);
 					}
+					
+					var arr = $("[i18nid_placeholder]");		
+					for (var i = 0; i < arr.length; i++) {
+							LangId=arr[i].getAttribute('i18nid_placeholder');
+							arr[i].setAttribute('placeholder',$.i18n.prop(LangId));
+					}
+					
+					var arr = $("[i18nid_title]");		
+					for (var i = 0; i < arr.length; i++) {
+							LangId=arr[i].getAttribute('i18nid_title');
+							arr[i].setAttribute('title',$.i18n.prop(LangId));
+					}
+					
 				}
 			});
 		}
@@ -26,15 +40,18 @@
 		}
 
 		$(document).ready(function () {
-			$.cookie('langcode', 'en');
+			//$.cookie('langcode', 'en');
 			var LangcodeFromCookie=$.cookie('langcode');
-			if(LangcodeFromCookie!='')
+			if(LangcodeFromCookie==undefined)
 			{
-				loadProperties(LangcodeFromCookie);
+				LangcodeFromCookie='en';
+				LANGUAGE_CODE='en';
+				$.cookie('langcode','en',{ expires: 30 });
 			}else
 			{
-				loadProperties(LANGUAGE_CODE);
+				loadProperties(LangcodeFromCookie);
 			}
+			
 			//LANGUAGE_CODE = jQuery.i18n.normaliseLanguageCode({});   
 			
 		})
