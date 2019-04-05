@@ -3,6 +3,7 @@ package com.spring.boot.luggage_claims_system.hirbernia_sina.domain;
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
+import java.util.Date;
 
 /**
  * @author Liu Dairui
@@ -28,12 +29,12 @@ public class EmployeeInfo {
 
     @NotEmpty(message = "nickname should not null")
     @Size(min = 2, max = 20)
-    @Column(nullable = false, length = 20)
+    @Column(nullable = false, length = 20, unique = true)
     private String nickname;
 
     @NotEmpty(message = "emailAddress should not null")
     @Size(min = 2, max = 50)
-    @Column(nullable = false, length = 50)
+    @Column(nullable = false, length = 50, unique = true)
     private String emailAddress;
 
     @NotEmpty(message = "phoneNumber should not null")
@@ -46,6 +47,11 @@ public class EmployeeInfo {
     @Column(nullable = false, length = 20)
     private String password;
 
+    @Column(nullable = false)
+    private Date registerDate;
+
+    @Column
+    private Date loginDate;
 //    @Column(nullable = false, length = 1)
 //    private boolean status;
 
@@ -61,6 +67,14 @@ public class EmployeeInfo {
         this.phoneNumber = phoneNumber;
         this.password = password;
         this.passport = passport;
+    }
+
+    public Date getRegisterDate() {
+        return registerDate;
+    }
+
+    public Date getLoginDate() {
+        return loginDate;
     }
 
     public Long getId() {
@@ -125,6 +139,14 @@ public class EmployeeInfo {
 
     public void setPassport(String passport) {
         this.passport = passport;
+    }
+
+    public void setRegisterDate(Date registerDate) {
+        this.registerDate = registerDate;
+    }
+
+    public void setLoginDate(Date loginDate) {
+        this.loginDate = loginDate;
     }
 
     @Override

@@ -50,17 +50,29 @@ public class ClaimController {
             model.addAttribute("error", bindingResult.getFieldError().getDefaultMessage());
             return "claim/write";
         }
-        System.out.println(writeInfo);
+//        System.out.println(writeInfo);
         CustomerInfo customerInfo = new CustomerInfo(null,writeInfo.getPassport(),writeInfo.getFirstName(),
                 writeInfo.getLastName(),writeInfo.getPhoneNumber(),writeInfo.getEmailAddress());
         customerInfo = customerRepository.save(customerInfo);
-        System.out.println(customerInfo);
+//        System.out.println(customerInfo);
         ClaimInfo claimInfo = new ClaimInfo(writeInfo.getSerialNo(),customerInfo.getId(),writeInfo.getBillingAddress(),
-                writeInfo.getFlightNo(),"",0L,writeInfo.getDetails());
+                writeInfo.getFlightNo(),writeInfo.getLuggageType(),0L,writeInfo.getDetails());
         System.out.println(claimInfo);
         claimRepository.save(claimInfo);
         model.addAttribute("customer",customerInfo);
         return "claim/finish";
+    }
+
+    @GetMapping("/detail")
+    public String claimDetail(@RequestParam ("serialNo") Long serialNo, Model model){
+        ClaimInfo claimInfo = claimRepository.getOne(serialNo);
+        CustomerInfo customerInfo = customerRepository.getOne(claimInfo.getCustomerId());
+        WriteInfo writeInfo = new WriteInfo(customerInfo.getFirstName(),customerInfo.getLastName(),customerInfo.getPassport(),
+                claimInfo.getSerialNo(),customerInfo.getPhoneNumber(),customerInfo.getEmailAddress(),claimInfo.getBillingAddress(),
+                claimInfo.getFlightNo(),claimInfo.getLostLuggage(),claimInfo.getDetails());
+        model.addAttribute("customerId", claimInfo.getCustomerId());
+        model.addAttribute("write", writeInfo);
+        return "claim/claimdetail";
     }
 
 }

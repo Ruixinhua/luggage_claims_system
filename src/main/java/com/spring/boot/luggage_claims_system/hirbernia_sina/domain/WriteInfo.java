@@ -22,10 +22,29 @@ public class WriteInfo {
 
     private String flightNo;
 
+    private String luggageType;
+
     private String details;
 
     public WriteInfo(){
 
+    }
+
+    public WriteInfo(String firstName, String lastName, String passport, Long serialNo, String phoneNumber, String emailAddress, String billingAddress, String flightNo, String luggageType, String details) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.passport = passport;
+        this.serialNo = serialNo;
+        this.phoneNumber = phoneNumber;
+        this.emailAddress = emailAddress;
+        this.billingAddress = billingAddress;
+        this.flightNo = flightNo;
+        this.luggageType = luggageType;
+        this.details = details;
+    }
+
+    public String getLuggageType() {
+        return luggageType;
     }
 
     public String getFirstName() {
@@ -100,10 +119,14 @@ public class WriteInfo {
         this.details = details;
     }
 
+    public void setLuggageType(String luggageType) {
+        this.luggageType = luggageType;
+    }
+
     @Override
     public String toString(){
         return String.format("Write[firstName=%s,lastName=%s,passport=%s,serialNo=%d,phoneNumber=%s,emailAddress=%s," +
-                "billingAddress=%s,flightNo=%s,details=%s",
-                firstName,lastName,passport,serialNo,phoneNumber,emailAddress,billingAddress,flightNo,details);
+                "billingAddress=%s,luggageType=%s,flightNo=%s,details=%s", firstName,lastName,passport,serialNo,
+                phoneNumber,emailAddress,billingAddress,luggageType,flightNo,details);
     }
 }

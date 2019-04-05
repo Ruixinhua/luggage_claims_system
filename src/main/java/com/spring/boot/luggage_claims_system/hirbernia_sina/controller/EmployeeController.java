@@ -11,6 +11,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -54,6 +55,8 @@ public class EmployeeController {
             model.addAttribute("passwordCheck", "");
             return "employee/register";
         }
+        employeeInfo.setRegisterDate(new Date());
+        employeeInfo.setLoginDate(null);
         model.addAttribute("employee", employeeInfo);
         employeeRepository.save(employeeInfo);
         return "employee/result";
@@ -85,6 +88,8 @@ public class EmployeeController {
             model.addAttribute("error","The password is not correct");
             return "employee/signin";
         }
+        employeeDB.setLoginDate(new Date());
+        employeeRepository.saveAndFlush(employeeDB);
         List<ClaimInfo> claims = claimRepository.findAll();
         model.addAttribute("employee", employeeDB);
         model.addAttribute("claimList", claims);

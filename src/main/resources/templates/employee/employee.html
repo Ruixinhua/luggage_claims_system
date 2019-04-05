@@ -103,7 +103,7 @@
           <!--<td th:text="${claim.employeeId}"></td>-->
           <td th:if="${claim.employeeId}" th:text="'Checked by ' + ${claim.employeeId}"></td>
           <td th:if="not ${claim.employeeId}">No employee checked</td>
-          <td th:if="not ${claim.employeeId}"><a th:href="@{/claim/claimdetail(seriaNo=${claim.getSerialNo()})}" > check </a></td>
+          <td th:if="not ${claim.employeeId}"><a th:href="@{/claim/details(serialNo=${claim.getSerialNo()})}" > check </a></td>
           <td th:if="${claim.employeeId}"> checked </td>
         </tr>
         </tbody>
