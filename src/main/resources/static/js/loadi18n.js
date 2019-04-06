@@ -18,20 +18,40 @@
 							arr[i].innerText=$.i18n.prop(LangId);
 					}
 					
-					arr = $("[i18nid_placeholder]");		
-					for (i = 0; i < arr.length; i++) {
-							LangId=arr[i].getAttribute('i18nid_placeholder');
-							arr[i].setAttribute('placeholder',$.i18n.prop(LangId));
-					}
-					
-					arr = $("[i18nid_title]");		
-					for (i = 0; i < arr.length; i++) {
-							LangId=arr[i].getAttribute('i18nid_title');
-							arr[i].setAttribute('title',$.i18n.prop(LangId));
-					}
+//					arr = $("[i18nid_placeholder]");		
+//					for (i = 0; i < arr.length; i++) {
+//							LangId=arr[i].getAttribute('i18nid_placeholder');
+//							arr[i].setAttribute('placeholder',$.i18n.prop(LangId));
+//					}
+//					
+//					arr = $("[i18nid_title]");		
+//					for (i = 0; i < arr.length; i++) {
+//							LangId=arr[i].getAttribute('i18nid_title');
+//							arr[i].setAttribute('title',$.i18n.prop(LangId));
+//					}
+					Replacei18nAttr("placeholder");
+					Replacei18nAttr("title");
 					
 				}
 			});
+		}
+
+		function Replacei18nAttr(InAttrName)
+		{
+				var attriName="i18nid_"+InAttrName;
+				var arr = $("["+attriName+"]");		
+				if (arr.length>0)
+				{
+					for (var i = 0; i < arr.length; i++) {
+						var LangId=arr[i].getAttribute(attriName);
+						if(LangId!=undefined)
+						{
+							arr[i].setAttribute(InAttrName,$.i18n.prop(LangId));
+						} 
+						
+					}
+				}
+				
 		}
 
 		function switchLang() {
