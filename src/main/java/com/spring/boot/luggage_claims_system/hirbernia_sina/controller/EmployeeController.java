@@ -90,11 +90,17 @@ public class EmployeeController {
         }
         employeeDB.setLoginDate(new Date());
         employeeRepository.saveAndFlush(employeeDB);
+        return "redirect:/employee/employee?employeeId="+employeeDB.getId();
+
+    }
+
+    @GetMapping("/employee")
+    public String employeeHomepage(@RequestParam("employeeId") Long employeeId,Model model){
+        EmployeeInfo employeeDB = employeeRepository.getOne(employeeId);
         List<ClaimInfo> claims = claimRepository.findAll();
         model.addAttribute("employee", employeeDB);
         model.addAttribute("claimList", claims);
         return "employee/employee";
-
     }
 //
 //    @GetMapping(value = "/{id}")

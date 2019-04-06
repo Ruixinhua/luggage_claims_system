@@ -101,9 +101,9 @@
           <td th:text="${claim.flightNo}"></td>
           <td th:text="${claim.customerId}"></td>
           <!--<td th:text="${claim.employeeId}"></td>-->
-          <td th:if="${claim.employeeId}" th:text="'Checked by ' + ${claim.employeeId}"></td>
+          <td th:if="${claim.employeeId}" th:text="'Checked by '+${employee.nickname}"></td>
           <td th:if="not ${claim.employeeId}">No employee checked</td>
-          <td th:if="not ${claim.employeeId}"><a th:href="@{/claim/details(serialNo=${claim.getSerialNo()})}" > check </a></td>
+          <td th:if="not ${claim.employeeId}"><a th:href="@{/claim/details(serialNo=${claim.getSerialNo()},employeeId=${employee.getId()})}" > view more </a></td>
           <td th:if="${claim.employeeId}"> checked </td>
         </tr>
         </tbody>

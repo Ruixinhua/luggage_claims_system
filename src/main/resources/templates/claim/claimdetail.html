@@ -147,18 +147,19 @@
       <div class="form-group row">
         <label for="detail" class="col-sm-2 col-form-label">Detail:</label>
         <div class="col-sm-10">
-          <textarea type="text" readonly class="form-control-plaintext empty" id="detail" th:value="'This is detail' + *{details}"></textarea>
+          <input type="text" readonly class="form-control-plaintext empty" id="detail" th:value="*{details}">
         </div>
       </div>
     </form>
 
 
     <hr/>
-    <form class="detail-form">
-
+    <form class="detail-form" method="post" action="/claim/result" th:object="${result}">
+      <input type="hidden" name="email" th:value="${write.emailAddress}">
+      <input type="hidden" name="serialNo" th:value="${write.serialNo}">
       <div class="form-group">
         <label for="select1">Feedback:</label>
-        <select class="form-control" id="select1">
+        <select class="form-control" id="select1" name="feedback" th:value="*{feedback}">
           <option value="1">Approve</option>
           <option value="2">Deny</option>
           <option value="3">To be confirmed</option>
@@ -166,7 +167,7 @@
       </div>
       <div class="form-group" id = "reasonarea">
         <label for="reason">Reason</label>
-        <textarea class="form-control" id="reason" rows="3"></textarea>
+        <textarea class="form-control" id="reason" name="reason" th:value="*{reason}" rows="3"></textarea>
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
       <button type="button" class="btn btn-primary">Back</button>

@@ -14,7 +14,7 @@ public class CustomerInfo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, length = 20)
+    @Column(nullable = false, length = 20, unique = true)
     private String passport;
 
     @Column(nullable = false, length = 20)
@@ -26,7 +26,7 @@ public class CustomerInfo {
     @Column(nullable = false, length = 20)
     private String phoneNumber;
 
-    @Column(nullable = false, length = 50)
+    @Column(nullable = false, length = 50, unique = true)
     private String emailAddress;
 
     protected CustomerInfo(){
