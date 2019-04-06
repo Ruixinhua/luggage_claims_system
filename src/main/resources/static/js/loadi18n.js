@@ -7,7 +7,7 @@
 			//$.cookie('langcode', type,{ expires: 30,secure:false });
 			jQuery.i18n.properties({
 				name: 'strings', 
-				path: 'js/i18n', 
+				path: '/js/i18n',
 				mode: 'map', 
 				language: type, 
 				cache: false,
