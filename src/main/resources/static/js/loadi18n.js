@@ -3,7 +3,8 @@
 
 		function loadProperties(type) {
 			//alert("load "+type);
-			$.cookie('langcode', type,{ expires: 30 });
+			$.cookie('Glangcode', type,{ expires: 30,path:'/',secure:false });
+			//$.cookie('langcode', type,{ expires: 30,secure:false });
 			jQuery.i18n.properties({
 				name: 'strings', 
 				path: 'js/i18n', 
@@ -60,17 +61,11 @@
 		}
 
 		$(document).ready(function () {
-			//$.cookie('langcode', 'en');
-			var LangcodeFromCookie=$.cookie('langcode');
-			if(LangcodeFromCookie==undefined)
-			{
-				LangcodeFromCookie='en';
-				LANGUAGE_CODE='en';
-				$.cookie('langcode','en',{ expires: 30 });
-			}else
-			{
-				loadProperties(LangcodeFromCookie);
-			}
+			var LangcodeFromCookie=$.cookie('Glangcode');
+			//alert('cookie:'+LangcodeFromCookie);
+			LangcodeFromCookie=LangcodeFromCookie=='en'?'en':'zh';
+			loadProperties(LangcodeFromCookie);
+			
 			
 			//LANGUAGE_CODE = jQuery.i18n.normaliseLanguageCode({});   
 			
