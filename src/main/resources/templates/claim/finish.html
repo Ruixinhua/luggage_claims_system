@@ -46,12 +46,12 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li><a href="/index">Home</a></li>
-                <li><a href="#about">About us</a></li>
-                <li><a href="#shop">Shop products</a></li>
-                <li class="active"><a href="/claim/write">Claim settlements</a></li>
-                <li><a href="#contact">Contact us</a></li>
-                <li><a href="#news">News</a></li>
+                <li><a href="/index" i18nid="Home">Home</a></li>
+                <li><a href="#about" i18nid="AboutUs">About us</a></li>
+                <li><a href="#shop" i18nid="ShopProducts">Shop products</a></li>
+                <li class="active"><a href="/claim/write" i18nid="ClaimSettlements">Claim settlements</a></li>
+                <li><a href="#contact" i18nid="ContactUs">Contact us</a></li>
+                <li><a href="#news" i18nid="News">News</a></li>
                 <li><a></a></li>
                 <li><a></a></li>
                 <li><a></a></li>
@@ -68,14 +68,14 @@
                 <li><a></a></li>
                 <li><a></a></li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Me
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" i18nid="Me">Me
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="#claim">My Claims</a></li>
-                        <li><a href="#purchase">My purchase</a></li>
+                        <li><a href="#claim" i18nid="MyClaims">My Claims</a></li>
+                        <li><a href="#purchase" i18nid="MyPurchase">My purchase</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="#profile">My profile</a></li>
+                        <li><a href="#profile" i18nid="MyProfile">My profile</a></li>
                     </ul>
                 </li>
             </ul>
@@ -92,15 +92,15 @@
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
         </p>
         <div class="jumbotron" id="edit">
-            <h1 class="head1">Congratulations,<span th:text="${customer.firstName} +' '+ ${customer.lastName}"></span> !You have successfully lodged a claim</h1>
-            <p class="head2">We are handling your claim, and we will call you back in 3 to 7 working-days.</p>
+            <h1 class="head1" i18nid="LodgeClaimTip">Congratulations,<span th:text="${customer.firstName} +' '+ ${customer.lastName}"></span> !You have successfully lodged a claim</h1>
+            <p class="head2" i18nid="HandledInfo">We are handling your claim, and we will call you back in 3 to 7 working-days.</p>
         </div>
         <div class="row">
             <div class="link">
-                <a href="/index">&gt;&gt;&nbsp;Return to homepage</a><br>
+                <a href="/index" i18nid="ReturnHomePage">&gt;&gt;&nbsp;Return to homepage</a><br>
             </div>
             <div class="link">
-                <a href=”#” onClick="javascript :history.back(-1);">&gt;&gt;&nbsp;Return to previous page</a>
+              <a href="#" onClick="javascript :history.back(-1);" i18nid="ReturnPrevPage">&gt;&gt;&nbsp;Return to previous page</a>
             </div>
         </div><!--/row-->
         <p></p>
@@ -112,7 +112,7 @@
     <hr>
 
     <footer>
-        <p>&copy; 2019 Hibernia-Sino Insurance Company, Inc.</p>
+        <p i18nid="CompanyInfo">&copy; 2019 Hibernia-Sino Insurance Company, Inc.</p>
     </footer>
 
 </div><!--/.container-->
@@ -132,5 +132,9 @@
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 
 
+	<script type="text/javascript" src="js/jquery.i18n.properties.js"></script>	
+	<script type="text/javascript" src="js/jquery.cookie.js"></script>
+	<script src="js/loadi18n.js"></script>
+	
 </body>
 </html>

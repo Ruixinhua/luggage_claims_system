@@ -14,18 +14,18 @@
 				callback: function () {    
 					var arr = $("[i18nid]");		
 					for (var i = 0; i < arr.length; i++) {
-							LangId=arr[i].getAttribute('i18nid');
+							var LangId=arr[i].getAttribute('i18nid');
 							arr[i].innerText=$.i18n.prop(LangId);
 					}
 					
-					var arr = $("[i18nid_placeholder]");		
-					for (var i = 0; i < arr.length; i++) {
+					arr = $("[i18nid_placeholder]");		
+					for (i = 0; i < arr.length; i++) {
 							LangId=arr[i].getAttribute('i18nid_placeholder');
 							arr[i].setAttribute('placeholder',$.i18n.prop(LangId));
 					}
 					
-					var arr = $("[i18nid_title]");		
-					for (var i = 0; i < arr.length; i++) {
+					arr = $("[i18nid_title]");		
+					for (i = 0; i < arr.length; i++) {
 							LangId=arr[i].getAttribute('i18nid_title');
 							arr[i].setAttribute('title',$.i18n.prop(LangId));
 					}
