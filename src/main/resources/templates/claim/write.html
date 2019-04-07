@@ -171,6 +171,18 @@
                            name="flightNo" th:value="*{flightNo}" placeholder="Please enter your flight number"
                            maxlength="20">
                 </div>
+
+                <!--<p>Luggage Type</p>-->
+                <!--<label for="luggageType" class="sr-only"> FLightNo</label>-->
+                <!--<div class="form-group">-->
+                    <!--<select class="form-control" id="luggageType" name="lostLuggage">-->
+                        <!--<option value="1">trolley case</option>-->
+                        <!--<option value="2">backpack</option>-->
+                        <!--<option value="3">handbag</option>-->
+                        <!--<option value="3">other</option>-->
+                    <!--</select>-->
+                <!--</div>-->
+
                 <p i18nid="Detail">Detail</p>
                 <label for="inputDetail" class="sr-only"> Detail</label>
                 <div class="box">
@@ -224,8 +236,15 @@
         });
         $("input").each(function () {
             $(this).blur(function (e) {
-                var onlyalphbet = /^[a-zA-Z]+$/;
-                var phone_pattern = /^[0-9]{2,6}-[0-9]{6,10}$/;
+                var onlyalphbet = "";
+                var language = getLanguageCode();
+                if(language == 'en'){
+                    onlyalphbet = /^[a-zA-Z]+$/;
+                }
+                if(language == 'zh'){
+                    onlyalphbet = /^[\u4e00-\u9fa5]+$/;
+                }
+                var phone_pattern = /^[0-9]{2,6}-[0-9]{6,12}$/;
                 var email_pattern = /^([A-Za-z0-9_\-\.\u4e00-\u9fa5])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,8})$/;
                 if ($(this).attr('id') == 'inputFirstName') {
                     if (onlyalphbet.test($(this).val())) {
