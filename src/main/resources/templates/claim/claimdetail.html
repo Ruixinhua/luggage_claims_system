@@ -2,178 +2,191 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <link rel="icon" href="../../favicon.ico">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
 
-  <title>Workload - Hibernia-Sino Insurance Company</title>
+    <title>Workload - Hibernia-Sino Insurance Company</title>
 
-  <!-- Bootstrap core CSS -->
-  <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-  <link href="../css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
-  <!-- Custom styles for this template -->
-  <link href="../css/dashboard.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="../css/dashboard.css" rel="stylesheet">
 
-  <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-  <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-  <script src="js/ie-emulation-modes-warning.js"></script>
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]>
+    <script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="js/ie-emulation-modes-warning.js"></script>
 
-  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
 
 <body>
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
 
-  <div class="container-fluid">
+    <div class="container-fluid">
 
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="/index"><img id="logo" src="../css/logo.jpeg"></a>
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/index"><img id="logo" src="../css/logo.jpeg"></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#dashboard" id="bar1" i18nid="Dashboard">Dashboard</a></li>
+                <li><a href="#settings" id="bar2" i18nid="Settings">Settings</a></li>
+                <li><a href="#profile" id="bar3" i18nid="Profile">Profile</a></li>
+            </ul>
+            <form class="navbar-form navbar-right">
+                <input type="text" class="form-control" placeholder="Search..." i18nid_placeholder="Search">
+            </form>
+        </div>
     </div>
-    <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#dashboard" id="bar1" i18nid="Dashboard">Dashboard</a></li>
-        <li><a href="#settings" id="bar2" i18nid="Settings" >Settings</a></li>
-        <li><a href="#profile" id="bar3" i18nid="Profile" >Profile</a></li>
-      </ul>
-      <form class="navbar-form navbar-right">
-        <input type="text" class="form-control" placeholder="Search..." i18nid_placeholder="Search">
-      </form>
-    </div>
-  </div>
 </nav>
 
 <div class="container-fluid">
-  <div class="row">
+    <div class="row">
 
-  </div>
-  <div class="col-sm-3 col-md-2 sidebar">
-    <ul class="list list-group" id="daohang">
-      <li class="list-group-item d-flex justify-content-between align-items-center" >
-        <i18n-pad i18nid="Solved" >solved</i18n-pad>
-        <span class="badge badge-primary badge-pill">14</span>
-      </li>
-      <li class="list-group-item d-flex justify-content-between align-items-center">
-        <i18n-pad i18nid="Processing">processing</i18n-pad>
-        <span class="badge badge-primary badge-pill">2</span>
-      </li>
-      <li class="list-group-item d-flex justify-content-between align-items-center">
-        <i18n-pad i18nid="Pending">pending</i18n-pad>
-        <span class="badge badge-primary badge-pill">1</span>
-      </li>
-    </ul>
-  </div>
-  <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    </div>
+    <div class="col-sm-3 col-md-2 sidebar">
+        <ul class="list list-group" id="daohang">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <i18n-pad i18nid="Solved">solved</i18n-pad>
+                <span class="badge badge-primary badge-pill">14</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <i18n-pad i18nid="Processing">processing</i18n-pad>
+                <span class="badge badge-primary badge-pill">2</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <i18n-pad i18nid="Pending">pending</i18n-pad>
+                <span class="badge badge-primary badge-pill">1</span>
+            </li>
+        </ul>
+    </div>
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
-    <h2 class="sub-header" i18nid="ClaimDetail">Claim Detail</h2>
-    <form class="detail-form" th:object="${write}">
-      <div class="form-group row">
-        <label for="customerId" class="col-sm-2 col-form-label" i18nid="CustomerId">Customer ID:</label>
-        <div class="col-sm-10">
-          <input type="text" readonly class="form-control-plaintext empty" id="customerId" th:value="${customerId}" value="email@example.com">
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="passportNo" class="col-sm-2 col-form-label" i18nid="PassportNo" >Passport Number:</label>
-        <div class="col-sm-10">
-          <input type="text" readonly class="form-control-plaintext empty" id="passportNo" th:value="*{passport}" value="email@example.com">
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="firstName" class="col-sm-2 col-form-label" i18nid="FirstName">First Name:</label>
-        <div class="col-sm-10">
-          <input type="text" readonly class="form-control-plaintext empty" id="firstName" th:value="*{firstName}" value="email@example.com">
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="lastName" class="col-sm-2 col-form-label" i18nid="LastName">Last Name:</label>
-        <div class="col-sm-10">
-          <input type="text" readonly class="form-control-plaintext empty" id="lastName" th:value="*{lastName}" value="email@example.com">
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="PhoneNo" class="col-sm-2 col-form-label" i18nid="PhoneNo">Phone Number:</label>
-        <div class="col-sm-10">
-          <input type="text" readonly class="form-control-plaintext empty" id="PhoneNo" th:value="*{phoneNumber}" value="email@example.com">
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="emailAddress" class="col-sm-2 col-form-label" i18nid="EmailAddress">Email Address:</label>
-        <div class="col-sm-10">
-          <input type="text" readonly class="form-control-plaintext empty" id="emailAddress" th:value="*{emailAddress}" value="email@example.com">
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="claimId" class="col-sm-2 col-form-label" i18nid="ClaimId">Claim ID:</label>
-        <div class="col-sm-10">
-          <input type="text" readonly class="form-control-plaintext empty" id="claimId" th:value="*{serialNo}" value="email@example.com">
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="billingAddress" class="col-sm-2 col-form-label" i18nid="BillingAddress">Billing Address:</label>
-        <div class="col-sm-10">
-          <input type="text" readonly class="form-control-plaintext empty" id="billingAddress" th:value="*{billingAddress}" value="email@example.com">
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="flightNo" class="col-sm-2 col-form-label" i18nid="FlightNo">Flight Number:</label>
-        <div class="col-sm-10">
-          <input type="text" readonly class="form-control-plaintext empty" id="flightNo" th:value="*{flightNo}" value="email@example.com">
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="luggageType" class="col-sm-2 col-form-label" i18nid="LuggageType">Luggage Type:</label>
-        <div class="col-sm-10">
-          <input type="text" readonly class="form-control-plaintext empty" id="luggageType" th:value="*{luggageType}" value="email@example.com">
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="detail" class="col-sm-2 col-form-label" i18nid="Detail">Detail:</label>
-        <div class="col-sm-10">
-          <input type="text" readonly class="form-control-plaintext empty" id="detail" th:value="*{details}">
-        </div>
-      </div>
-    </form>
+        <h2 class="sub-header" i18nid="ClaimDetail">Claim Detail</h2>
+        <form class="detail-form" th:object="${write}">
+            <div class="form-group row">
+                <label for="customerId" class="col-sm-2 col-form-label" i18nid="CustomerId">Customer ID:</label>
+                <div class="col-sm-10">
+                    <input type="text" readonly class="form-control-plaintext empty" id="customerId"
+                           th:value="${customerId}" value="email@example.com">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="passportNo" class="col-sm-2 col-form-label" i18nid="PassportNo">Passport Number:</label>
+                <div class="col-sm-10">
+                    <input type="text" readonly class="form-control-plaintext empty" id="passportNo"
+                           th:value="*{passport}" value="email@example.com">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="firstName" class="col-sm-2 col-form-label" i18nid="FirstName">First Name:</label>
+                <div class="col-sm-10">
+                    <input type="text" readonly class="form-control-plaintext empty" id="firstName"
+                           th:value="*{firstName}" value="email@example.com">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="lastName" class="col-sm-2 col-form-label" i18nid="LastName">Last Name:</label>
+                <div class="col-sm-10">
+                    <input type="text" readonly class="form-control-plaintext empty" id="lastName"
+                           th:value="*{lastName}" value="email@example.com">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="PhoneNo" class="col-sm-2 col-form-label" i18nid="PhoneNo">Phone Number:</label>
+                <div class="col-sm-10">
+                    <input type="text" readonly class="form-control-plaintext empty" id="PhoneNo"
+                           th:value="*{phoneNumber}" value="email@example.com">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="emailAddress" class="col-sm-2 col-form-label" i18nid="EmailAddress">Email Address:</label>
+                <div class="col-sm-10">
+                    <input type="text" readonly class="form-control-plaintext empty" id="emailAddress"
+                           th:value="*{emailAddress}" value="email@example.com">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="claimId" class="col-sm-2 col-form-label" i18nid="ClaimId">Claim ID:</label>
+                <div class="col-sm-10">
+                    <input type="text" readonly class="form-control-plaintext empty" id="claimId" th:value="*{serialNo}"
+                           value="email@example.com">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="billingAddress" class="col-sm-2 col-form-label" i18nid="BillingAddress">Billing
+                    Address:</label>
+                <div class="col-sm-10">
+                    <input type="text" readonly class="form-control-plaintext empty" id="billingAddress"
+                           th:value="*{billingAddress}" value="email@example.com">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="flightNo" class="col-sm-2 col-form-label" i18nid="FlightNo">Flight Number:</label>
+                <div class="col-sm-10">
+                    <input type="text" readonly class="form-control-plaintext empty" id="flightNo"
+                           th:value="*{flightNo}" value="email@example.com">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="luggageType" class="col-sm-2 col-form-label" i18nid="LuggageType">Luggage Type:</label>
+                <div class="col-sm-10">
+                    <input type="text" readonly class="form-control-plaintext empty" id="luggageType"
+                           th:value="*{luggageType}" value="email@example.com">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="detail" class="col-sm-2 col-form-label" i18nid="Detail">Detail:</label>
+                <div class="col-sm-10">
+                    <input type="text" readonly class="form-control-plaintext empty" id="detail" th:value="*{details}">
+                </div>
+            </div>
+        </form>
 
 
-    <hr/>
-    <form class="detail-form" method="post" action="/claim/result" th:object="${result}">
-      <input type="hidden" name="email" th:value="${write.emailAddress}">
-      <input type="hidden" name="serialNo" th:value="${write.serialNo}">
-      <div class="form-group">
-        <label for="select1" i18nid="Feedback">Feedback:</label>
-        <select class="form-control" id="select1" name="feedback" th:value="*{feedback}">
-          <option value="1" i18nid="Approve">Approve</option>
-          <option value="2" i18nid="Deny">Deny</option>
-          <option value="3" i18nid="ToBeConfirmed">To be confirmed</option>
-        </select>
-      </div>
-      <div class="form-group" id = "reasonarea">
-        <label for="reason" i18nid="Reason">Reason</label>
-        <textarea class="form-control" id="reason" name="reason" th:value="*{reason}" rows="3"></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary" i18nid="Submit">Submit</button>
-      <button type="button" class="btn btn-primary" i18nid="Back">Back</button>
-    </form>
+        <hr/>
+        <form class="detail-form" method="post" action="/claim/result" th:object="${result}">
+            <input type="hidden" name="email" th:value="${write.emailAddress}">
+            <input type="hidden" name="serialNo" th:value="${write.serialNo}">
+            <div class="form-group">
+                <label for="select1" i18nid="Feedback">Feedback:</label>
+                <select class="form-control" id="select1" name="feedback" th:value="*{feedback}">
+                    <option value="1" i18nid="Approve">Approve</option>
+                    <option value="2" i18nid="Deny">Deny</option>
+                    <option value="3" i18nid="ToBeConfirmed">To be confirmed</option>
+                </select>
+            </div>
+            <div class="form-group" id="reasonarea">
+                <label for="reason" i18nid="Reason">Reason</label>
+                <textarea class="form-control" id="reason" name="reason" th:value="*{reason}" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" i18nid="Submit">Submit</button>
+            <button type="button" class="btn btn-primary" i18nid="Back">Back</button>
+        </form>
 
-  </div>
+    </div>
 </div>
 
 
@@ -187,21 +200,21 @@
 <script src="../js/ie10-viewport-bug-workaround.js"></script>
 <script src="../js/offcanvas.js"></script>
 <script type="text/javascript">
-    $(document).ready(function() {
-        $("#daohang li").each(function(){
-            $(this).mouseover(function(){
+    $(document).ready(function () {
+        $("#daohang li").each(function () {
+            $(this).mouseover(function () {
                 $(this).addClass("active");
             });
-            $(this).mouseout(function(){
+            $(this).mouseout(function () {
                 $(this).removeClass("active");
             });
         });
         $("#reasonarea").hide();
-        $("#select1").change(function(){
+        $("#select1").change(function () {
             console.log($("#select1").val());
-            if($("#select1").val() == '2'|| $("#select1").val() == '3'){
+            if ($("#select1").val() == '2' || $("#select1").val() == '3') {
                 $("#reasonarea").fadeIn();
-            }else{
+            } else {
                 $("#reasonarea").fadeOut();
             }
         });
@@ -209,13 +222,12 @@
     });
 
 </script>
-	
-	
-<script type="text/javascript" src="../js/jquery.i18n.properties.js"></script>	
+
+
+<script type="text/javascript" src="../js/jquery.i18n.properties.js"></script>
 <script type="text/javascript" src="../js/jquery.cookie.js"></script>
 <script src="../js/loadi18n.js"></script>
-	
-	
+
 
 </body>
 </html>
