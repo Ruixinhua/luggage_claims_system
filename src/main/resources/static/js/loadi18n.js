@@ -63,7 +63,7 @@
 		$(document).ready(function () {
 			var LangcodeFromCookie=$.cookie('Glangcode');
 			//alert('cookie:'+LangcodeFromCookie);
-			LangcodeFromCookie=LangcodeFromCookie=='en'?'en':'zh';
+			LangcodeFromCookie = LangcodeFromCookie == 'zh' ? 'zh' : 'en';
 			loadProperties(LangcodeFromCookie);
 			
 			

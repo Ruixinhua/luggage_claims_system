@@ -49,16 +49,19 @@
         <input type="email" id="inputEmail" class="form-control" placeholder="Email address" name="emailAddress" th:value="*{emailAddress}" required autofocus>
         <label for="inputPassword" class="sr-only">Password</label>
         <input type="password" id="inputPassword" class="form-control" placeholder="Input your password" name="password" th:value="*{password}" required>
-        <label for="inputPasswordAgain" class="sr-only">Repassword</label>
+        <label for="inputPasswordAgain" class="sr-only">Re-password</label>
         <input type="password" id="inputPasswordAgain" class="form-control" placeholder="Input password again..." name="passwordCheck" th:value="${passwordCheck}" required>
-        <label for="inputUserName" class="sr-only">User name</label>
-        <input type="text" id="inputUsername" class="form-control" placeholder="Username" name="nickname" th:value="*{nickname}" required>
+        <label for="inputUserName" class="sr-only">Nick Name</label>
+        <input type="text" id="inputUsername" class="form-control" placeholder="Nick Name" name="nickname"
+               th:value="*{nickname}" required>
         <label for="inputPhone" class="sr-only">Phone</label>
         <input type="text" id="inputPhone" class="form-control" placeholder="Phone No." name="phoneNumber" th:value="*{phoneNumber}">
-        <label for="inputPolicyHolder" class="sr-only">Policy holder</label>
-        <input type="text" id="inputPolicyHolder" class="form-control" placeholder="Nickname" name="name" th:value="*{name}" required>
+        <label for="inputRealName" class="sr-only">Real Name</label>
+        <input type="text" id="inputRealName" class="form-control" placeholder="Real Name" name="name"
+               th:value="*{name}" required>
         <label for="inputPassport" class="sr-only">Passport No.</label>
-        <input type="text" id="inputPassport" class="form-control" placeholder="Real name" name="passport" th:value="*{passport}">
+        <input type="text" id="inputPassport" class="form-control" placeholder="Passport No" name="passport"
+               th:value="*{passport}">
 
         <!--<div class="checkbox">-->
             <!--<label>-->

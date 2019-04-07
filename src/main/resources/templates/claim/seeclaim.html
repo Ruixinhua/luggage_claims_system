@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,109 +21,112 @@
     <link href="../../static/css/offcanvas.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../static/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <!--[if lt IE 9]>
+    <script src="../../static/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="../../static/js/ie-emulation-modes-warning.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-      <script src="../../static/js/html5shiv.min.js"></script>
-      <script src="../../static/js/respond.min.js"></script>
+    <script src="../../static/js/html5shiv.min.js"></script>
+    <script src="../../static/js/respond.min.js"></script>
     <![endif]-->
-  </head>
+</head>
 
-  <body>
-    <nav class="navbar navbar-fixed-top navbar-inverse">
-      <div class="container">
+<body>
+<nav class="navbar navbar-fixed-top navbar-inverse">
+    <div class="container">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#"><img id="logo" src="../../static/css/logo.jpeg"></a>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><img id="logo" src="../../static/css/logo.jpeg"></a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="/index">Home</a></li>
-            <li><a href="#about">About us</a></li>
-            <li><a href="#shop">Shop products</a></li>
-            <li class="active"><a href="/claim/write">Claim settlements</a></li>
-            <li><a href="#contact">Contact us</a></li>
-            <li><a href="#news">News</a></li>
-            <li><a></a></li>
-            <li><a></a></li>
-            <li><a></a></li>
-            <li><a></a></li>
-            <li><a></a></li>
-            <li><a></a></li>
-            <li><a></a></li>
-            <li><a></a></li>
-            <li><a></a></li>
-            <li><a></a></li>
-            <li><a></a></li>
-            <li><a></a></li>
-            <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Me <span class="caret"></span></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="claims.html">My Claims</a></li>
-                    <li><a href="seeclaim.html">My purchase</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li><a href="#profile">My profile</a></li>
-                  </ul>
+            <ul class="nav navbar-nav">
+                <li><a href="/index">Home</a></li>
+                <li><a href="#about">About us</a></li>
+                <li><a href="#shop">Shop products</a></li>
+                <li class="active"><a href="/claim/write">Claim settlements</a></li>
+                <li><a href="#contact">Contact us</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a></a></li>
+                <li><a></a></li>
+                <li><a></a></li>
+                <li><a></a></li>
+                <li><a></a></li>
+                <li><a></a></li>
+                <li><a></a></li>
+                <li><a></a></li>
+                <li><a></a></li>
+                <li><a></a></li>
+                <li><a></a></li>
+                <li><a></a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="true">Me <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="claims.html">My Claims</a></li>
+                        <li><a href="seeclaim.html">My purchase</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#profile">My profile</a></li>
+                    </ul>
                 </li>
-          </ul>
+            </ul>
         </div><!-- /.nav-collapse -->
-      </div><!-- /.container -->
-    </nav><!-- /.navbar -->
+    </div><!-- /.container -->
+</nav><!-- /.navbar -->
 
-    <div class="container">
+<div class="container">
 
-      <div class="row row-offcanvas row-offcanvas-right">
+    <div class="row row-offcanvas row-offcanvas-right">
 
 
-          <p class="pull-right visible-xs">
+        <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
-          </p>
-          <div class="jumbotron" id="seetop">
+        </p>
+        <div class="jumbotron" id="seetop">
             <h1>Choose your purchase</h1>
             <p>Please choose the insurance product you bought for your flight this time.</p>
-          </div>
-          <div class="row">
+        </div>
+        <div class="row">
             <ul>
-              <li th:each="purchase: ${purchaseList}">
-                <div class="col-xs-6 col-lg-4" id="info">
-                  <h2 th:text="${purchase.insuranceName}">Flight Insurance</h2>
-                  <p th:text="${purchase.insuranceType}">Type: Luggage Insurance A</p>
-                  <p th:text="${purchase.flightNo}">Flight No.: CA1003</p>
-                  <p th:text="${purchase.serialNo}">Serial No.: 12345</p>
-                  <p th:text="${purchase.validFrom}">Valid From:8/10/2018</p>
-                  <p th:text="${purchase.validTo}">Valid To:8/15/2018</p>
-                  <p><a class="btn btn-default" href="/claim/write" role="button">Claim settlement &raquo;</a></p>
-                </div><!--/.col-xs-6.col-lg-4-->
-              </li>
+                <!--<li th:each="purchase: ${purchaseList}">-->
+                <!--<div class="col-xs-6 col-lg-4" id="info">-->
+                <!--<h2 th:text="${purchase.insuranceName}">Flight Insurance</h2>-->
+                <!--<p th:text="${purchase.insuranceType}">Type: Luggage Insurance A</p>-->
+                <!--<p th:text="${purchase.flightNo}">Flight No.: CA1003</p>-->
+                <!--<p th:text="${purchase.serialNo}">Serial No.: 12345</p>-->
+                <!--<p th:text="${purchase.validFrom}">Valid From:8/10/2018</p>-->
+                <!--<p th:text="${purchase.validTo}">Valid To:8/15/2018</p>-->
+                <!--<p><a class="btn btn-default" href="/claim/write" role="button">Claim settlement &raquo;</a></p>-->
+                <!--</div>&lt;!&ndash;/.col-xs-6.col-lg-4&ndash;&gt;-->
+                <!--</li>-->
             </ul>
-          </div><!--/row-->
+        </div><!--/row-->
         <p></p>
-      </div><!--/row-->
+    </div><!--/row-->
 
-      <hr>
+    <hr>
 
-      <footer>
+    <footer>
         <p>&copy; 2019 Hibernia-Sino Insurance Company, Inc.</p>
-      </footer>
+    </footer>
 
-    </div><!--/.container-->
+</div><!--/.container-->
 
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="../../static/js/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<js/jquery.min.js"><\/script>')</script>
-    <script src="../../static/js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../static/js/ie10-viewport-bug-workaround.js"></script>
-    <script src="../../static/js/offcanvas.js"></script>
-  </body>
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="../../static/js/jquery.min.js"></script>
+<script>window.jQuery || document.write('<js/jquery.min.js"><\/script>')</script>
+<script src="../../static/js/bootstrap.min.js"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="../../static/js/ie10-viewport-bug-workaround.js"></script>
+<script src="../../static/js/offcanvas.js"></script>
+</body>
 </html>

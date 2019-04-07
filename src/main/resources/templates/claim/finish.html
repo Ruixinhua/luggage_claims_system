@@ -22,7 +22,8 @@
     <link href="../css/offcanvas.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <!--[if lt IE 9]>
+    <script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="../js/ie-emulation-modes-warning.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -36,7 +37,8 @@
 <nav class="navbar navbar-fixed-top navbar-inverse">
     <div class="container1">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -68,7 +70,8 @@
                 <li><a></a></li>
                 <li><a></a></li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" i18nid="Me">Me
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false" i18nid="Me">Me
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
@@ -92,21 +95,23 @@
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
         </p>
         <div class="jumbotron" id="edit">
-            <h1 class="head1" i18nid="LodgeClaimTip">Congratulations,<span th:text="${customer.firstName} +' '+ ${customer.lastName}"></span> !You have successfully lodged a claim</h1>
-            <p class="head2" i18nid="HandledInfo">We are handling your claim, and we will call you back in 3 to 7 working-days.</p>
+            <h1 class="head1" i18nid="LodgeClaimTip">Congratulations,<span
+                    th:text="${customer.firstName} +' '+ ${customer.lastName}"></span> !You have successfully lodged a
+                claim</h1>
+            <p class="head2" i18nid="HandledInfo">We are handling your claim, and we will call you back in 3 to 7
+                working-days.</p>
         </div>
         <div class="row">
             <div class="link">
                 <a href="/index" i18nid="ReturnHomePage">&gt;&gt;&nbsp;Return to homepage</a><br>
             </div>
             <div class="link">
-              <a href="#" onClick="javascript :history.back(-1);" i18nid="ReturnPrevPage">&gt;&gt;&nbsp;Return to previous page</a>
+                <a href="#" onClick="javascript :history.back(-1);" i18nid="ReturnPrevPage">&gt;&gt;&nbsp;Return to
+                    previous page</a>
             </div>
         </div><!--/row-->
         <p></p>
     </div><!--/row-->
-
-
 
 
     <hr>
@@ -132,9 +137,9 @@
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 
 
-	<script type="text/javascript" src="../js/jquery.i18n.properties.js"></script>	
-	<script type="text/javascript" src="../js/jquery.cookie.js"></script>
-	<script src="../js/loadi18n.js"></script>
-	
+<script type="text/javascript" src="../js/jquery.i18n.properties.js"></script>
+<script type="text/javascript" src="../js/jquery.cookie.js"></script>
+<script src="../js/loadi18n.js"></script>
+
 </body>
 </html>

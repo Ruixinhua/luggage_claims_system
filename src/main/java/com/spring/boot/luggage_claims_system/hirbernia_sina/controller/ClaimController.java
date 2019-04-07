@@ -114,7 +114,6 @@ public class ClaimController {
 
     public void emailSender(Result result, String feedback) throws IOException {
 
-        //新建邮件
         SimpleMailMessage mailMessage = new SimpleMailMessage();
         mailMessage.setTo(result.getEmail());
         mailMessage.setSubject("We have settled your claim");
