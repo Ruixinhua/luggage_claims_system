@@ -15,16 +15,11 @@ body {
 footer {
     padding: 30px 0;
 }
-.myborder{
-     border-color:#003366 ;
-     border-width:1px;
-}
+
 .box {
     position: relative;
 }
-.row-claims{
-    border-radius: 2px
-}
+
 .icon-search {
     display: none;
     background-image: url('right.png');
@@ -40,18 +35,7 @@ footer {
 .jumbotron {
     color: #003366;
 }
-.btn-outline-primary{color:#007bff;border-color:#007bff}
- .btn-outline-primary:hover{color:#fff;background-color:#007bff;border-color:#007bff}
- .btn-outline-primary.focus,
- .btn-outline-primary:focus{box-shadow:0 0 0 .2rem rgba(0,123,255,.5)}
- .btn-outline-primary.disabled,
- .btn-outline-primary:disabled{color:#007bff;background-color:transparent}
- .btn-outline-primary:not(:disabled):not(.disabled).active,
- .btn-outline-primary:not(:disabled):not(.disabled):active,.show>
- .btn-outline-primary.dropdown-toggle{color:#fff;background-color:#007bff;border-color:#007bff}
- .btn-outline-primary:not(:disabled):not(.disabled).active:focus,
- .btn-outline-primary:not(:disabled):not(.disabled):active:focus,.show>
- .btn-outline-primary.dropdown-toggle:focus{box-shadow:0 0 0 .2rem rgba(0,123,255,.5)}
+
 #logo {
     margin-top: -5px;
     height: 120%;
@@ -76,7 +60,9 @@ footer {
 }
 
 .btn {
+    background-color: #003366;
     margin-top: 10px;
+    color: #ffffff;
 }
 
 .row {

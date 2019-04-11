@@ -1,17 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ac41a1f6-9b90-4ab4-9b41-aa05e04a75c8" name="Default Changelist" comment="">
+    <list default="true" id="ac41a1f6-9b90-4ab4-9b41-aa05e04a75c8" name="Default Changelist" comment="Add validation for register and login">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/blog.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/claimstop.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/finishtop.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/jumbotron.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/about.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/contact.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/shop.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/controller/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/controller/EmployeeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/repository/ClaimRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/repository/ClaimRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/offcanvas.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/offcanvas.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/i18n/strings.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/i18n/strings.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/i18n/strings_en.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/i18n/strings_en.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/i18n/strings_zh.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/i18n/strings_zh.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/claim/claims.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/claim/claims.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/employee/claimdetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/claim/claimdetail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/employee/employee.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/employee/employee.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/employee/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/employee/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/employee/result.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/employee/result.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/claim/finish.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/claim/finish.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/claim/policy.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/claim/policy.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/claim/seeclaim.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/claim/seeclaim.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/claim/write.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/claim/write.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
     </list>
     <list id="05be7ca4-9a57-43b3-9b48-345739b3af7c" name="Revert: Add files via upload" comment="" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -115,81 +123,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="36" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/employee/employee.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="102" column="61" selection-start-line="102" selection-start-column="61" selection-end-line="102" selection-end-column="61" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/claim/seeclaim.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="105" column="27" selection-start-line="105" selection-start-column="27" selection-end-line="105" selection-end-column="27" />
-              <folding>
-                <element signature="e#4673#4680#0" expanded="true" />
-                <element signature="e#4883#4889#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/claim/claims.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5">
-              <caret line="83" selection-start-line="83" selection-end-line="83" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/controller/EmployeeController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/shop.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="707">
-              <caret line="61" column="5" lean-forward="true" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
+            <state relative-caret-position="206">
+              <caret line="79" column="30" lean-forward="true" selection-start-line="79" selection-start-column="30" selection-end-line="79" selection-end-column="30" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#4270#4277#0" expanded="true" />
+                <element signature="e#4710#4717#0" expanded="true" />
+                <element signature="e#5058#5065#0" expanded="true" />
+                <element signature="e#5386#5393#0" expanded="true" />
+                <element signature="e#5425#5432#0" expanded="true" />
+                <element signature="e#5816#5823#0" expanded="true" />
+                <element signature="e#6158#6165#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="das://04ec64df-6b9e-4c83-9709-77a614f7a6b7/schema/hibernia_sino/table/employee">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="das://04ec64df-6b9e-4c83-9709-77a614f7a6b7/schema/hibernia_sino/table/customer">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/claim/finish.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1129">
-              <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -200,8 +147,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="HTML File" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -237,13 +184,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/resources/static/homepage.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/customer/CustomerInfo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/info/CustomerInfo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/info/ClaimInfo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/info/EmployeeInfo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/respository/CustomerRespository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/respository/CustomerRespositoryImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/controller/CustomerController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/write.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/seeclaim.html" />
@@ -264,18 +204,13 @@
         <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/domain/User.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/employee/register_test.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/employee/claimdetail.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/claim/finish.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/repository/CustomerRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/domain/WriteInfo.java" />
         <option value="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/index.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/domain/ClaimInfo.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/domain/CustomerInfo.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/domain/EmployeeInfo.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/claim/seeclaim.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/claim/claims.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/employee/signin.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/claim/write.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/controller/ClaimController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/RedisSessionConfig.java" />
         <option value="$PROJECT_DIR$/build.gradle" />
@@ -285,6 +220,21 @@
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/controller/EmployeeController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/employee/employee.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/css/offcanvas.css" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/css/blog.css" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/css/jumbotron.css" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/contact.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/claim/claims.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/claim/finish.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/claim/policy.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/claim/seeclaim.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/claim/write.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/index.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/about.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/i18n/strings_zh.properties" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/shop.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/i18n/strings_en.properties" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/i18n/strings.properties" />
       </list>
     </option>
   </component>
@@ -295,10 +245,9 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="112" />
     <option name="y" value="23" />
-    <option name="width" value="1240" />
-    <option name="height" value="777" />
+    <option name="width" value="1440" />
+    <option name="height" value="797" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -308,7 +257,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -356,18 +304,7 @@
               <item name="luggage_claims_system" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="hirbernia_sina" type="462c0819:PsiDirectoryNode" />
-              <item name="domain" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hirbernia_sina" type="b2602c69:ProjectViewProjectNode" />
-              <item name="luggage_claims_system" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="hirbernia_sina" type="462c0819:PsiDirectoryNode" />
-              <item name="repository" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="hirbernia_sina" type="b2602c69:ProjectViewProjectNode" />
@@ -375,6 +312,46 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hirbernia_sina" type="b2602c69:ProjectViewProjectNode" />
+              <item name="luggage_claims_system" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hirbernia_sina" type="b2602c69:ProjectViewProjectNode" />
+              <item name="luggage_claims_system" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hirbernia_sina" type="b2602c69:ProjectViewProjectNode" />
+              <item name="luggage_claims_system" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="i18n" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hirbernia_sina" type="b2602c69:ProjectViewProjectNode" />
+              <item name="luggage_claims_system" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="i18n" type="462c0819:PsiDirectoryNode" />
+              <item name="Resource Bundle 'strings'" type="a6c14932:ResourceBundleNode" />
             </path>
             <path>
               <item name="hirbernia_sina" type="b2602c69:ProjectViewProjectNode" />
@@ -407,6 +384,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -419,22 +397,24 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$USER_HOME$/Android/sdk" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554307416632" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554948767606" />
     <property name="database.console.LAST_STATE" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="project.propCompiler" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources/templates/claim" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/static/css" />
+      <recent name="$PROJECT_DIR$/src/main/resources/templates" />
       <recent name="$PROJECT_DIR$/src/main/resources/templates/claim" />
       <recent name="$PROJECT_DIR$/src/main/resources/templates/employee" />
       <recent name="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/repository" />
-      <recent name="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/domain" />
-      <recent name="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/controller" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/static/css" />
+      <recent name="$PROJECT_DIR$/src/main/resources/templates/claim" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -525,6 +505,8 @@
       <workItem from="1554183970646" duration="3391000" />
       <workItem from="1554285042963" duration="61000" />
       <workItem from="1554288952240" duration="6009000" />
+      <workItem from="1554432999683" duration="668000" />
+      <workItem from="1554689215973" duration="13707000" />
     </task>
     <task id="LOCAL-00001" summary="Add validation for register and login">
       <created>1554280202868</created>
@@ -537,7 +519,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81657000" />
+    <option name="totallyTimeSpent" value="96032000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -549,9 +531,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4979592" visible="true" weight="0.25444266" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4979592" visible="true" weight="0.26180258" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -559,10 +542,9 @@
       <window_info id="UI Designer" order="5" />
       <window_info id="Favorites" order="6" sideWeight="0.5020408" side_tool="true" weight="0.24232633" />
       <window_info id="Web" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Database Console" weight="0.32876712" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32876712" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.5694669" visible="true" weight="0.49178082" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.56866956" weight="0.49156627" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -571,19 +553,20 @@
       <window_info anchor="bottom" id="Spring" order="8" sideWeight="0.49919224" weight="0.32876712" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4983845" weight="0.32876712" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.4305331" side_tool="true" weight="0.29041097" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.43133047" side_tool="true" weight="0.49156627" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32876712" />
       <window_info anchor="bottom" id="Java Enterprise" order="13" sideWeight="0.49919224" weight="0.32876712" />
       <window_info anchor="bottom" id="Database Changes" order="14" />
       <window_info anchor="bottom" id="Version Control" order="15" sideWeight="0.54846525" weight="0.32876712" />
       <window_info anchor="bottom" id="Problems" order="16" weight="0.32876712" />
+      <window_info anchor="bottom" id="Database Console" order="17" weight="0.32876712" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24959612" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Maven" order="3" weight="0.32956383" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Gradle" order="6" weight="0.32875606" />
+      <window_info anchor="right" id="Gradle" order="6" weight="0.32761088" />
       <window_info anchor="right" id="Database" order="7" weight="0.2625202" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info anchor="right" id="Theme Preview" order="9" />
@@ -679,39 +662,8 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/seetop.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/write.html" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/claim/home.html" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/repository/ClaimRepositoryImp.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/repository/CustomerRepositoryImpl.java" />
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/users/list.html" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/fragments/footer.html" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/repository/UserRepositoryImpl.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/controller/MediaTypeController.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/repository/UserRepository.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/users/form.html" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/domain/User.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/controller/UserController.java" />
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/src.zip!/java/lang/Object.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="234" column="18" selection-start-line="234" selection-start-column="18" selection-end-line="234" selection-end-column="18" />
-          <folding>
-            <element signature="e#10065#10066#0" expanded="true" />
-            <element signature="e#10148#10149#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/src.zip!/java/lang/Object.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/controller/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="328">
@@ -769,9 +721,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/04ec64df-6b9e-4c83-9709-77a614f7a6b7/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/04ec64df-6b9e-4c83-9709-77a614f7a6b7/console.sql" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/domain/WriteInfo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -783,29 +733,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/employee/signin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="40" column="53" selection-start-line="40" selection-start-column="53" selection-end-line="40" selection-end-column="53" />
-          <folding>
-            <element signature="e#1878#1884#1" expanded="true" />
-            <element signature="n#style#0;n#span#1;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#2886#2892#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/claim/write.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1515">
-          <caret line="101" column="115" selection-start-line="101" selection-start-column="115" selection-end-line="101" selection-end-column="115" />
-          <folding>
-            <element signature="e#4422#4428#1" expanded="true" />
-            <element signature="n#style#0;n#span#1;n#form#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -847,16 +774,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/controller/ClaimController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="44" column="51" selection-start-line="44" selection-start-column="51" selection-end-line="44" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/HirberniaSinaApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -878,84 +795,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="125" selection-start-line="125" selection-end-line="125" selection-end-column="128" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/employee/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="74" column="26" lean-forward="true" selection-start-line="74" selection-start-column="26" selection-end-line="74" selection-end-column="26" />
-          <folding>
-            <element signature="n#style#0;n#span#1;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#4246#4252#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://04ec64df-6b9e-4c83-9709-77a614f7a6b7/schema/hibernia_sino/table/claim">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/claim/finish.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1129">
-          <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://04ec64df-6b9e-4c83-9709-77a614f7a6b7/schema/hibernia_sino/table/customer">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://04ec64df-6b9e-4c83-9709-77a614f7a6b7/schema/hibernia_sino/table/employee">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/claim/seeclaim.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="105" column="27" selection-start-line="105" selection-start-column="27" selection-end-line="105" selection-end-column="27" />
-          <folding>
-            <element signature="e#4673#4680#0" expanded="true" />
-            <element signature="e#4883#4889#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/employee/result.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="95" column="58" lean-forward="true" selection-start-line="95" selection-start-column="58" selection-end-line="95" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/claim/claimdetail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-69">
-          <caret line="80" column="6" lean-forward="true" selection-start-line="80" selection-start-column="6" selection-end-line="80" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/claim/claims.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5">
-          <caret line="83" selection-start-line="83" selection-end-line="83" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://04ec64df-6b9e-4c83-9709-77a614f7a6b7/schema/hibernia_sino/table/claim" />
+    <entry file="das://04ec64df-6b9e-4c83-9709-77a614f7a6b7/schema/hibernia_sino/table/customer" />
+    <entry file="das://04ec64df-6b9e-4c83-9709-77a614f7a6b7/schema/hibernia_sino/table/employee" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -963,19 +805,194 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/employee/employee.html">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/controller/EmployeeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="102" column="61" selection-start-line="102" selection-start-column="61" selection-end-line="102" selection-end-column="61" />
+        <state relative-caret-position="105">
+          <caret line="18" column="25" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/controller/EmployeeController.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-beans/5.1.5.RELEASE/65b8846a1d79cfff2bcd44e0d40c5f95c5cb2d14/spring-beans-5.1.5.RELEASE-sources.jar!/org/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="707">
-          <caret line="61" column="5" lean-forward="true" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
+        <state relative-caret-position="25110">
+          <caret line="1761" selection-start-line="1761" selection-end-line="1761" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-autoconfigure/2.1.3.RELEASE/6df39e2fbf8757ce2bf084909224e7e78f315ec7/spring-boot-autoconfigure-2.1.3.RELEASE-sources.jar!/org/springframework/boot/autoconfigure/orm/jpa/JpaBaseConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="140" column="63" selection-start-line="140" selection-start-column="63" selection-end-line="140" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/controller/ClaimController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="50" column="77" selection-start-line="50" selection-start-column="77" selection-end-line="50" selection-end-column="77" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/claimstop.jpeg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/blog.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="39" column="1" lean-forward="true" selection-start-line="39" selection-start-column="1" selection-end-line="39" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/employee/signin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="41" column="38" selection-start-line="41" selection-start-column="38" selection-end-line="41" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/employee/result.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="86">
+          <caret line="95" column="41" lean-forward="true" selection-start-line="95" selection-start-column="41" selection-end-line="95" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/employee/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="74" column="26" lean-forward="true" selection-start-line="74" selection-start-column="26" selection-end-line="74" selection-end-column="26" />
+          <folding>
+            <element signature="n#style#0;n#span#1;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/employee/employee.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="757">
+          <caret line="104" column="51" lean-forward="true" selection-start-line="104" selection-start-column="51" selection-end-line="104" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/offcanvas.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="678">
+          <caret line="83" column="30" lean-forward="true" selection-start-line="83" selection-start-column="4" selection-end-line="83" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/jumbotron.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="1" lean-forward="true" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/claim/claimdetail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/claim/finish.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="52" column="41" selection-start-line="52" selection-start-column="41" selection-end-line="52" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/claim/policy.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="117" column="41" selection-start-line="117" selection-start-column="41" selection-end-line="117" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/claim/write.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="55">
+          <caret line="52" column="41" selection-start-line="52" selection-start-column="41" selection-end-line="52" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/claim/seeclaim.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="51" column="41" selection-start-line="51" selection-start-column="41" selection-end-line="51" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/claim/claims.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="51" column="41" selection-start-line="51" selection-start-column="41" selection-end-line="51" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="56" column="46" selection-start-line="56" selection-start-column="46" selection-end-line="56" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/contact.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="49" column="38" selection-start-line="49" selection-start-column="38" selection-end-line="49" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/about.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="49" column="32" selection-start-line="49" selection-start-column="32" selection-end-line="49" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/i18n/strings_en.properties">
+      <provider editor-type-id="ResourceBundle" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1108">
+          <caret line="76" column="24" lean-forward="true" selection-start-line="76" selection-start-column="24" selection-end-line="76" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/i18n/strings.properties">
+      <provider editor-type-id="ResourceBundle" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/i18n/strings_zh.properties">
+      <provider editor-type-id="ResourceBundle" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="17" lean-forward="true" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/shop.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="79" column="30" lean-forward="true" selection-start-line="79" selection-start-column="30" selection-end-line="79" selection-end-column="30" />
+          <folding>
+            <element signature="e#4270#4277#0" expanded="true" />
+            <element signature="e#4710#4717#0" expanded="true" />
+            <element signature="e#5058#5065#0" expanded="true" />
+            <element signature="e#5386#5393#0" expanded="true" />
+            <element signature="e#5425#5432#0" expanded="true" />
+            <element signature="e#5816#5823#0" expanded="true" />
+            <element signature="e#6158#6165#0" expanded="true" />
           </folding>
         </state>
       </provider>

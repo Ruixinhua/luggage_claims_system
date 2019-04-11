@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../static/css/logo.jpeg">
+
+    <title i18nid="ShopProductsTitle">Shop Products - Hibernia-Sino Insurance Company</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../static/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../static/css/jumbotron.css" rel="stylesheet">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="../static/js/html5shiv.min.js"></script>
+    <script src="../static/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+<nav class="navbar navbar-fixed-top navbar-inverse">
+    <div id = "header">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><img id="logo"  src="../static/css/logo.jpeg"></a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/index" i18nid="Home">Home</a></li>
+                <li><a href="about.html" i18nid="AboutUs" class="active">About us</a></li>
+                <li><a href="shop.html" i18nid="ShopProducts">Shop products</a></li>
+                <li><a href="/claim/write" i18nid="ClaimSettlements">Claim settlements</a></li>
+                <li><a href="contact.html" i18nid="ContactUs">Contact us</a></li>
+                <li><a href="#news" i18nid="News">News</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="true" i18nid="Me">Me <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li class="active"><a href="claims.html"  i18nid="MyClaims">My claims</a></li>
+                        <li><a href="seeclaim.html"  i18nid="MyPurchase">My purchase</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#profile"  i18nid="MyProfile">My profile</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.nav-collapse -->
+    </div><!-- /.container -->
+</nav><!-- /.navbar -->
+
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+    <div class="container">
+        <h1 i18nid="ShopProducts">Shop Products</h1>
+        <p i18nid="ShopDescription">We offer various products to meet your demand. If you need any help, please contact us to learn more.</p>
+        <p i18nid="ContactUs"><a class="btn btn-primary btn-lg" href="#" role="button">Contact Us &raquo;</a></p>
+    </div>
+</div>
+
+<div class="container">
+    <!-- Example row of columns -->
+    <div class="row">
+        <div class="col-md-4">
+            <h2 i18nid="TravelInsurance">Travel Insurance</h2>
+            <p i18nid="TravelDetail">Travel Insurance designed specially for passengers who travel between Ireland and China.</p>
+            <p><a class="btn btn-default" href="#" role="button" i18nid="ViewDetails">View details &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2 i18nid="HealthInsurance">Health Insurance</h2>
+            <p i18nid="HealthDetail">Our Health Insurance will can help you to receive treatment in Ireland and China. </p>
+            <p><a class="btn btn-default" href="#" role="button" i18nid="ViewDetails">View details &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2 i18nid="Pension">Pension</h2>
+            <p i18nid="PensionDetail">Our pension products can meet the requests of Old people in Ireland and China.</p>
+            <p><a class="btn btn-default" href="#" role="button" i18nid="ViewDetails">View details &raquo;</a></p>
+        </div>
+
+        <hr>
+
+        <div class="col-md-4">
+            <h2 i18nid="EducationInsurance">Education Insurance</h2>
+            <p i18nid="EducationDetail">Our education insurance gives students chances to study in foreign countries.</p>
+            <p><a class="btn btn-default" href="#" role="button" i18nid="ViewDetails">View details &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2 i18nid="InvestmentInsurance">Investment Insurance</h2>
+            <p i18nid="InvestmentDetail">Our investment insurance helps people to invest with no worries.</p>
+            <p><a class="btn btn-default" href="#" role="button" i18nid="ViewDetails">View details &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2 i18nid="CargoTransportationInsurance">Cargo Transportation Insurance</h2>
+            <p i18nid="CargoDetail">Buy our cargo transportation insurance to keep you from transportation accidents.</p>
+            <p><a class="btn btn-default" href="#" role="button" i18nid="ViewDetails">View details &raquo;</a></p>
+        </div>
+    </div>
+
+    <hr>
+
+</div> <!-- /container -->
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="../static/js/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="../static/js/jquery.min.js"><\/script>')</script>
+<script src="../static/js/bootstrap.min.js"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="../static/js/ie10-viewport-bug-workaround.js"></script>
+</body>
+</html>
