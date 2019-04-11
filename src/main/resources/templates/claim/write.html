@@ -25,6 +25,17 @@
     <!--[if lt IE 9]>
     <script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="../js/ie-emulation-modes-warning.js"></script>
+    <script src="../js/jquery.min.js"></script>
+
+    <link href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/jquery.mCustomScrollbar.min.css" />
+    <link rel="stylesheet" href="../css/custom.css">
+    <script src="../js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<js/jquery.min.js"><\/script>')</script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="../js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="../js/custom.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -34,185 +45,239 @@
 </head>
 
 <body>
-<nav class="navbar navbar-fixed-top navbar-inverse">
-    <div class="container1">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                    aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/index"><img id="logo" src="../css/logo.jpeg"></a>
+<div class="page-wrapper toggled">
+    <nav id="sidebar" class="sidebar-wrapper">
+        <div class="sidebar-content">
+            <a href="#" id="toggle-sidebar"><i class="fa fa-bars"></i></a>
+            <div class="sidebar-brand">
+            </div>
+            <div class="sidebar-header">
+                <div class="user-pic">
+                    <img class="img-responsive img-rounded" src="assets/img/user.jpg" alt="">
+                </div>
+                <div class="user-info">
+                    <span class="user-name">Yang <strong>Qingqiong</strong></span>
+                    <span class="user-role">Customer</span>
+                    <div class="user-status">
+                        <a href="#"><span class="label label-success">Online</span></a>
+                    </div>
+                </div>
+            </div><!-- sidebar-header  -->
+            <div class="sidebar-search">
+                <div>
+                    <div class="input-group">
+                        <input type="text" class="form-control search-menu" placeholder="Search for...">
+                        <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                    </div>
+                </div>
+            </div><!-- sidebar-search  -->
+            <div class="sidebar-menu">
+                <ul>
+                    <li class="header-menu"><span>My Policy</span></li>
+                    <li><a href="#"><i class="fa fa-tv"></i><span>My Purchase</span></a></li>
+                    <li class="sidebar-dropdown">
+                        <a href="#"><i class="fa fa-photo"></i><span>My Claims</span></a>
+                        <div class="sidebar-submenu">
+                            <ul>
+                                <li><a href="#">Processing<span class="badge">2</span></a></li>
+                                <li><a href="#">Solved</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="#"><i class="fa fa-tv"></i><span>Message</span><span class="label label-danger">New</span></a></li>
+                </ul>
+            </div><!-- sidebar-menu  -->
+        </div><!-- sidebar-content  -->
+
+        <div class="sidebar-footer">
+            <a href="#"><i class="fa fa-bell"></i><span class="label label-warning notification">3</span></a>
+            <a href="#"><i class="fa fa-envelope"></i><span class="label label-success notification">7</span></a>
+            <a href="#"><i class="fa fa-gear"></i></a>
+            <a href="#"><i class="fa fa-power-off"></i></a>
         </div>
-        <div id="navbar" class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li><a href="/index" i18nid="Home">Home</a></li>
-                <li><a href="../about.html" i18nid="AboutUs">About us</a></li>
-                <li><a href="../shop.html" i18nid="ShopProducts">Shop products</a></li>
-                <li class="active"><a href="/claim/write" i18nid="ClaimSettlements">Claim settlements</a></li>
-                <li><a href="../contact.html" i18nid="ContactUs">Contact us</a></li>
-                <li><a href="#news" i18nid="News">News</a></li>
-                <li><a></a></li>
-                <li><a></a></li>
-                <li><a></a></li>
-                <li><a></a></li>
-                <li><a></a></li>
-                <li><a></a></li>
-                <li><a></a></li>
-                <li><a></a></li>
-                <li><a></a></li>
-                <li><a></a></li>
-                <li><a></a></li>
-                <li><a></a></li>
-                <li><a></a></li>
-                <li><a></a></li>
-                <li><a></a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                       aria-expanded="false" i18nid="Me">Me
-                        <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#claim" i18nid="MyClaims">My Claims</a></li>
-                        <li><a href="#purchase" i18nid="MyPurchase">My purchase</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#profile" i18nid="MyProfile">My profile</a></li>
+    </nav><!-- sidebar-wrapper  -->
+
+
+    <main class="page-content">
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container1">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                            aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/index"><img id="logo" src="../css/logo.jpeg"></a>
+                </div>
+                <div id="navbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/index" i18nid="Home">Home</a></li>
+                        <li><a href="../about.html" i18nid="AboutUs">About us</a></li>
+                        <li><a href="../shop.html" i18nid="ShopProducts">Shop products</a></li>
+                        <li class="active"><a href="/claim/write" i18nid="ClaimSettlements">Claim settlements</a></li>
+                        <li><a href="../contact.html" i18nid="ContactUs">Contact us</a></li>
+                        <li><a href="#news" i18nid="News">News</a></li>
+                        <li><a></a></li>
+                        <li><a></a></li>
+                        <li><a></a></li>
+                        <li><a></a></li>
+                        <li><a></a></li>
+                        <li><a></a></li>
+                        <li><a></a></li>
+                        <li><a></a></li>
+                        <li><a></a></li>
+                        <li><a></a></li>
+                        <li><a></a></li>
+                        <li><a></a></li>
+                        <li><a></a></li>
+                        <li><a></a></li>
+                        <li><a></a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                               aria-expanded="false" i18nid="Me">Me
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#claim" i18nid="MyClaims">My Claims</a></li>
+                                <li><a href="#purchase" i18nid="MyPurchase">My purchase</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#profile" i18nid="MyProfile">My profile</a></li>
+                            </ul>
+                        </li>
                     </ul>
-                </li>
-            </ul>
-        </div><!-- /.nav-collapse -->
-    </div><!-- /.container -->
-</nav><!-- /.navbar -->
+                </div><!-- /.nav-collapse -->
+            </div><!-- /.container -->
+        </nav><!-- /.navbar -->
 
-<div class="container">
+        <div class="container-fluid">
 
-    <div class="row row-offcanvas row-offcanvas-right">
+            <div class="col-sm-9 col-sm-offset-3 col-md-12 col-md-offset-0 main ">
 
 
-        <p class="pull-right visible-xs">
-            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
-        </p>
-        <div class="jumbotron" id="edit">
-            <h1 class="head1" i18nid="WriteInfo">Write informations</h1>
-            <p class="head2" i18nid="RequireInfo">Please write down informations requried below to complete your
-                claim.</p>
-        </div>
-        <div class="row">
-            <form class="form-signin" enctype="multipart/form-data" id="form1" action="/claim/finish" method="post"
-                  th:object="${write}">
-                <h2 class="form-signin-heading" i18nid="PlsWriteInfo">Please write informations</h2>
-                <p i18nid="FirstName">First Name</p>
-                <label for="inputFirstName" class="sr-only">First Name</label>
-                <div class="box">
-                    <i class="icon-search"></i>
-                    <input type="text" id="inputFirstName" i18nid_placeholder="EnterFirstnameTip" class="form-control"
-                           name="firstName" th:value="*{firstName}" placeholder="Please enter your firstname"
-                           maxlength="25" required autofocus>
+                <p class="pull-right visible-xs">
+                    <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+                </p>
+                <div class="jumbotron" id="edit">
+                    <h1 class="head1" i18nid="WriteInfo">Write informations</h1>
+                    <p class="head2" i18nid="RequireInfo">Please write down informations requried below to complete your
+                        claim.</p>
                 </div>
-                <p i18nid="LastName">Last Name</p>
-                <label for="inputLastName" class="sr-only">Last Name</label>
-                <div class="box">
-                    <i class="icon-search"></i>
-                    <input type="text" id="inputLastName" i18nid_placeholder="EnterLastNameTip" class="form-control"
-                           name="lastName" th:value="*{lastName}" placeholder="Please enter your last name"
-                           maxlength="25" required>
-                </div>
-                <p i18nid="PassportNo">Passport No.</p>
-                <label for="inputPassport" class="sr-only">PassportNo</label>
-                <div class="box">
-                    <i class="icon-search"></i>
-                    <input type="text" id="inputPassport" i18nid_placeholder="EnterPassportTip" class="form-control"
-                           name="passport" th:value="*{passport}" placeholder="Please enter your passport number"
-                           maxlength="20">
-                </div>
-                <p i18nid="SerialNo">Serial No.</p>
-                <label for="inputClaimNo" class="sr-only">SerialNo</label>
-                <div class="box">
-                    <i class="icon-search"></i>
-                    <input type="text" id="inputClaimNo" i18nid_placeholder="EnterClaimNoTip" class="form-control"
-                           name="serialNo" th:value="*{serialNo}"
-                           placeholder="Please enter your insurance's serial number" maxlength="20" required>
-                </div>
-                <p i18nid="PhoneNo">Phone No.</p>
-                <!--<label for="inputPhone" class="sr-only"> Phone</label>-->
-                <div class="box">
-                    <i class="icon-search"></i>
-                    <input type="tel" id="inputPhone" i18nid_placeholder="EnterPhoneNoTip" i18nid_title="RequireAreaNum"
-                           class="form-control" name="phoneNumber" data-toggle="tooltip"
-                           title="You must include your area number" th:value="*{phoneNumber}"
-                           placeholder="Please include the area number e.g.86-1234567" maxlength="20" required>
-                </div>
-                <p i18nid="EmailAddress">Email Address</p>
-                <label for="inputEmail" class="sr-only">Email</label>
-                <div class="box">
-                    <i class="icon-search"></i>
-                    <input type="email" id="inputEmail" i18nid_title="RequireValidEmail"
-                           i18nid_placeholder="EnterEmailTip" class="form-control" name="emailAddress"
-                           data-toggle="tooltip" title="Be sure to enter the correct mailbox" th:value="*{emailAddress}"
-                           placeholder="Please enter your email address" maxlength="50" required>
-                </div>
-                <p i18nid="BillingAdress">Billing Address</p>
-                <label for="inputBilling" class="sr-only">Email</label>
-                <div class="box">
-                    <i class="icon-search"></i>
-                    <input type="text" id="inputBilling" i18nid_placeholder="EnterBillingAddrTip"
-                           i18nid_title="RequireCorrectBillingAddr" class="form-control" name="billingAddress"
-                           data-toggle="tooltip" title="Be sure to enter the correct billing address"
-                           th:value="*{billingAddress}" placeholder="Please enter your billing address" maxlength="100"
-                           required>
-                </div>
-                <p i18nid="FlightNo">Flight No.</p>
-                <label for="inputFlight" class="sr-only"> FLightNo</label>
-                <div class="box">
-                    <i class="icon-search"></i>
-                    <input type="text" id="inputFLight" i18nid_placeholder="EnterFlightNoTip" class="form-control"
-                           name="flightNo" th:value="*{flightNo}" placeholder="Please enter your flight number"
-                           maxlength="20">
-                </div>
+                <div class="rows">
+                    <form class="form-signin" enctype="multipart/form-data" id="form1" action="/claim/finish" method="post"
+                          th:object="${write}">
+                        <h2 class="form-signin-heading" i18nid="PlsWriteInfo">Please write informations</h2>
+                        <p i18nid="FirstName">First Name</p>
+                        <label for="inputFirstName" class="sr-only">First Name</label>
+                        <div class="box">
+                            <i class="icon-search"></i>
+                            <input type="text" id="inputFirstName" i18nid_placeholder="EnterFirstnameTip" class="form-control"
+                                   name="firstName" th:value="*{firstName}" placeholder="Please enter your firstname"
+                                   maxlength="25" required autofocus>
+                        </div>
+                        <p i18nid="LastName">Last Name</p>
+                        <label for="inputLastName" class="sr-only">Last Name</label>
+                        <div class="box">
+                            <i class="icon-search"></i>
+                            <input type="text" id="inputLastName" i18nid_placeholder="EnterLastNameTip" class="form-control"
+                                   name="lastName" th:value="*{lastName}" placeholder="Please enter your last name"
+                                   maxlength="25" required>
+                        </div>
+                        <p i18nid="PassportNo">Passport No.</p>
+                        <label for="inputPassport" class="sr-only">PassportNo</label>
+                        <div class="box">
+                            <i class="icon-search"></i>
+                            <input type="text" id="inputPassport" i18nid_placeholder="EnterPassportTip" class="form-control"
+                                   name="passport" th:value="*{passport}" placeholder="Please enter your passport number"
+                                   maxlength="20">
+                        </div>
+                        <p i18nid="SerialNo">Serial No.</p>
+                        <label for="inputClaimNo" class="sr-only">SerialNo</label>
+                        <div class="box">
+                            <i class="icon-search"></i>
+                            <input type="text" id="inputClaimNo" i18nid_placeholder="EnterClaimNoTip" class="form-control"
+                                   name="serialNo" th:value="*{serialNo}"
+                                   placeholder="Please enter your insurance's serial number" maxlength="20" required>
+                        </div>
+                        <p i18nid="PhoneNo">Phone No.</p>
+                        <!--<label for="inputPhone" class="sr-only"> Phone</label>-->
+                        <div class="box">
+                            <i class="icon-search"></i>
+                            <input type="tel" id="inputPhone" i18nid_placeholder="EnterPhoneNoTip" i18nid_title="RequireAreaNum"
+                                   class="form-control" name="phoneNumber" data-toggle="tooltip"
+                                   title="You must include your area number" th:value="*{phoneNumber}"
+                                   placeholder="Please include the area number e.g.86-1234567" maxlength="20" required>
+                        </div>
+                        <p i18nid="EmailAddress">Email Address</p>
+                        <label for="inputEmail" class="sr-only">Email</label>
+                        <div class="box">
+                            <i class="icon-search"></i>
+                            <input type="email" id="inputEmail" i18nid_title="RequireValidEmail"
+                                   i18nid_placeholder="EnterEmailTip" class="form-control" name="emailAddress"
+                                   data-toggle="tooltip" title="Be sure to enter the correct mailbox" th:value="*{emailAddress}"
+                                   placeholder="Please enter your email address" maxlength="50" required>
+                        </div>
+                        <p i18nid="BillingAdress">Billing Address</p>
+                        <label for="inputBilling" class="sr-only">Email</label>
+                        <div class="box">
+                            <i class="icon-search"></i>
+                            <input type="text" id="inputBilling" i18nid_placeholder="EnterBillingAddrTip"
+                                   i18nid_title="RequireCorrectBillingAddr" class="form-control" name="billingAddress"
+                                   data-toggle="tooltip" title="Be sure to enter the correct billing address"
+                                   th:value="*{billingAddress}" placeholder="Please enter your billing address" maxlength="100"
+                                   required>
+                        </div>
+                        <p i18nid="FlightNo">Flight No.</p>
+                        <label for="inputFlight" class="sr-only"> FLightNo</label>
+                        <div class="box">
+                            <i class="icon-search"></i>
+                            <input type="text" id="inputFLight" i18nid_placeholder="EnterFlightNoTip" class="form-control"
+                                   name="flightNo" th:value="*{flightNo}" placeholder="Please enter your flight number"
+                                   maxlength="20">
+                        </div>
 
-                <!--<p>Luggage Type</p>-->
-                <!--<label for="luggageType" class="sr-only"> FLightNo</label>-->
-                <!--<div class="form-group">-->
-                    <!--<select class="form-control" id="luggageType" name="lostLuggage">-->
+                        <!--<p>Luggage Type</p>-->
+                        <!--<label for="luggageType" class="sr-only"> FLightNo</label>-->
+                        <!--<div class="form-group">-->
+                        <!--<select class="form-control" id="luggageType" name="lostLuggage">-->
                         <!--<option value="1">trolley case</option>-->
                         <!--<option value="2">backpack</option>-->
                         <!--<option value="3">handbag</option>-->
                         <!--<option value="3">other</option>-->
-                    <!--</select>-->
-                <!--</div>-->
+                        <!--</select>-->
+                        <!--</div>-->
 
-                <p i18nid="Detail">Detail</p>
-                <label for="inputDetail" class="sr-only"> Detail</label>
-                <div class="box">
-                    <i class="icon-search"></i>
-                    <textarea id="inputDetail" class="form-control" i18nid_placeholder="EnterDetailTip" name="details"
-                              th:value="*{details}" placeholder="Please describe your lost luggage in 80 worlds"
-                              rows="3" maxlength="80"></textarea>
-                </div>
-                <p i18nid="UpdateImgTip">Please upload images of your luggage and flight tickets</p>
-                <label for="inputImage" class="sr-only"> Image</label>
-                <input type="file" id="inputImage">
-
-
-                <button class="btn btn-lg btn-primary btn-block" type="submit" id="button1" i18nid="Submit">Submit
-                </button>
-            </form>
-        </div><!--/row-->
-        <p></p>
-    </div><!--/row-->
+                        <p i18nid="Detail">Detail</p>
+                        <label for="inputDetail" class="sr-only"> Detail</label>
+                        <div class="box">
+                            <i class="icon-search"></i>
+                            <textarea id="inputDetail" class="form-control" i18nid_placeholder="EnterDetailTip" name="details"
+                                      th:value="*{details}" placeholder="Please describe your lost luggage in 80 worlds"
+                                      rows="3" maxlength="80"></textarea>
+                        </div>
+                        <p i18nid="UpdateImgTip">Please upload images of your luggage and flight tickets</p>
+                        <label for="inputImage" class="sr-only"> Image</label>
+                        <input type="file" id="inputImage">
 
 
-    <hr>
+                        <button class="btn btn-lg btn-primary btn-block" type="submit" id="button1" i18nid="Submit">Submit
+                        </button>
+                    </form>
+                </div><!--/row-->
+                <p></p>
+            </div><!--/row-->
 
-    <footer>
-        <p>&copy; 2019 Hibernia-Sino Insurance Company, Inc.</p>
-    </footer>
 
-</div><!--/.container-->
+            <hr>
 
+            <footer>
+                <p>&copy; 2019 Hibernia-Sino Insurance Company, Inc.</p>
+            </footer>
+        </div>
 
+    </main>
+</div>
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
