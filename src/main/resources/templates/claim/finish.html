@@ -103,7 +103,7 @@
         </div>
         <div class="row">
             <div class="link">
-                <a href="/index" i18nid="ReturnHomePage">&gt;&gt;&nbsp;Return to homepage</a><br>
+                <a href="/index" i18nid="ReturnHomePage">&gt;&gt;&nbsp;Return to homepage (<b id="second">5</b>)</a><br>
             </div>
             <div class="link">
                 <a href="#" onClick="javascript :history.back(-1);" i18nid="ReturnPrevPage">&gt;&gt;&nbsp;Return to
@@ -140,6 +140,19 @@
 <script type="text/javascript" src="../js/jquery.i18n.properties.js"></script>
 <script type="text/javascript" src="../js/jquery.cookie.js"></script>
 <script src="../js/loadi18n.js"></script>
+<script type="text/javascript">
+    var sec = document.getElementById("second");
+    var i=5;
+    var timer = setInterval(function(){
+        i--;
+        sec.innerHTML = i;
+        if(i ==1){
+            window.location.href='/index';
+        }
+    },1000)
+
+
+</script>
 
 </body>
 </html>

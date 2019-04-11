@@ -17,22 +17,31 @@ img{
     top: 20%;
     transform: translate(-50%, -50%);
 }
+.nav-color{
+    background-color: rgba(0,0,0,0.5);
+
+}
 .form-signin {
-    background-color: #99ccff;
+    background-color: #71b1f1a6;
     box-shadow: 0 0 10px 10px #EDEDED outset;
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     max-width: 400px;
+    min-width: 380px;
     padding: 15px;
     margin: 0 auto;
+    box-shadow: 3px 3px 5px #286090e0;
+
 }
 
 .btn{
     background-color: #003366;
 }
-.form-signin .form-signin-heading,
+.form-signin .form-signin-heading{
+    text-align: center;
+}
 .form-signin .checkbox {
     margin-bottom: 15px;
 }
@@ -71,4 +80,24 @@ img{
     margin-bottom: 5px;
     padding:5px;
     display:none
+}
+#bar1{
+    color:#f5f5f5;
+}
+#bar1:hover{
+    color:#999;
+}
+#bar2{
+    color:#f5f5f5;
+}
+#bar2:hover{
+    color:#999;
+}
+#inputRole{
+    margin-bottom: 10px;
+    height: 40px;
+}
+#title{
+    color: #98b3cf;
+    padding-top: 15px;
 }
