@@ -1,6 +1,6 @@
 package com.spring.boot.luggage_claims_system.hirbernia_sina.repository;
 
-import com.spring.boot.luggage_claims_system.hirbernia_sina.domain.EmployeeInfo;
+import com.spring.boot.luggage_claims_system.hirbernia_sina.domain.UserInfo;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
  * @date 2019-03-30 23:00
  */
 @Repository
-public interface EmployeeRepository extends JpaRepository<EmployeeInfo, Long> {
+public interface UserRepository extends JpaRepository<UserInfo, Long> {
 
-    EmployeeInfo findByEmailAddress(String emailAddress);
+    UserInfo findByEmailAddress(String emailAddress);
 }

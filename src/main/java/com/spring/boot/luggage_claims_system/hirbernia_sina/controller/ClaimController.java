@@ -1,22 +1,18 @@
 package com.spring.boot.luggage_claims_system.hirbernia_sina.controller;
 
 import com.spring.boot.luggage_claims_system.hirbernia_sina.domain.*;
-import com.spring.boot.luggage_claims_system.hirbernia_sina.repository.ClaimRepository;
-import com.spring.boot.luggage_claims_system.hirbernia_sina.repository.CustomerRepository;
+import com.spring.boot.luggage_claims_system.hirbernia_sina.domain.UserInfo;
+import com.spring.boot.luggage_claims_system.hirbernia_sina.service.SecurityDataService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 import org.springframework.mail.SimpleMailMessage;
-import org.springframework.mail.javamail.JavaMailSenderImpl;
 
-import javax.mail.Session;
 import javax.validation.Valid;
 import java.io.IOException;
-import java.util.Properties;
 
 /**
  * @author Liu Dairui
@@ -27,9 +23,8 @@ import java.util.Properties;
 public class ClaimController {
 
     @Autowired
-    private ClaimRepository claimRepository;
-    @Autowired
-    private CustomerRepository customerRepository;
+    private SecurityDataService securityDataService;
+
     @Autowired
     private JavaMailSender mailSender;
     @GetMapping
@@ -55,26 +50,26 @@ public class ClaimController {
             return "claim/write";
         }
 //        System.out.println(writeInfo);
-        CustomerInfo customerInfo = new CustomerInfo(null,writeInfo.getPassport(),writeInfo.getFirstName(),
-                writeInfo.getLastName(),writeInfo.getPhoneNumber(),writeInfo.getEmailAddress());
-        customerInfo = customerRepository.save(customerInfo);
-//        System.out.println(customerInfo);
-        ClaimInfo claimInfo = new ClaimInfo(writeInfo.getSerialNo(),customerInfo.getId(),writeInfo.getBillingAddress(),
+        // TODO: add customer to database
+        UserInfo userInfo = new UserInfo();
+        userInfo = securityDataService.saveAndUpdateUser(userInfo);
+//        System.out.println(userInfo);
+        ClaimInfo claimInfo = new ClaimInfo(writeInfo.getSerialNo(), userInfo.getId(), writeInfo.getBillingAddress(),
                 writeInfo.getFlightNo(),writeInfo.getLuggageType(),0L,writeInfo.getDetails());
         System.out.println(claimInfo);
-        claimRepository.save(claimInfo);
-        model.addAttribute("customer",customerInfo);
+        securityDataService.saveAndUpdateClaim(claimInfo);
+        model.addAttribute("customer", userInfo);
         return "claim/finish";
     }
 
     @GetMapping("/details")
     public String claimDetail(@RequestParam ("serialNo") Long serialNo, @RequestParam("employeeId") Long employeeId, Model model){
-        ClaimInfo claimInfo = claimRepository.getOne(serialNo);
+        ClaimInfo claimInfo = securityDataService.getClaimById(serialNo);
         claimInfo.setEmployeeId(employeeId);
-        claimRepository.saveAndFlush(claimInfo);
-        CustomerInfo customerInfo = customerRepository.getOne(claimInfo.getCustomerId());
-        WriteInfo writeInfo = new WriteInfo(customerInfo.getFirstName(),customerInfo.getLastName(),customerInfo.getPassport(),
-                claimInfo.getSerialNo(),customerInfo.getPhoneNumber(),customerInfo.getEmailAddress(),claimInfo.getBillingAddress(),
+        securityDataService.saveAndUpdateClaim(claimInfo);
+        UserInfo userInfo = securityDataService.getUserById(claimInfo.getCustomerId());
+        WriteInfo writeInfo = new WriteInfo(userInfo.getFirstName(), userInfo.getLastName(), userInfo.getPassport(),
+                claimInfo.getSerialNo(), userInfo.getPhoneNumber(), userInfo.getEmailAddress(), claimInfo.getBillingAddress(),
                 claimInfo.getFlightNo(),claimInfo.getLostLuggage(),claimInfo.getDetails());
         model.addAttribute("customerId", claimInfo.getCustomerId());
         model.addAttribute("write", writeInfo);
@@ -85,7 +80,7 @@ public class ClaimController {
     @PostMapping("/result")
     public String sendResult(@ModelAttribute("result")Result result){
         System.out.println(result);
-        ClaimInfo claimInfo = claimRepository.getOne(result.getSerialNo());
+        ClaimInfo claimInfo = securityDataService.getClaimById(result.getSerialNo());
         String feedback = "We have received your application.\n";
         if(result.getReason() != null){
             feedback += "The feedback is: " + result.getReason()+"\n";

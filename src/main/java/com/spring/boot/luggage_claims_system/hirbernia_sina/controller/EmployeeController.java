@@ -1,9 +1,8 @@
 package com.spring.boot.luggage_claims_system.hirbernia_sina.controller;
 
 import com.spring.boot.luggage_claims_system.hirbernia_sina.domain.ClaimInfo;
-import com.spring.boot.luggage_claims_system.hirbernia_sina.domain.EmployeeInfo;
-import com.spring.boot.luggage_claims_system.hirbernia_sina.repository.ClaimRepository;
-import com.spring.boot.luggage_claims_system.hirbernia_sina.repository.EmployeeRepository;
+import com.spring.boot.luggage_claims_system.hirbernia_sina.domain.UserInfo;
+import com.spring.boot.luggage_claims_system.hirbernia_sina.service.SecurityDataService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,11 +20,8 @@ import java.util.List;
 @Controller
 @RequestMapping("/employee")
 public class EmployeeController {
-
     @Autowired
-    private EmployeeRepository employeeRepository;
-    @Autowired
-    private ClaimRepository claimRepository;
+    private SecurityDataService securityDataService;
 
     @GetMapping
     public String employeeRegister(){
@@ -34,70 +30,68 @@ public class EmployeeController {
 
     @GetMapping("/register")
     public String getRegister(Model model){
-        model.addAttribute("employee", new EmployeeInfo(null, null,null,
-                null, null, null, null));
+        model.addAttribute("employee", new UserInfo());
         model.addAttribute("passwordCheck", "");
         return "employee/register";
     }
 
     @PostMapping("/result")
-    public String postRegister(@Valid @ModelAttribute(value = "employee")EmployeeInfo employeeInfo,
+    public String postRegister(@Valid @ModelAttribute(value = "employee") UserInfo userInfo,
                                BindingResult bindingResult, @ModelAttribute(value = "passwordCheck")String passwordCheck,
                                Model model){
-//        System.out.println(employeeInfo);
+//        System.out.println(userInfo);
 //        System.out.println(passwordCheck);
         if(bindingResult.hasErrors()){
             model.addAttribute("error",bindingResult.getFieldError().getDefaultMessage());
             return "employee/register";
         }
-        if (!employeeInfo.getPassword().equals(passwordCheck)){
-            model.addAttribute("employee", employeeInfo);
+        if (!userInfo.getPassword().equals(passwordCheck)) {
+            model.addAttribute("employee", userInfo);
             model.addAttribute("passwordCheck", "");
             return "employee/register";
         }
-        employeeInfo.setRegisterDate(new Date());
-        employeeInfo.setLoginDate(null);
-        model.addAttribute("employee", employeeInfo);
-        employeeRepository.save(employeeInfo);
+        userInfo.setRegisterDate(new Date());
+        userInfo.setLoginDate(null);
+        model.addAttribute("employee", userInfo);
+        securityDataService.saveAndUpdateUser(userInfo);
         return "employee/result";
     }
 
     @GetMapping("/signin")
     public String getLogin(Model model){
-        model.addAttribute("employee", new EmployeeInfo(null,null, null,
-                null, null, null, null));
+        model.addAttribute("employee", new UserInfo());
         return "employee/signin";
     }
 
     @PostMapping("/signin")
-    public String postLogin(@ModelAttribute(value = "employee")EmployeeInfo employeeInfo, Model model){
-//        System.out.println(employeeInfo);
-        EmployeeInfo employeeDB = employeeRepository.findByEmailAddress(employeeInfo.getEmailAddress());
-//        System.out.println("employee receive: "+employeeInfo);
+    public String postLogin(@ModelAttribute(value = "employee") UserInfo userInfo, Model model) {
+//        System.out.println(userInfo);
+        UserInfo employeeDB = securityDataService.getUserByEmailAddress(userInfo.getEmailAddress());
+//        System.out.println("employee receive: "+userInfo);
 //        System.out.println("employee in DB: "+employeeDB);
         // TODO: add feedback
         if(employeeDB == null){
             System.out.println("The password is not correct");
-            model.addAttribute("employee", employeeInfo);
+            model.addAttribute("employee", userInfo);
             model.addAttribute("error","The employee is not exist");
             return "employee/signin";
         }
-        if(!employeeDB.getPassword().equals(employeeInfo.getPassword())){
+        if (!employeeDB.getPassword().equals(userInfo.getPassword())) {
             System.out.println("The employee is not exist");
-            model.addAttribute("employee", employeeInfo);
+            model.addAttribute("employee", userInfo);
             model.addAttribute("error","The password is not correct");
             return "employee/signin";
         }
         employeeDB.setLoginDate(new Date());
-        employeeRepository.saveAndFlush(employeeDB);
+        securityDataService.saveAndUpdateUser(employeeDB);
         return "redirect:/employee/employee?employeeId="+employeeDB.getId();
 
     }
 
     @GetMapping("/employee")
     public String employeeHomepage(@RequestParam("employeeId") Long employeeId,Model model){
-        EmployeeInfo employeeDB = employeeRepository.getOne(employeeId);
-        List<ClaimInfo> claims = claimRepository.findAll();
+        UserInfo employeeDB = securityDataService.getUserById(employeeId);
+        List<ClaimInfo> claims = securityDataService.getAllClaims();
         model.addAttribute("employee", employeeDB);
         model.addAttribute("claimList", claims);
         return "employee/employee";
@@ -105,7 +99,7 @@ public class EmployeeController {
 //
 //    @GetMapping(value = "/{id}")
 //    public String employee(@PathVariable("id") Long id, Model model){
-//        EmployeeInfo employeeInfo = employeeRepository.getOne(id);
+//        UserInfo employeeInfo = employeeRepository.getOne(id);
 //        List<ClaimInfo> claims = claimRepository.findAll();
 //        model.addAttribute("employee", employeeInfo);
 //        model.addAttribute("claimList", claims);

@@ -5,8 +5,8 @@
 			//alert("load "+type);
 			$.cookie('Glangcode', type,{ expires: 30,path:'/',secure:false });
 			jQuery.i18n.properties({
-				name: 'strings', 
-				path: '/js/i18n', 
+				name: 'strings',
+                path: '/js/i18n',
 				mode: 'map', 
 				language: type, 
 				cache: false,
@@ -47,7 +47,7 @@
 		function getLanguageCode()
 		{
 			var LangcodeFromCookie=$.cookie('Glangcode');
-			LangcodeFromCookie=LangcodeFromCookie=='en'?'en':'zh';
+            LangcodeFromCookie = LangcodeFromCookie == 'zh' ? 'zh' : 'en';
 			return LangcodeFromCookie;
 		}
 
