@@ -1,0 +1,29 @@
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+
+.navbar {
+  background-color: #003366;
+  color: #eeeeee;
+
+}
+
+#logo {
+  margin-top: -5px;
+  height: 120%;
+}
+
+.jumbotron{
+  background-color: #99ccff;
+}
+
+.btn{
+  background-color: #003366;
+  color: #ffffff;
+}
+
+.dropdown{
+  align-content: center;
+}
