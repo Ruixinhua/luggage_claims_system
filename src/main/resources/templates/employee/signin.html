@@ -39,31 +39,56 @@
 <div class="container">
     <!--<img id="logo" src= "../css/logo.jpeg">-->
     <form class="form-signin" action="/employee/signin" th:object="${employee}" method="post">
-        <h2 class="form-signin-heading">Please sign in</h2>
-        <span id="basic-addon0">&nbsp;</span>
-        <!--<span style="font-size: 12px;color: red" th:text="${error}" aria-describedby="basic-addon0"></span>-->
-        <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="email" id="inputEmail" class="form-control" name="emailAddress" th:value="*{emailAddress}"
-               placeholder="Email address" required autofocus>
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" name="password" th:value="*{password}"
-               placeholder="Password" required>
-        <!--<div class="checkbox">-->
-        <!--<label>-->
-        <!--<input type="checkbox" value="remember-me"> Remember me-->
-        <!--</label>-->
-        <!--</div>-->
-        <div id="hintInformation" class="alertdanger" th:text="${error}"></div>
+        <!--<ul id="myTab" class="nav nav-tabs mytab">-->
+        <!--<li>-->
+        <!--<a href="#home" data-toggle="tab" class="mytab">By Email</a>-->
+        <!--</li>-->
+        <!--<li>-->
+        <!--<a href="#ios" data-toggle="tab" class="mytab">By Phone</a>-->
+        <!--</li>-->
+        <!--</ul>-->
+
+        <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade in active" id="home">
+                <h2 class="form-signin-heading">Please sign in</h2>
+                <span id="basic-addon0">&nbsp;</span>
+                <!--<span style="font-size: 12px;color: red" th:text="${error}" aria-describedby="basic-addon0"></span>-->
+                <label for="inputEmail" class="sr-only">Email address</label>
+                <input type="email" id="inputEmail" class="form-control" name="emailAddress" th:value="*{emailAddress}"
+                       placeholder="Email address" required autofocus>
+                <label for="inputPassword" class="sr-only">Password</label>
+                <input type="password" id="inputPassword" class="form-control" name="password" th:value="*{password}"
+                       placeholder="Password" required>
+            </div>
+            <div class="tab-pane fade" id="ios">
+            </div>
+
+            <!--<div class="checkbox">-->
+            <!--<label>-->
+            <!--<input type="checkbox" value="remember-me"> Remember me-->
+            <!--</label>-->
+            <!--</div>-->
+            <div id="hintInformation" class="alertdanger" th:text="${error}"></div>
+        </div>
 
         <button class="btn btn-lg btn-primary btn-block" type="submit" id="login">Sign in</button>
         <button class="btn btn-lg btn-primary btn-block" type="button" id="register">Create an account</button>
     </form>
 
 </div> <!-- /container -->
-<footer>
-    <p class="foot">&copy; 2019 Hibernia-Sino Insurance Company, Inc.</p>
-</footer>
 
+<nav class="nav-color navbar  navbar-fixed-top">
+
+    <div class=" container-fluid">
+        <!--<span class="title navbar-brand mb-0 h1">Hibernia-sina Insurance Company</span>-->
+
+        <!--<ul class="nav navbar-nav navbar-right">-->
+            <!--<li><a href="#dashboard" id="bar1">Customer</a></li>-->
+            <!--<li><a href="#dashboard" id="bar2">Employee</a></li>-->
+
+        <!--</ul>-->
+    </div>
+</nav>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="js/ie10-viewport-bug-workaround.js" th:inline="javascript"></script>
 <script>
@@ -90,3 +115,4 @@
 </script>
 </body>
 </html>
+

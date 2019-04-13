@@ -38,6 +38,18 @@
 </head>
 
 <body>
+<nav class="nav-color navbar  navbar-fixed-top">
+
+    <div class=" container-fluid">
+        <!--<span class="title navbar-brand mb-0 h1">Hibernia-sina Insurance Company</span>-->
+
+        <!--<ul class="nav navbar-nav navbar-right">-->
+            <!--<li><a href="#dashboard" id="bar1">Customer</a></li>-->
+            <!--<li><a href="#dashboard" id="bar2">Employee</a></li>-->
+
+        <!--</ul>-->
+    </div>
+</nav>
 
 <div class="container">
     <!--<img id="logo" src= "../css/logo.jpeg">-->
@@ -56,12 +68,23 @@
                th:value="*{nickname}" required>
         <label for="inputPhone" class="sr-only">Phone</label>
         <input type="text" id="inputPhone" class="form-control" placeholder="Phone No." name="phoneNumber" th:value="*{phoneNumber}">
-        <label for="inputRealName" class="sr-only">Real Name</label>
-        <input type="text" id="inputRealName" class="form-control" placeholder="Real Name" name="name"
-               th:value="*{name}" required>
-        <label for="inputPassport" class="sr-only">Passport No.</label>
-        <input type="text" id="inputPassport" class="form-control" placeholder="Passport No" name="passport"
-               th:value="*{passport}">
+        <label for="inputFirstName" class="sr-only">First Name</label>
+        <input type="text" id="inputFirstName" class="form-control" placeholder="First Name" name="firstName"
+               th:value="*{firstName}" required>
+        <label for="inputLastName" class="sr-only">Last Name</label>
+        <input type="text" id="inputLastName" class="form-control" placeholder="Last Name" name="LastName"
+               th:value="*{LastName}" required>
+
+        <!--<label for="inputPassport" class="sr-only">Passport No.</label>-->
+        <!--<input type="text" id="inputPassport" class="form-control" placeholder="Passport No" name="passport"-->
+               <!--th:value="*{passport}">-->
+
+
+        <label for="inputRole" class="sr-only">Role</label>
+        <select class="form-control" id="inputRole" name="role">
+            <option value="customer">Customer</option>
+            <option value="employee">Employee</option>
+        </select>
 
         <!--<div class="checkbox">-->
             <!--<label>-->
@@ -76,10 +99,6 @@
         <div id="hintInformation" class="alertdanger"></div>
     </form>
 </div> <!-- /container -->
-
-<footer>
-    <p class="foot">&copy; 2019 Hibernia-Sino Insurance Company, Inc.</p>
-</footer>
 
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="js/ie10-viewport-bug-workaround.js"></script>
@@ -132,9 +151,6 @@
                 return true;
             }
         });
-        // $("#login").click(function (e){
-        //     window.location.href="signin.html"
-        // });
 
     });
 </script>
