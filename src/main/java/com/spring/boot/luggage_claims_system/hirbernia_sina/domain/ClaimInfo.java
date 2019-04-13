@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * @author Liu Dairui
@@ -40,6 +41,9 @@ public class ClaimInfo implements Serializable {
 
     @Column(nullable = false, length = 50)
     private String details;
+
+    @Column
+    private Date date;
 
     protected ClaimInfo() {
     }

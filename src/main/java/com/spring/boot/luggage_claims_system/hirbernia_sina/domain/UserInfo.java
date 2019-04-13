@@ -5,9 +5,11 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 import java.util.Date;
+import java.util.Set;
 
 /**
  * @author Liu Dairui
@@ -24,6 +26,7 @@ public class UserInfo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Email
     @NotEmpty(message = "emailAddress should not null")
     @Size(min = 2, max = 50)
     @Column(nullable = false, length = 50, unique = true)
@@ -59,8 +62,11 @@ public class UserInfo {
     @Column(nullable = false, length = 20)
     private String phoneNumber;
 
+    @ManyToMany(mappedBy = "users")
+    private Set<Role> roles;
+
     @Column
-    private int role;
+    private boolean enabled;
 
     @Column(nullable = false)
     private Date registerDate;

@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Component;
 
 import java.util.Set;
 
@@ -15,6 +16,7 @@ import java.util.Set;
  * @author Liu Dairui
  * @date 2019-04-11 17:12
  */
+@Component
 public class HSUserDetailsService implements UserDetailsService {
 
     @Autowired
@@ -23,7 +25,10 @@ public class HSUserDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         UserInfo userInfo = securityDataService.getUserByEmailAddress(username);
-        Role role = securityDataService.getRoleByUserId(userInfo.getId());
+        if (userInfo == null) {
+            throw new UsernameNotFoundException("The user is not exist");
+        }
+        Set<Role> role = securityDataService.getRoleByUserId(userInfo.getId());
         Set<Permission> permissions = securityDataService.getPermissionsByUserId(userInfo.getId());
         return new HSUserDetails(userInfo, role, permissions);
     }

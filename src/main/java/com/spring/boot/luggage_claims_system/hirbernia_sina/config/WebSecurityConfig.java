@@ -1,6 +1,10 @@
 package com.spring.boot.luggage_claims_system.hirbernia_sina.config;
 
+import com.spring.boot.luggage_claims_system.hirbernia_sina.authentication.UserAuthenticationProvider;
+import com.spring.boot.luggage_claims_system.hirbernia_sina.service.HSUserDetailsService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -14,33 +18,55 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @EnableWebSecurity //Open function of Spring Security
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
+    @Autowired
+    private UserAuthenticationProvider authenticationProvider;
+    @Autowired
+    private HSUserDetailsService userDetailsService;
+
     /**
-     * 定义不需要过滤的静态资源（等价于HttpSecurity的permitAll）
+     * Define static resources that do not require filtering (equivalent to permitAll of HttpSecurity)
      */
     @Override
     public void configure(WebSecurity webSecurity) throws Exception {
-        webSecurity.ignoring().antMatchers("/css/**");
+        webSecurity.ignoring().antMatchers("/css/**", "/js/**");
+    }
+
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+    /*  保存用户信息到内存中
+        auth.inMemoryAuthentication()
+             .withUser("张三").password("123456").roles("VIP1")
+             .and()
+             .withUser("李四").password("123456").roles("VIP2");
+    */
+
+        /*自定义认证*/
+        auth.authenticationProvider(authenticationProvider);
+        auth.userDetailsService(userDetailsService);
     }
 
     /**
-     * 安全策略配置
+     * Security strategy configuration
      */
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity
                 .authorizeRequests()
-                .antMatchers("/index").permitAll()
-                // 对于网站部分资源需要指定鉴权
+                .antMatchers("/", "/index", "/register", "/result").permitAll()
+                .antMatchers("/employee/**").hasRole("EMPLOYEE")
+                // Authentication needs to be specified for some resources of the website
                 //.antMatchers("/admin/**").hasRole("ADMIN")
-                // 除上面外的所有请求全部需要鉴权认证
+                // All requests except the above require authentication
                 .anyRequest().authenticated().and()
-                // 定义当需要用户登录时候，转到的登录页面
-                .formLogin().loginPage("/employee/signin").defaultSuccessUrl("/index").permitAll().and()
-                // 定义登出操作
+                // Define the login page to which a user needs to log in
+                .formLogin().loginPage("/signin").usernameParameter("emailAddress")  //username
+                .passwordParameter("password").defaultSuccessUrl("/index").permitAll().and()
+                // Define logout operation
                 .logout().logoutSuccessUrl("/login?logout").permitAll().and()
+                .rememberMe().rememberMeParameter("remember").tokenValiditySeconds(604800).and()
                 .csrf().disable()
         ;
-        // 禁用缓存
+        // disable cache
         httpSecurity.headers().cacheControl();
     }
 }

@@ -13,6 +13,7 @@ import org.springframework.mail.SimpleMailMessage;
 
 import javax.validation.Valid;
 import java.io.IOException;
+import java.util.Date;
 
 /**
  * @author Liu Dairui
@@ -55,7 +56,7 @@ public class ClaimController {
         userInfo = securityDataService.saveAndUpdateUser(userInfo);
 //        System.out.println(userInfo);
         ClaimInfo claimInfo = new ClaimInfo(writeInfo.getSerialNo(), userInfo.getId(), writeInfo.getBillingAddress(),
-                writeInfo.getFlightNo(),writeInfo.getLuggageType(),0L,writeInfo.getDetails());
+                writeInfo.getFlightNo(), writeInfo.getLuggageType(), 0L, writeInfo.getDetails(), new Date());
         System.out.println(claimInfo);
         securityDataService.saveAndUpdateClaim(claimInfo);
         model.addAttribute("customer", userInfo);

@@ -21,24 +21,27 @@ public class HSUserDetails extends UserInfo implements org.springframework.secur
 
     private static final long serialVersionUID = 1L;
     Logger logger = LoggerFactory.getLogger(this.getClass());
-    private Role roleDetail;
-    private Set<Permission> permissionSet = null;
+    private Set<Role> roles;
+    private Set<Permission> permissions = null;
 
-    public HSUserDetails(UserInfo userInfo, Role roleDetail, Set<Permission> permissionSet) {
+    public HSUserDetails(UserInfo userInfo, Set<Role> roleDetail, Set<Permission> permissionSet) {
         super(userInfo);
-        this.roleDetail = roleDetail;
-        this.permissionSet = permissionSet;
+        this.roles = roleDetail;
+        this.permissions = permissionSet;
     }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         StringBuilder authoritiesBuilder = new StringBuilder();
-        if (roleDetail != null) {
-            authoritiesBuilder.append(",").append(roleDetail.getRole());
+        Set<Role> tempRoles = this.getRoles();
+        if (tempRoles != null) {
+            for (Role role : tempRoles) {
+                authoritiesBuilder.append(",").append(role.getRole());
+            }
         }
-        Set<Permission> tempPermissionSet = this.getPermissionSet();
-        if (tempPermissionSet != null) {
-            for (Permission permission : tempPermissionSet) {
+        Set<Permission> tempPermissions = this.getPermissions();
+        if (tempPermissions != null) {
+            for (Permission permission : tempPermissions) {
                 authoritiesBuilder.append(",").append(permission.getPermission());
             }
         }

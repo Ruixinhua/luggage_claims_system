@@ -7,7 +7,9 @@ import com.spring.boot.luggage_claims_system.hirbernia_sina.domain.Role;
 import com.spring.boot.luggage_claims_system.hirbernia_sina.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -34,10 +36,22 @@ public class SecurityDataService {
         return claimRepository.saveAndFlush(claimInfo);
     }
 
+    @Transactional
     public UserInfo saveAndUpdateUser(UserInfo userInfo) {
+        if (emailExist(userInfo.getEmailAddress())) {
+            return null;
+        }
+        // the rest of the registration operation
         return userRepository.saveAndFlush(userInfo);
     }
 
+    private boolean emailExist(String email) {
+        UserInfo user = userRepository.findByEmailAddress(email);
+        if (user != null) {
+            return true;
+        }
+        return false;
+    }
     public ClaimInfo getClaimById(Long serialNo) {
         return claimRepository.getOne(serialNo);
     }
@@ -54,13 +68,17 @@ public class SecurityDataService {
         return claimRepository.findAll();
     }
 
-    public Role getRoleByUserId(Long userId) {
+    public Set<Role> getRoleByUserId(Long userId) {
         UserInfo userInfo = getUserById(userId);
-        return roleRepository.getOne(userInfo.getRole());
+        return userInfo.getRoles();
     }
 
     public Set<Permission> getPermissionsByUserId(Long userId) {
-        Role role = getRoleByUserId(userId);
-        return role.getPermissions();
+        Set<Role> role = getRoleByUserId(userId);
+        Set<Permission> permissions = new HashSet<>();
+        for (Role r : role) {
+            permissions.addAll(r.getPermissions());
+        }
+        return permissions;
     }
 }

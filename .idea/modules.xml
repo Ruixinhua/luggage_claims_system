@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.spring.boot.luggage_claims_system.hirbernia_sina.iml" filepath="$PROJECT_DIR$/.idea/modules/com.spring.boot.luggage_claims_system.hirbernia_sina.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.spring.boot.luggage_claims_system.hirbernia_sina.main.iml" filepath="$PROJECT_DIR$/.idea/modules/com.spring.boot.luggage_claims_system.hirbernia_sina.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.spring.boot.luggage_claims_system.hirbernia_sina.test.iml" filepath="$PROJECT_DIR$/.idea/modules/com.spring.boot.luggage_claims_system.hirbernia_sina.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/hibernia_sino.iml" filepath="$PROJECT_DIR$/.idea/hibernia_sino.iml" />
     </modules>
   </component>
 </project>

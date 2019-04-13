@@ -17,6 +17,7 @@ import java.util.Set;
 public class Role {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @Column
@@ -27,6 +28,9 @@ public class Role {
 
     @ManyToMany
     private Set<Permission> permissions;
+
+    @ManyToMany
+    private Set<UserInfo> users;
 
     protected Role() {
 
