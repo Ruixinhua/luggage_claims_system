@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -14,8 +16,8 @@ import java.util.Set;
 @AllArgsConstructor
 @Entity
 @Table(name = "role")
-public class Role {
-
+public class Role implements Serializable {
+    private static final long serialVersionUID = -2L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -26,11 +28,11 @@ public class Role {
     @Column
     private String describes;
 
-    @ManyToMany
-    private Set<Permission> permissions;
+//    @ManyToMany(mappedBy = "roles",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+//    private Set<Permission> permissions = new HashSet<>();
 
-    @ManyToMany
-    private Set<UserInfo> users;
+//    @ManyToMany(mappedBy = "roles",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+//    private Set<UserInfo> users = new HashSet<>();
 
     protected Role() {
 

@@ -8,7 +8,9 @@ import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
+import java.io.Serializable;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -20,8 +22,8 @@ import java.util.Set;
 @NoArgsConstructor
 @Entity
 @Table(name = "user")
-public class UserInfo {
-
+public class UserInfo implements Serializable {
+    private static final long serialVersionUID = 1L;
     @Id // primary key
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -62,8 +64,12 @@ public class UserInfo {
     @Column(nullable = false, length = 20)
     private String phoneNumber;
 
-    @ManyToMany(mappedBy = "users")
-    private Set<Role> roles;
+    @Column
+    private int role;
+
+    //    @ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+    @Transient
+    private Set<Role> roles = new HashSet<>();
 
     @Column
     private boolean enabled;

@@ -84,9 +84,9 @@
 
 
         <label for="inputRole" class="sr-only">Role</label>
-        <select class="form-control" id="inputRole" name="role">
-            <option value="customer">Customer</option>
-            <option value="employee">Employee</option>
+        <select class="form-control" id="inputRole" name="role" th:value="*{role}">
+            <option value=2>Customer</option>
+            <option value=1>Employee</option>
         </select>
 
         <!--<div class="checkbox">-->

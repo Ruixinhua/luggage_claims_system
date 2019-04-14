@@ -1,13 +1,9 @@
 package com.spring.boot.luggage_claims_system.hirbernia_sina.service;
 
-import com.spring.boot.luggage_claims_system.hirbernia_sina.domain.ClaimInfo;
-import com.spring.boot.luggage_claims_system.hirbernia_sina.domain.Permission;
-import com.spring.boot.luggage_claims_system.hirbernia_sina.domain.UserInfo;
-import com.spring.boot.luggage_claims_system.hirbernia_sina.domain.Role;
+import com.spring.boot.luggage_claims_system.hirbernia_sina.domain.*;
 import com.spring.boot.luggage_claims_system.hirbernia_sina.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.HashSet;
 import java.util.List;
@@ -29,20 +25,22 @@ public class SecurityDataService {
     @Autowired
     private RoleRepository roleRepository;
 
-//    @Autowired
-//    private PermissionRepository permissionRepository;
+    @Autowired
+    private PermissionRepository permissionRepository;
+
+    @Autowired
+    private RolePermissionRepository rolePermissionRepository;
 
     public ClaimInfo saveAndUpdateClaim(ClaimInfo claimInfo) {
         return claimRepository.saveAndFlush(claimInfo);
     }
 
-    @Transactional
     public UserInfo saveAndUpdateUser(UserInfo userInfo) {
         if (emailExist(userInfo.getEmailAddress())) {
             return null;
         }
         // the rest of the registration operation
-        return userRepository.saveAndFlush(userInfo);
+        return userRepository.save(userInfo);
     }
 
     private boolean emailExist(String email) {
@@ -52,6 +50,7 @@ public class SecurityDataService {
         }
         return false;
     }
+
     public ClaimInfo getClaimById(Long serialNo) {
         return claimRepository.getOne(serialNo);
     }
@@ -68,16 +67,30 @@ public class SecurityDataService {
         return claimRepository.findAll();
     }
 
-    public Set<Role> getRoleByUserId(Long userId) {
+    public Set<Role> getRolesByUserId(Long userId) {
         UserInfo userInfo = getUserById(userId);
+        System.out.println(userInfo);
+        userInfo.getRoles().add(roleRepository.getOne(userInfo.getRole()));
+        System.out.println(userInfo);
         return userInfo.getRoles();
     }
 
-    public Set<Permission> getPermissionsByUserId(Long userId) {
-        Set<Role> role = getRoleByUserId(userId);
+    public Role getRoleById(int roleId) {
+        return roleRepository.getOne(roleId);
+    }
+
+    public Permission getPermissionById(int permissionId) {
+        return permissionRepository.getOne(permissionId);
+    }
+
+    public Set<Permission> getPermissionsByUserId(UserInfo userInfo) {
+//        System.out.println(userInfo);
         Set<Permission> permissions = new HashSet<>();
-        for (Role r : role) {
-            permissions.addAll(r.getPermissions());
+        for (Role r : userInfo.getRoles()) {
+            RolePermission rolePermission = rolePermissionRepository.findRolePermissionByRolesId(r.getId());
+//            System.out.println(rolePermission);
+            int permissionId = rolePermission.getPermissionsId();
+            permissions.add(permissionRepository.getOne(permissionId));
         }
         return permissions;
     }

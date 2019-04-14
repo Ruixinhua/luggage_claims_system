@@ -10,6 +10,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -25,11 +26,14 @@ public class HSUserDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         UserInfo userInfo = securityDataService.getUserByEmailAddress(username);
+        System.out.println(userInfo);
         if (userInfo == null) {
             throw new UsernameNotFoundException("The user is not exist");
         }
-        Set<Role> role = securityDataService.getRoleByUserId(userInfo.getId());
-        Set<Permission> permissions = securityDataService.getPermissionsByUserId(userInfo.getId());
-        return new HSUserDetails(userInfo, role, permissions);
+        Set<Role> roles = new HashSet<>();
+        roles.add(securityDataService.getRoleById(userInfo.getRole()));
+        userInfo.setRoles(roles);
+        Set<Permission> permissions = securityDataService.getPermissionsByUserId(userInfo);
+        return new HSUserDetails(userInfo, roles, permissions);
     }
 }

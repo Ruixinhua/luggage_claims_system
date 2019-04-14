@@ -8,8 +8,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -17,9 +21,7 @@ import java.util.Set;
  * @date 2019-04-11 11:22
  */
 @Data
-public class HSUserDetails extends UserInfo implements org.springframework.security.core.userdetails.UserDetails {
-
-    private static final long serialVersionUID = 1L;
+public class HSUserDetails extends UserInfo implements UserDetails {
     Logger logger = LoggerFactory.getLogger(this.getClass());
     private Set<Role> roles;
     private Set<Permission> permissions = null;
@@ -32,25 +34,29 @@ public class HSUserDetails extends UserInfo implements org.springframework.secur
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        StringBuilder authoritiesBuilder = new StringBuilder();
+        List<SimpleGrantedAuthority> simpleAuthorities = new ArrayList<>();
+//        StringBuilder authoritiesBuilder = new StringBuilder();
         Set<Role> tempRoles = this.getRoles();
         if (tempRoles != null) {
             for (Role role : tempRoles) {
-                authoritiesBuilder.append(",").append(role.getRole());
+//                authoritiesBuilder.append(",").append(role.getRole());
+                simpleAuthorities.add(new SimpleGrantedAuthority(role.getRole()));
             }
         }
         Set<Permission> tempPermissions = this.getPermissions();
         if (tempPermissions != null) {
             for (Permission permission : tempPermissions) {
-                authoritiesBuilder.append(",").append(permission.getPermission());
+                simpleAuthorities.add(new SimpleGrantedAuthority(permission.getPermission()));
+//                authoritiesBuilder.append(",").append(permission.getPermission());
             }
         }
-        String authoritiesStr = "";
-        if (authoritiesBuilder.length() > 0) {
-            authoritiesStr = authoritiesBuilder.deleteCharAt(0).toString();
-        }
-        logger.info("HSUserDetails getAuthorities [authoritiesStr={} ", authoritiesStr);
-        return AuthorityUtils.commaSeparatedStringToAuthorityList(authoritiesStr);
+//        String authoritiesStr = "";
+//        if (authoritiesBuilder.length() > 0) {
+//            authoritiesStr = authoritiesBuilder.deleteCharAt(0).toString();
+//        }
+        logger.info("HSUserDetails getAuthorities [authoritiesStr={}] ", simpleAuthorities.toString());
+//        return AuthorityUtils.commaSeparatedStringToAuthorityList(authoritiesStr);
+        return simpleAuthorities;
     }
 
     @Override

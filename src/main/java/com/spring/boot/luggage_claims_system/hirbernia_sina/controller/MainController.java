@@ -16,6 +16,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * @author Liu Dairui
@@ -44,9 +46,8 @@ public class MainController {
     @PostMapping("/result")
     public String postRegister(@Valid @ModelAttribute(value = "user") UserInfo userInfo,
                                BindingResult bindingResult, @ModelAttribute(value = "passwordCheck") String passwordCheck,
-                               @ModelAttribute(value = "role") String role, Model model) {
+                               Model model) {
         System.out.println(userInfo);
-        System.out.println("Role: " + role);
 //        Role r = new Role(null,);
 //        System.out.println(passwordCheck);
         model.addAttribute("user", userInfo);

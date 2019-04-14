@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Set;
 
 /**
@@ -16,17 +17,19 @@ import java.util.Set;
 @AllArgsConstructor
 @Entity
 @Table(name = "permission")
-public class Permission {
+public class Permission implements Serializable {
+    private static final long serialVersionUID = -1L;
     @Id
-    private Long id;
+    private int id;
     @Column
     private String permission;
     @Column
     private String url;
     @Column
     private String describes;
-    @ManyToMany(mappedBy = "permissions")
-    private Set<Role> roles;
+
+//    @ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+//    private Set<Role> roles;
 
     protected Permission() {
 
