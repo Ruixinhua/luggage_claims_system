@@ -1,6 +1,7 @@
 drop table if exists claim;
 drop table if exists permission;
 drop table if exists permission_roles;
+drop table if exists role_permissions;
 drop table if exists role;
 drop table if exists user;
 drop table if exists user_roles;
@@ -24,7 +25,7 @@ create table permission
   url        varchar(255),
   primary key (id)
 ) engine = MyISAM;
-create table permission_roles
+create table role_permissions
 (
   permissions_id bigint  not null,
   roles_id       integer not null,
@@ -63,10 +64,10 @@ alter table user
   add constraint UK_d0ar1h7wcp7ldy6qg5859sol6 unique (email_address);
 alter table user
   add constraint UK_n4swgcf30j6bmtb4l4cjryuym unique (nickname);
-alter table permission_roles
-  add constraint FK9k4j9myvlxs8w8omv4awtpcpo foreign key (roles_id) references role (id);
-alter table permission_roles
-  add constraint FK9lqx45njk0pt5lcux4lqewijk foreign key (permissions_id) references permission (id);
+# alter table permission_roles
+#   add constraint FK9k4j9myvlxs8w8omv4awtpcpo foreign key (roles_id) references role (id);
+# alter table permission_roles
+#   add constraint FK9lqx45njk0pt5lcux4lqewijk foreign key (permissions_id) references permission (id);
 alter table user_roles
   add constraint FKj9553ass9uctjrmh0gkqsmv0d foreign key (roles_id) references role (id);
 alter table user_roles
