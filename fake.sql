@@ -40,17 +40,17 @@ create table role
 ) engine = MyISAM;
 create table user
 (
-  id            bigint      not null auto_increment,
-  email_address varchar(50) not null,
+  id            bigint       not null auto_increment,
+  email_address varchar(50)  not null,
   enabled       bit,
-  first_name    varchar(20) not null,
-  last_name     varchar(20) not null,
+  first_name    varchar(20)  not null,
+  last_name     varchar(20)  not null,
   login_date    datetime,
-  nickname      varchar(20) not null,
-  passport      varchar(20) not null,
-  password      varchar(20) not null,
-  phone_number  varchar(20) not null,
-  register_date datetime    not null,
+  nickname      varchar(20)  not null,
+  passport      varchar(20)  not null,
+  password      varchar(100) not null,
+  phone_number  varchar(20)  not null,
+  register_date datetime     not null,
   role          INTEGER,
   primary key (id)
 ) engine = MyISAM;
@@ -88,13 +88,13 @@ VALUES (2, 2);
 # VALUES (1, 1);
 # INSERT INTO permission_roles(roles_id, permissions_id)
 # VALUES (2, 2);
-insert into user (email_address, enabled, first_name, last_name, login_date, nickname, passport, password, phone_number,
-                  register_date, role)
-values ("rxhjxja@gmail.com", false, "Dairui", "Liu", null, "ruixinhua", "E89211241", "a12345test", "86-17338129825",
-        "2019-04-14 13:26:49.0",
-        1);
-insert into user (email_address, enabled, first_name, last_name, login_date, nickname, passport, password, phone_number,
-                  register_date, role)
-values ("amazing@liu.com", false, "amazing", "Liu", null, "amazing", "E21332112", "12345test", "86-12345678911",
-        "2019-04-14 13:26:49.0",
-        1);
+# insert into user (email_address, enabled, first_name, last_name, login_date, nickname, passport, password, phone_number,
+#                   register_date, role)
+# values ("rxhjxja@gmail.com", false, "Dairui", "Liu", null, "ruixinhua", "E89211241", "a12345test", "86-17338129825",
+#         "2019-04-14 13:26:49.0",
+#         1);
+# insert into user (email_address, enabled, first_name, last_name, login_date, nickname, passport, password, phone_number,
+#                   register_date, role)
+# values ("amazing@liu.com", false, "amazing", "Liu", null, "amazing", "E21332112", "12345test", "86-12345678911",
+#         "2019-04-14 13:26:49.0",
+#         1);

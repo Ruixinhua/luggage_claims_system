@@ -4,6 +4,7 @@ import com.spring.boot.luggage_claims_system.hirbernia_sina.domain.ClaimInfo;
 import com.spring.boot.luggage_claims_system.hirbernia_sina.domain.UserInfo;
 import com.spring.boot.luggage_claims_system.hirbernia_sina.service.SecurityDataService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -89,8 +90,8 @@ public class EmployeeController {
     }
 
     @GetMapping("/employee")
-    public String employeeHomepage(@RequestParam("employeeId") Long employeeId,Model model){
-        UserInfo employeeDB = securityDataService.getUserById(employeeId);
+    public String employeeHomepage(Authentication authentication, Model model) {
+        UserInfo employeeDB = securityDataService.getUserByEmailAddress(authentication.getName());
         List<ClaimInfo> claims = securityDataService.getAllClaims();
         model.addAttribute("employee", employeeDB);
         model.addAttribute("claimList", claims);

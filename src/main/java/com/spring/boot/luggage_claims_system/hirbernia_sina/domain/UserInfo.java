@@ -40,8 +40,8 @@ public class UserInfo implements Serializable {
     private String passport;
 
     @NotEmpty(message = "password should not null")
-    @Size(min = 2, max = 20)
-    @Column(nullable = false, length = 20)
+    @Size(min = 2, max = 100)
+    @Column(nullable = false, length = 100)
     private String password;
 
     @NotEmpty(message = "first name should not null")

@@ -5,6 +5,7 @@ import com.spring.boot.luggage_claims_system.hirbernia_sina.domain.Role;
 import com.spring.boot.luggage_claims_system.hirbernia_sina.domain.UserInfo;
 import com.spring.boot.luggage_claims_system.hirbernia_sina.service.SecurityDataService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -62,6 +63,8 @@ public class MainController {
             model.addAttribute("passwordCheck", "");
             return "register";
         }
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+        userInfo.setPassword(encoder.encode(userInfo.getPassword().trim()));
         UserInfo registered = securityDataService.saveAndUpdateUser(userInfo);
         if (registered == null) {
             bindingResult.rejectValue("email address", "message.regError");
@@ -74,6 +77,13 @@ public class MainController {
     @GetMapping("/signin")
     public String getLogin(Model model) {
         model.addAttribute("user", new UserInfo());
+        return "signin";
+    }
+
+    @GetMapping("/login-error")
+    public String loginError(UserInfo userInfo, Model model) {
+        model.addAttribute("user", userInfo);
+        model.addAttribute("error", true);
         return "signin";
     }
 }

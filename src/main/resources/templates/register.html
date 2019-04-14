@@ -99,6 +99,7 @@
         <!--</div>-->
         <button class="btn btn-lg btn-primary btn-block" type="submit" id="register">Register</button>
         <button class="btn btn-lg btn-primary btn-block" type="button" id="login">I already have an account</button>
+        <button class="btn btn-lg btn-primary btn-block" type="button" id="return">Return Home</button>
         <div id="hintInformation" class="alertdanger"></div>
     </form>
 </div> <!-- /container -->
@@ -119,6 +120,10 @@
         $('#login').click(function (e) {
             e.preventDefault();
             $(window).attr('location', '/signin');
+        })
+        $('#return').click(function (e) {
+            e.preventDefault();
+            $(window).attr('location', '/index');
         })
         $("#register").click(function (e) {
             e.preventDefault();

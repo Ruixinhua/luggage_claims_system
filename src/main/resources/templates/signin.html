@@ -68,11 +68,14 @@
             <!--<input type="checkbox" value="remember-me"> Remember me-->
             <!--</label>-->
             <!--</div>-->
-            <div id="hintInformation" class="alertdanger" th:if="${param.error}" th:text="${error}"></div>
+            <div id="hintInformation" class="alertdanger" th:if="${error}">The user is not exist or password is not
+                correct
+            </div>
         </div>
 
         <button class="btn btn-lg btn-primary btn-block" type="submit" id="login">Sign in</button>
         <button class="btn btn-lg btn-primary btn-block" type="button" id="register">Create an account</button>
+        <button class="btn btn-lg btn-primary btn-block" type="button" id="return">Return Home</button>
     </form>
 
 </div> <!-- /container -->
@@ -95,16 +98,20 @@
     $(document).ready(function () {
         $(function () {
             var name = "[[${error}]]";
-            if (name != "") {
+            if (name) {
 
                 $("#hintInformation").fadeIn();
-                $("#hintInformation").html(name);
+                // $("#hintInformation").html(name);
                 $("#hintInformation").fadeOut(6000);
             }
         });
         $('#register').click(function (e) {
             e.preventDefault();
             $(window).attr('location', '/register');
+        })
+        $('#return').click(function (e) {
+            e.preventDefault();
+            $(window).attr('location', '/index');
         })
         // $("#login").click(function (e) {
         //     e.preventDefault();

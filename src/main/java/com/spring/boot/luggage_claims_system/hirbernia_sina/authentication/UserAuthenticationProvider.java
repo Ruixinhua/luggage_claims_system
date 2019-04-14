@@ -6,11 +6,14 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.authentication.AuthenticationProvider;
+import org.springframework.security.authentication.AuthenticationServiceException;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.stereotype.Component;
+
+import java.util.Date;
 
 
 /**
@@ -36,13 +39,16 @@ public class UserAuthenticationProvider implements AuthenticationProvider {
         }
         if (!password.equals(userDetails.getPassword())) {
             logger.info("UserAuthenticationProvider authenticate BadCredentialsException [inputPassword={}, DBPassword={}]", password, userDetails.getPassword());
-            throw new BadCredentialsException("Password is wrong");
+            throw new AuthenticationServiceException("Password is wrong");
         }
+        userDetails.setLoginDate(new Date());
+        System.out.println(userDetails);
+        userDetailsService.saveUser(userDetails);
         return new UsernamePasswordAuthenticationToken(userDetails, password, userDetails.getAuthorities());
     }
 
     @Override
     public boolean supports(Class<?> authentication) {
-        return true;
+        return UsernamePasswordAuthenticationToken.class.equals(authentication);
     }
 }

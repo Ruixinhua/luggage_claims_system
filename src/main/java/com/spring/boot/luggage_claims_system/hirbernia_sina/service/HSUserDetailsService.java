@@ -4,6 +4,8 @@ import com.spring.boot.luggage_claims_system.hirbernia_sina.authentication.HSUse
 import com.spring.boot.luggage_claims_system.hirbernia_sina.domain.Permission;
 import com.spring.boot.luggage_claims_system.hirbernia_sina.domain.Role;
 import com.spring.boot.luggage_claims_system.hirbernia_sina.domain.UserInfo;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -19,14 +21,14 @@ import java.util.Set;
  */
 @Component
 public class HSUserDetailsService implements UserDetailsService {
-
+    Logger logger = LoggerFactory.getLogger(this.getClass());
     @Autowired
     SecurityDataService securityDataService;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         UserInfo userInfo = securityDataService.getUserByEmailAddress(username);
-        System.out.println(userInfo);
+        logger.info("user details[{}]", userInfo);
         if (userInfo == null) {
             throw new UsernameNotFoundException("The user is not exist");
         }
@@ -35,5 +37,9 @@ public class HSUserDetailsService implements UserDetailsService {
         userInfo.setRoles(roles);
         Set<Permission> permissions = securityDataService.getPermissionsByUserId(userInfo);
         return new HSUserDetails(userInfo, roles, permissions);
+    }
+
+    public UserInfo saveUser(UserInfo user) {
+        return securityDataService.saveAndUpdateUser(user);
     }
 }

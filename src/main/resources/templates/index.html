@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -60,8 +61,12 @@
                         <li><a href="#news" i18nid="News">News</a></li>
                         <li><a></a></li>
                         <li><a></a></li>
-                        <li><a href="/signin" i18nid="Login">Login</a></li>
-                        <li><a href="/register" i18nid="Register">Register</a></li>
+                        <li sec:authorize="isAuthenticated()"><a href="/logout" i18nid="Logout">Logout</a></li>
+                        <li sec:authorize="hasAuthority('EMPLOYEE')"><a href="/employee/employee" i18nid="Employee">Employee</a>
+                        </li>
+                        <li sec:authorize="not isAuthenticated()"><a href="/signin" i18nid="Login">Login</a></li>
+                        <li sec:authorize="not isAuthenticated()"><a href="/register" i18nid="Register">Register</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -144,12 +149,12 @@
     </a>
 </div><!-- /.carousel -->
 
-<!-- FOOTER -->
-<footer>
-    <p class="pull-right"><a href="#">Back to top</a></p>
-    <p i18nid="CompanyInfo">&copy; 2019 Hibernia-Sino Insurance Company, Inc. &middot; <a href="#" i18nid="Privacy">Privacy</a>
-        &middot; <a href="#" i18nid="Terms">Terms</a></p>
-</footer>
+<!--&lt;!&ndash; FOOTER &ndash;&gt;-->
+<!--<footer>-->
+<!--<p class="pull-right"><a href="#">Back to top</a></p>-->
+<!--<p i18nid="CompanyInfo">&copy; 2019 Hibernia-Sino Insurance Company, Inc. &middot; <a href="#" i18nid="Privacy">Privacy</a>-->
+<!--&middot; <a href="#" i18nid="Terms">Terms</a></p>-->
+<!--</footer>-->
 
 
 <!-- Bootstrap core JavaScript
