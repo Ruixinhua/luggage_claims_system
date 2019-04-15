@@ -5,6 +5,7 @@ import com.spring.boot.luggage_claims_system.hirbernia_sina.domain.UserInfo;
 import com.spring.boot.luggage_claims_system.hirbernia_sina.service.SecurityDataService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -58,15 +59,17 @@ public class ClaimController {
         ClaimInfo claimInfo = new ClaimInfo(writeInfo.getSerialNo(), userInfo.getId(), writeInfo.getBillingAddress(),
                 writeInfo.getFlightNo(), writeInfo.getLuggageType(), 0L, writeInfo.getDetails(), new Date());
         System.out.println(claimInfo);
+        claimInfo.setDate(new Date());
         securityDataService.saveAndUpdateClaim(claimInfo);
         model.addAttribute("customer", userInfo);
         return "claim/finish";
     }
 
     @GetMapping("/details")
-    public String claimDetail(@RequestParam ("serialNo") Long serialNo, @RequestParam("employeeId") Long employeeId, Model model){
+    public String claimDetail(@RequestParam("serialNo") Long serialNo, Authentication authentication, Model model) {
         ClaimInfo claimInfo = securityDataService.getClaimById(serialNo);
-        claimInfo.setEmployeeId(employeeId);
+        UserInfo employeeDB = securityDataService.getUserByEmailAddress(authentication.getName());
+        claimInfo.setEmployeeId(employeeDB.getId());
         securityDataService.saveAndUpdateClaim(claimInfo);
         UserInfo userInfo = securityDataService.getUserById(claimInfo.getCustomerId());
         WriteInfo writeInfo = new WriteInfo(userInfo.getFirstName(), userInfo.getLastName(), userInfo.getPassport(),
@@ -75,7 +78,7 @@ public class ClaimController {
         model.addAttribute("customerId", claimInfo.getCustomerId());
         model.addAttribute("write", writeInfo);
         model.addAttribute("result", new Result());
-        return "claim/claimdetail";
+        return "employee/claimdetail";
     }
 
     @PostMapping("/result")

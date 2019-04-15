@@ -6,7 +6,7 @@ plugins {
 apply plugin: 'io.spring.dependency-management'
 
 group = 'com.spring.boot.luggage_claims_system'
-version = '0.0.1'
+version = '0.0.2'
 sourceCompatibility = '1.8'
 repositories {
     mavenCentral()
@@ -14,6 +14,10 @@ repositories {
 
 dependencies {
     implementation 'org.projectlombok:lombok'
+    compileOnly 'org.projectlombok:lombok:1.18.4'
+    annotationProcessor 'org.projectlombok:lombok:1.18.4'
+    testCompileOnly 'org.projectlombok:lombok:1.18.4'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.4'
     implementation 'org.springframework.boot:spring-boot-starter-web'
 //  add thymeleaf dependency 
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
