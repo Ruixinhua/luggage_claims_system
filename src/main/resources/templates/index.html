@@ -61,9 +61,9 @@
                         <li><a href="#news" i18nid="News">News</a></li>
                         <li><a></a></li>
                         <li><a></a></li>
-                        <li sec:authorize="isAuthenticated()"><a href="/logout" i18nid="Logout">Logout</a></li>
-                        <li sec:authorize="hasAuthority('EMPLOYEE')"><a href="/employee/employee" i18nid="Employee">Employee</a>
+                        <li sec:authorize="hasAuthority('EMPLOYEE')"><a href="/employee/employee" th:text="${username}"></a>
                         </li>
+                        <li sec:authorize="isAuthenticated()"><a href="/logout" i18nid="Logout">Logout</a></li>
                         <li sec:authorize="not isAuthenticated()"><a href="/signin" i18nid="Login">Login</a></li>
                         <li sec:authorize="not isAuthenticated()"><a href="/register" i18nid="Register">Register</a>
                         </li>

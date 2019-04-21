@@ -62,7 +62,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity
                 .authorizeRequests()
-                .antMatchers("/", "/index", "/register", "/result").permitAll()
+                .antMatchers("/", "/index", "/register", "/result", "/claim/finish").permitAll()
                 .antMatchers("/employee/**").hasAuthority("EMPLOYEE")
                 // Authentication needs to be specified for some resources of the website
                 //.antMatchers("/admin/**").hasRole("ADMIN")
@@ -70,7 +70,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest().authenticated().and()
                 // Define the login page to which a user needs to log in
                 .formLogin().loginPage("/signin").usernameParameter("emailAddress")  //username
-                .passwordParameter("password").defaultSuccessUrl("/index").failureUrl("/login-error").permitAll().and()
+                .passwordParameter("password").defaultSuccessUrl("/employee/employee").failureUrl("/login-error").permitAll().and()
                 // Define logout operation
                 .logout().logoutSuccessUrl("/signin?logout").permitAll().and()
                 .rememberMe().rememberMeParameter("remember").tokenValiditySeconds(604800).and()

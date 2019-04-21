@@ -45,6 +45,9 @@ public class ClaimInfo implements Serializable {
     @Column
     private Date date;
 
+    @Column
+    private String result;
+
     protected ClaimInfo() {
     }
 }

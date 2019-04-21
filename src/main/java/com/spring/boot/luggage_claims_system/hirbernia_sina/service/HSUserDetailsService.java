@@ -40,6 +40,6 @@ public class HSUserDetailsService implements UserDetailsService {
     }
 
     public UserInfo saveUser(UserInfo user) {
-        return securityDataService.saveAndUpdateUser(user);
+        return securityDataService.saveUser(user);
     }
 }

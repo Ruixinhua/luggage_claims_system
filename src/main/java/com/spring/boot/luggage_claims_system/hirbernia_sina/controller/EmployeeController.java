@@ -54,7 +54,7 @@ public class EmployeeController {
         userInfo.setRegisterDate(new Date());
         userInfo.setLoginDate(null);
         model.addAttribute("employee", userInfo);
-        securityDataService.saveAndUpdateUser(userInfo);
+        securityDataService.saveUser(userInfo);
         return "employee/result";
     }
 
@@ -64,46 +64,16 @@ public class EmployeeController {
         return "employee/signin";
     }
 
-    @PostMapping("/signin")
-    public String postLogin(@ModelAttribute(value = "employee") UserInfo userInfo, Model model) {
-//        System.out.println(userInfo);
-        UserInfo employeeDB = securityDataService.getUserByEmailAddress(userInfo.getEmailAddress());
-//        System.out.println("employee receive: "+userInfo);
-//        System.out.println("employee in DB: "+employeeDB);
-        // TODO: add feedback
-        if(employeeDB == null){
-            System.out.println("The password is not correct");
-            model.addAttribute("employee", userInfo);
-            model.addAttribute("error","The employee is not exist");
-            return "employee/signin";
-        }
-        if (!employeeDB.getPassword().equals(userInfo.getPassword())) {
-            System.out.println("The employee is not exist");
-            model.addAttribute("employee", userInfo);
-            model.addAttribute("error","The password is not correct");
-            return "employee/signin";
-        }
-        employeeDB.setLoginDate(new Date());
-        securityDataService.saveAndUpdateUser(employeeDB);
-        return "redirect:/employee/employee?employeeId="+employeeDB.getId();
 
-    }
 
     @GetMapping("/employee")
     public String employeeHomepage(Authentication authentication, Model model) {
-        UserInfo employeeDB = securityDataService.getUserByEmailAddress(authentication.getName());
+        UserInfo user = securityDataService.getUserByEmailAddress(authentication.getName());
         List<ClaimInfo> claims = securityDataService.getAllClaims();
-        model.addAttribute("employee", employeeDB);
+        model.addAttribute("employee", user);
         model.addAttribute("claimList", claims);
+        user.setLoginDate(new Date());
+        securityDataService.updateUser(user);
         return "employee/employee";
     }
-//
-//    @GetMapping(value = "/{id}")
-//    public String employee(@PathVariable("id") Long id, Model model){
-//        UserInfo employeeInfo = employeeRepository.getOne(id);
-//        List<ClaimInfo> claims = claimRepository.findAll();
-//        model.addAttribute("employee", employeeInfo);
-//        model.addAttribute("claimList", claims);
-//        return "employee/employee";
-//    }
 }

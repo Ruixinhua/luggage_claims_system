@@ -69,7 +69,7 @@
     <div class="col-sm-3 col-md-2 sidebar">
         <ul class="list list-group" id="daohang">
             <li class="list-group-item d-flex justify-content-between align-items-center">
-                unprocessed
+                Unprocessed
                 <span class="badge badge-primary badge-pill">3</span>
             </li>
             <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -96,23 +96,23 @@
                 <tr>
                     <th>Serial No</th>
                     <th>Flight No</th>
-                    <th>Customer ID</th>
+                    <th>Submit Date</th>
                     <th>Status</th>
-                    <th>Check</th>
+                    <th>Result</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr th:each="claim : ${claimList}">
                     <td th:text="${claim.serialNo}"></td>
                     <td th:text="${claim.flightNo}"></td>
-                    <td th:text="${claim.customerId}"></td>
+                    <td th:text="${claim.date}"></td>
                     <!--<td th:text="${claim.employeeId}"></td>-->
                     <td th:if="${claim.employeeId}" th:text="'Checked by '+${employee.nickname}"></td>
                     <td th:if="not ${claim.employeeId}">No employee checked</td>
                     <td th:if="not ${claim.employeeId}"><a
                             th:href="@{/claim/details(serialNo=${claim.getSerialNo()})}">
                         view more </a></td>
-                    <td th:if="${claim.employeeId}"> checked</td>
+                    <td th:if="${claim.employeeId}" th:text="${claim.result}"> checked</td>
                 </tr>
                 </tbody>
             </table>

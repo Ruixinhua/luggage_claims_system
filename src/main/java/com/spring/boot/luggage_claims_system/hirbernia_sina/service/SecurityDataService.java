@@ -35,11 +35,15 @@ public class SecurityDataService {
         return claimRepository.saveAndFlush(claimInfo);
     }
 
-    public UserInfo saveAndUpdateUser(UserInfo userInfo) {
+    public UserInfo saveUser(UserInfo userInfo) {
         if (emailExist(userInfo.getEmailAddress())) {
             return null;
         }
         // the rest of the registration operation
+        return userRepository.save(userInfo);
+    }
+
+    public UserInfo updateUser(UserInfo userInfo){
         return userRepository.save(userInfo);
     }
 

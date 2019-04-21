@@ -1,10 +1,9 @@
 package com.spring.boot.luggage_claims_system.hirbernia_sina.controller;
 
-import com.spring.boot.luggage_claims_system.hirbernia_sina.domain.ClaimInfo;
-import com.spring.boot.luggage_claims_system.hirbernia_sina.domain.Role;
 import com.spring.boot.luggage_claims_system.hirbernia_sina.domain.UserInfo;
 import com.spring.boot.luggage_claims_system.hirbernia_sina.service.SecurityDataService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,13 +11,9 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
 import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * @author Liu Dairui
@@ -34,7 +29,11 @@ public class MainController {
     }
 
     @GetMapping("/index")
-    public String index() {
+    public String index(Authentication authentication, Model model) {
+        if(authentication != null){
+            UserInfo userInfo = securityDataService.getUserByEmailAddress(authentication.getName());
+            model.addAttribute("username", userInfo.getNickname());
+        }
         return "index";
     }
 
@@ -65,7 +64,7 @@ public class MainController {
         }
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         userInfo.setPassword(encoder.encode(userInfo.getPassword().trim()));
-        UserInfo registered = securityDataService.saveAndUpdateUser(userInfo);
+        UserInfo registered = securityDataService.saveUser(userInfo);
         if (registered == null) {
             bindingResult.rejectValue("email address", "message.regError");
             model.addAttribute("error", "The email is exist");
