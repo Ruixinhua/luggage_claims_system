@@ -57,16 +57,16 @@
               </div>
               <div class="userInfo-info">
                   <span class="userInfo-name">Yang <strong>Qingqiong</strong></span>
-                  <span class="userInfo-role">Customer</span>
+                  <span class="userInfo-role" i18nid="Customer">Customer</span>
                   <div class="userInfo-status">
-                      <a href="#"><span class="label label-success">Online</span></a>
+                      <a href="#"><span class="label label-success" i18nid="Online">Online</span></a>
                   </div>
               </div>
           </div><!-- sidebar-header  -->
           <div class="sidebar-search">
               <div>
                   <div class="input-group">
-                      <input type="text" class="form-control search-menu" placeholder="Search for...">
+                      <input type="text" class="form-control search-menu" i18nid_placeholder="Search"  placeholder="Search for...">
                       <span class="input-group-addon"><i class="fa fa-search"></i></span>
                   </div>
               </div>
@@ -74,18 +74,18 @@
           <div class="sidebar-menu">
               <ul>
                   <li class="header-menu"><span>My Policy</span></li>
-                  <li><a href="/claim/write"><i class="fa fa-tv"></i><span>My Purchase</span></a></li>
+                  <li><a href="/claim/write"><i class="fa fa-tv"></i><span i18nid="MyPurchase">My Purchase</span></a></li>
                   <li class="sidebar-dropdown">
-                      <a href="#"><i class="fa fa-bar-chart-o"></i><span>My Claims</span></a>
+                      <a href="#"><i class="fa fa-bar-chart-o"></i><span i18nid="MyClaims">My Claims</span></a>
                       <div class="sidebar-submenu">
                           <ul>
-                              <li><a href="#">Processing<span class="badge">2</span></a></li>
-                              <li><a href="#">Solved</a></li>
+                              <li><a href="#" i18nid="Processing">Processing<span class="badge">2</span></a></li>
+                              <li><a href="#" i18nid="Solved">Solved</a></li>
                           </ul>
                       </div>
                   </li>
-                  <li><a href="#"><i class="fa fa-tv"></i><span>Message</span><span class="label label-danger">New</span></a></li>
-                  <li><a href="#"><i class="fa fa-diamond"></i><span>My Profile</span></a></li>
+                  <li><a href="#"><i class="fa fa-tv"></i><span i18nid="Message">Message</span><span class="label label-danger">New</span></a></li>
+                  <li><a href="#"><i class="fa fa-diamond"></i><span i18nid="MyProfile">My Profile</span></a></li>
 
               </ul>
              </div><!-- sidebar-menu  -->
@@ -170,9 +170,9 @@
                 </tr>
                 <tr>
                     <th height="20" width="40"></th>
-                    <th width="100">Flight No</th>
-                    <th width="380" colspan="2">Insurance Type</th>
-                    <th width="180" >Policy Holder</th>
+                    <th width="100" i18nid="FlightNo">Flight No</th>
+                    <th width="380" colspan="2" i18nid="InsuranceType">Insurance Type</th>
+                    <th width="180" i18nid="PolicyHolder">Policy Holder</th>
                     <th></th>
                     <th></th>
                     <th></th>
@@ -183,21 +183,21 @@
                 <tr class="mb-1">
                     <td >1</td>
                     <td >CA123456</td>
-                    <td colspan="2">Air passenger baggage insurance</td>
-                    <td >Yang Qinqiong</th>
-                    <td colspan="2"><button type="button" class="btn btn-outline-primary">Click me to apply for compensation</button>
-
+                    <td colspan="2" i18nid="BaggageType">Air passenger baggage insurance</td>
+                    <td >Yang Qinqiong</td>
+                    <td colspan="2"><button type="button" class="btn btn-outline-primary" i18nid="ApplyCompensation">Click me to apply for compensation</button>
+					</td>
                 </tr>
                 </tbody>
                 <tbody class="ext">
                     <tr>
                         <th height="40"></th>
-                        <th height="40">Single/Return</th>
-                        <th>Validate From</th>
-                        <th>Validate To</th>
-                        <th >From</th>
-                        <th>To</th>
-                        <th>Pieces of Luggage</th>
+                        <th height="40" i18nid="SingleOrReturn">Single/Return</th>
+                        <th i18nid="ValidateFrom">Validate From</th>
+                        <th i18nid="ValidateTo">Validate To</th>
+                        <th i18nid="From">From</th>
+                        <th i18nid="To">To</th>
+                        <th i18nid="PiecesOfLuggage">Pieces of Luggage</th>
 
                     </tr>
                     <tr>
@@ -227,32 +227,35 @@
                 </tr>
                 <tr>
                     <th height="20" width="40"></th>
-                    <th width="100">Flight No</th>
-                    <th width="380" colspan="2">Insurance Type</th>
-                    <th width="180" >Policy Holder</th>
+                    <th width="100" i18nid="FlightNo">Flight No</th>
+                    <th width="380" colspan="2" i18nid="InsuranceType">Insurance Type</th>
+                    <th width="180" i18nid="PolicyHolder">Policy Holder</th>
                     <th></th>
                     <th></th>
                     <th></th>
                     <th></th>
+
                 </tr>
                 </thead>
                 <tr class="mb-1">
                     <td >2</td>
                     <td >CA123456</td>
-                    <td colspan="2">Air passenger baggage insurance</td>
-                    <td >Yang Qinqiong</th>
-                    <td colspan="2"><button type="button" class="btn btn-outline-primary">Click me to apply for compensation</button>
+                    <td colspan="2" i18nid="BaggageType">Air passenger baggage insurance</td>
+                    <td >Yang Qinqiong</td>
+                    <td colspan="2"><button type="button" class="btn btn-outline-primary" i18nid="ApplyCompensation">Click me to apply for compensation</button>
+					</td>
                 </tr>
                 </tbody>
                 <tbody class="ext">
                     <tr>
                         <th height="40"></th>
-                        <th height="40">Single/Return</th>
-                        <th>Validate From</th>
-                        <th>Validate To</th>
-                        <th >From</th>
-                        <th>To</th>
-                        <th>Pieces of Luggage</th>
+                        <th height="40" i18nid="SingleOrReturn">Single/Return</th>
+                        <th i18nid="ValidateFrom">Validate From</th>
+                        <th i18nid="ValidateTo">Validate To</th>
+                        <th i18nid="From">From</th>
+                        <th i18nid="To">To</th>
+                        <th i18nid="PiecesOfLuggage">Pieces of Luggage</th>
+
                     </tr>
                     <tr>
                         <td></td>
@@ -262,6 +265,7 @@
                         <td>Dublin</td>
                         <td>Beiing</td>
                         <td>3</td>
+
                     </tr>
 
                 </tbody>
@@ -305,5 +309,9 @@
     });
 
 </script>
+
+<script type="text/javascript" src="../js/jquery.i18n.properties.js"></script>
+<script type="text/javascript" src="../js/jquery.cookie.js"></script>
+<script type="text/javascript" src="../js/loadi18n.js"></script>
 </body>
 </html>

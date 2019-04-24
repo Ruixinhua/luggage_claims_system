@@ -54,25 +54,25 @@
 <div class="container">
     <!--<img id="logo" src= "../css/logo.jpeg">-->
     <form class="form-signin" action="/employee/result" method="post" th:object="${employee}">
-        <h2 class="form-signin-hxeading">Please register</h2>
+        <h2 class="form-signin-hxeading" i18nid="PlsRegister">Please register</h2>
         <span id="basic-addon0">&nbsp;</span>
         <span style="font-size: 12px;color: red" th:text="${error}" aria-describedby="basic-addon0"></span>
         <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" name="emailAddress" th:value="*{emailAddress}" required autofocus>
+        <input type="email" id="inputEmail" class="form-control" i18nid_placeholder="EmailAddress" placeholder="Email address" name="emailAddress" th:value="*{emailAddress}" required autofocus>
         <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Input your password" name="password" th:value="*{password}" required>
+        <input type="password" id="inputPassword" class="form-control" i18nid_placeholder="PlsEnterPwd" placeholder="Input your password" name="password" th:value="*{password}" required>
         <label for="inputPasswordAgain" class="sr-only">Re-password</label>
-        <input type="password" id="inputPasswordAgain" class="form-control" placeholder="Input password again..." name="passwordCheck" th:value="${passwordCheck}" required>
+        <input type="password" id="inputPasswordAgain" class="form-control" placeholder="Input password again..." name="passwordCheck" i18nid_placeholder="PlsConfirmPwd" th:value="${passwordCheck}" required>
         <label for="inputUserName" class="sr-only">Nick Name</label>
-        <input type="text" id="inputUsername" class="form-control" placeholder="Nick Name" name="nickname"
+        <input type="text" id="inputUsername" class="form-control" placeholder="Nick Name" name="nickname" i18nid_placeholder="Nickname"
                th:value="*{nickname}" required>
         <label for="inputPhone" class="sr-only">Phone</label>
-        <input type="text" id="inputPhone" class="form-control" placeholder="Phone No." name="phoneNumber" th:value="*{phoneNumber}">
+        <input type="text" id="inputPhone" class="form-control" placeholder="Phone No." i18nid_placeholder="PhoneNo" name="phoneNumber" th:value="*{phoneNumber}">
         <label for="inputFirstName" class="sr-only">First Name</label>
-        <input type="text" id="inputFirstName" class="form-control" placeholder="First Name" name="firstName"
+        <input type="text" id="inputFirstName" class="form-control" placeholder="First Name" name="firstName" i18nid_placeholder="FirstName"
                th:value="*{firstName}" required>
         <label for="inputLastName" class="sr-only">Last Name</label>
-        <input type="text" id="inputLastName" class="form-control" placeholder="Last Name" name="LastName"
+        <input type="text" id="inputLastName" class="form-control" placeholder="Last Name" name="LastName" i18nid_placeholder="LastName"
                th:value="*{LastName}" required>
 
         <!--<label for="inputPassport" class="sr-only">Passport No.</label>-->
@@ -82,8 +82,8 @@
 
         <label for="inputRole" class="sr-only">Role</label>
         <select class="form-control" id="inputRole" name="role">
-            <option value="customer">Customer</option>
-            <option value="employee">Employee</option>
+            <option value="customer" i18nid="Customer">Customer</option>
+            <option value="employee" i18nid="Employee">Employee</option>
         </select>
 
         <!--<div class="checkbox">-->
@@ -94,8 +94,8 @@
                 <!--Privacy Policy </a>-->
             <!--</label>-->
         <!--</div>-->
-        <button class="btn btn-lg btn-primary btn-block" type="submit" id="register">Register</button>
-        <button class="btn btn-lg btn-primary btn-block" type="button" id="login" >I already have an account</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" id="register" i18nid="Register">Register</button>
+        <button class="btn btn-lg btn-primary btn-block" type="button" id="login" i18nid="AlreadyAccount">I already have an account</button>
         <div id="hintInformation" class="alertdanger"></div>
     </form>
 </div> <!-- /container -->
@@ -159,6 +159,10 @@
 
 
 </script>
+	
+	<script type="text/javascript" src="../js/jquery.i18n.properties.js"></script>
+<script type="text/javascript" src="../js/jquery.cookie.js"></script>
+<script type="text/javascript" src="../js/loadi18n.js"></script>
 </body>
 
 </html>
