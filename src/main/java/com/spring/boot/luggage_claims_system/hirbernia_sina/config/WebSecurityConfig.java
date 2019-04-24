@@ -1,8 +1,14 @@
 package com.spring.boot.luggage_claims_system.hirbernia_sina.config;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.spring.boot.luggage_claims_system.hirbernia_sina.authentication.SecurityAuthenticationSuccessHandler;
+import com.spring.boot.luggage_claims_system.hirbernia_sina.authentication.UserAuthenticationFilter;
 import com.spring.boot.luggage_claims_system.hirbernia_sina.authentication.UserAuthenticationProvider;
 import com.spring.boot.luggage_claims_system.hirbernia_sina.service.HSUserDetailsService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.devtools.restart.FailureHandler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -11,8 +17,20 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.AuthenticationFailureHandler;
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author Liu Dairui
@@ -27,7 +45,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     private UserAuthenticationProvider authenticationProvider;
     @Autowired
     private HSUserDetailsService userDetailsService;
-
+    @Autowired
+    private SecurityAuthenticationSuccessHandler securityAuthenticationSuccessHandler;
+    @Autowired
+    private ObjectMapper objectMapper;
+    private Logger logger = LoggerFactory.getLogger(getClass());
     /**
      * Define static resources that do not require filtering (equivalent to permitAll of HttpSecurity)
      */
@@ -62,7 +84,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity
                 .authorizeRequests()
-                .antMatchers("/", "/index", "/register", "/result", "/claim/finish").permitAll()
+                .antMatchers("/", "/index", "/register", "/result", "/claim/finish", "/api/*").permitAll()
                 .antMatchers("/employee/**").hasAuthority("EMPLOYEE")
                 // Authentication needs to be specified for some resources of the website
                 //.antMatchers("/admin/**").hasRole("ADMIN")
@@ -70,13 +92,41 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest().authenticated().and()
                 // Define the login page to which a user needs to log in
                 .formLogin().loginPage("/signin").usernameParameter("emailAddress")  //username
-                .passwordParameter("password").defaultSuccessUrl("/employee/employee").failureUrl("/login-error").permitAll().and()
+                .passwordParameter("password").successHandler(securityAuthenticationSuccessHandler).failureUrl("/login-error").permitAll().and()
                 // Define logout operation
                 .logout().logoutSuccessUrl("/signin?logout").permitAll().and()
                 .rememberMe().rememberMeParameter("remember").tokenValiditySeconds(604800).and()
                 .csrf().disable()
         ;
+        httpSecurity.addFilterAt(customAuthenticationFilter(),
+                UsernamePasswordAuthenticationFilter.class);
         // disable cache
         httpSecurity.headers().cacheControl();
+    }
+
+    //UsernamePasswordAuthenticationFilter
+    @Bean
+    UserAuthenticationFilter customAuthenticationFilter() throws Exception {
+        UserAuthenticationFilter filter = new UserAuthenticationFilter();
+        filter.setAuthenticationSuccessHandler((request, response, authentication) -> {
+            Map<String, String> map = new HashMap<>();
+            map.put("code", "200");
+            map.put("msg", "login success");
+            map.put("authentication", authentication.getAuthorities().toArray()[0].toString());
+            response.setContentType("application/json;charset=UTF-8");
+            response.getWriter().write(objectMapper.writeValueAsString(map));//return JSON
+        });
+        filter.setAuthenticationFailureHandler((request, response, exception) -> {
+            Map<String, String> map = new HashMap<>();
+            map.put("code", "403");
+            map.put("msg", "username or password is wrong");
+            response.setContentType("application/json;charset=UTF-8");
+            response.getWriter().write(objectMapper.writeValueAsString(map));//return JSON
+        });
+        filter.setFilterProcessesUrl("/api/login");
+
+        //important
+        filter.setAuthenticationManager(authenticationManagerBean());
+        return filter;
     }
 }
