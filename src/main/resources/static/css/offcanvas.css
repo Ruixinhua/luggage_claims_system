@@ -61,16 +61,33 @@ footer {
 
 .btn {
     background-color: #003366;
-    margin-top: 10px;
     color: #ffffff;
 }
 
+.btn-save {
+    width: 100px;
+}
+
+#button1 {
+    margin-top: 10px;
+
+}
 .row {
     background-color: #FFFFFF;
     width: 90%;
     margin-left: 55px;
 }
 
+.row2 {
+    margin-left: -15px;
+    margin-right: -15px;
+    height: 30px
+
+}
+
+.divider {
+    border-top: 1px solid #ccc
+}
 #info {
     background-color: #99ddff;
     max-width: 270px;
