@@ -51,13 +51,14 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#dashboard" id="bar1" i18nid="Dashboard">Dashboard</a></li>
-                <li><a href="#settings" id="bar2" i18nid="Settings">Settings</a></li>
-                <li><a href="/logout" id="bar3" i18nid="Logout">Logout</a></li>
+                <!--                 <li><a href="#dashboard" id="bar1">Dashboard</a></li>
+                 -->
+                <li><a href="/index" id="bar2">Home</a></li>
+                <li><a href="/logout" id="bar3">Logout</a></li>
             </ul>
-            <form class="navbar-form navbar-right">
-                <input type="text" class="form-control" placeholder="Search..." i18nid_placeholder="Search">
-            </form>
+            <!-- <form class="navbar-form navbar-right">
+                <input type="text" class="form-control" placeholder="Search...">
+            </form> -->
         </div>
     </div>
 </nav>
@@ -101,12 +102,11 @@
                     <th i18nid="Result">Result</th>
                 </tr>
                 </thead>
-                <tbody>
+                <tbody id="tabledata">
                 <tr th:each="claim : ${claimList}">
                     <td th:text="${claim.serialNo}"></td>
                     <td th:text="${claim.flightNo}"></td>
                     <td th:text="${claim.date}"></td>
-                    <!--<td th:text="${claim.employeeId}"></td>-->
                     <td th:if="${claim.employeeId}" th:text="'Checked by '+${employee.nickname}"></td>
                     <td th:if="not ${claim.employeeId}">
 						<i18n-pad i18nid="NoEmployeeChecked">No employee checked</i18n-pad>
@@ -144,13 +144,55 @@
                 $(this).removeClass("active");
             });
         });
+        setInterval(function () {
+            Push();
+        }, 10000);
+
+        function Push() {
+            var optionJson = [];
+            $.ajax({
+                type: "GET",
+                async: true,
+                // url:"/employee/employeeUpdate",
+                data: {},
+                beforeSend: function () {
+                },
+                success: function (data) {
+                    optionJson = data;
+
+                    var str = "";
+                    $("#tbodydata").html("");
+                    for (var i = 0; i < data.claim.length; i++) {
+                        var checkedBy = "";
+                        var view = "";
+                        if (optionJson.claim[i].employeeId) {
+                            checkedBy = "Checked by " + optionJson.employee.nickname;
+                            view = "checked";
+                        } else {
+                            checkedBy = "No employee checked";
+                            href = "／claim/details(serialNo=" + optionJson.claim[i].getSerialNo() + ")";
+                            view = "<a href='" + href + "' view more </a>";
+                        }
+                        str += "<tr>" +
+                            "<td>" + optionJson.claim[i].serialNo + "</td>" +
+                            "<td>" + optionJson.claim[i].flightNo + "</td>" +
+                            "<td>" + optionJson.claim[i].date + "</td>" +
+                            "<td>" + checkedBy + "</td>" +
+                            "<td>" + view + "</td>" +
+                            "</tr>";
+                        $("#tbodydata").append(str);
+                    }
+
+                }
+            });
+        }
     });
 
 </script>
-	
-		<script type="text/javascript" src="../js/jquery.i18n.properties.js"></script>
+
+<script type="text/javascript" src="../js/jquery.i18n.properties.js"></script>
 <script type="text/javascript" src="../js/jquery.cookie.js"></script>
 <script type="text/javascript" src="../js/loadi18n.js"></script>
-	
+
 </body>
 </html>
