@@ -24,7 +24,7 @@
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]>
     <script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="js/ie-emulation-modes-warning.js"></script>
+    <!--<script src="js/ie-emulation-modes-warning.js"></script>-->
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -151,38 +151,39 @@
         function Push() {
             var optionJson = [];
             $.ajax({
-                type: "GET",
+                type: "post",
                 async: true,
-                // url:"/employee/employeeUpdate",
-                data: {},
+                url: "/api/claims",
+                contentType: "application/json",
+                data: JSON.stringify({"test": "test"}),
                 beforeSend: function () {
                 },
                 success: function (data) {
                     optionJson = data;
-
+                    console.log(data);
                     var str = "";
-                    $("#tbodydata").html("");
-                    for (var i = 0; i < data.claim.length; i++) {
+                    // $("#tabledata").html("");
+                    for (var i = 0; i < data.length; i++) {
                         var checkedBy = "";
                         var view = "";
-                        if (optionJson.claim[i].employeeId) {
-                            checkedBy = "Checked by " + optionJson.employee.nickname;
-                            view = "checked";
+                        if (optionJson[i].nickname) {
+                            checkedBy = "Checked by " + optionJson[i].nickname;
+                            view = optionJson[i].result;
                         } else {
                             checkedBy = "No employee checked";
-                            href = "／claim/details(serialNo=" + optionJson.claim[i].getSerialNo() + ")";
-                            view = "<a href='" + href + "' view more </a>";
+                            href = "／claim/details(serialNo=" + optionJson[i].serialNo + ")";
+                            view = "<a href='" + href + "'> view more </a>";
                         }
                         str += "<tr>" +
-                            "<td>" + optionJson.claim[i].serialNo + "</td>" +
-                            "<td>" + optionJson.claim[i].flightNo + "</td>" +
-                            "<td>" + optionJson.claim[i].date + "</td>" +
+                            "<td>" + optionJson[i].serialNo + "</td>" +
+                            "<td>" + optionJson[i].flightNo + "</td>" +
+                            "<td>" + optionJson[i].date + "</td>" +
                             "<td>" + checkedBy + "</td>" +
                             "<td>" + view + "</td>" +
                             "</tr>";
-                        $("#tbodydata").append(str);
+                        // $("#tabledata").append(str);
                     }
-
+                    $("#tabledata").html(str);
                 }
             });
         }
