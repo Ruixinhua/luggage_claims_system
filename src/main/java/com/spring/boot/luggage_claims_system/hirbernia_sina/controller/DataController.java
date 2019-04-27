@@ -8,6 +8,8 @@ import com.spring.boot.luggage_claims_system.hirbernia_sina.service.SecurityData
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -62,4 +64,11 @@ public class DataController {
         return results;
     }
 
+//    public
+
+    @PostMapping(value = "/api/writeClaim")
+    public ResponseEntity<String> writeClaim(@RequestBody JSONObject jsonParam) {
+
+        return new ResponseEntity<>("success", HttpStatus.OK);
+    }
 }

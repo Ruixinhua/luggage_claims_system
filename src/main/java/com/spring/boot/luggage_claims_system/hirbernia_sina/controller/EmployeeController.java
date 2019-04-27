@@ -70,8 +70,29 @@ public class EmployeeController {
     public String employeeHomepage(Authentication authentication, Model model) {
         UserInfo user = securityDataService.getUserByEmailAddress(authentication.getName());
         List<ClaimInfo> claims = securityDataService.getAllClaims();
+        int approved = 0, rejected = 0, unsure = 0, unprocessed = 0;
         model.addAttribute("employee", user);
         model.addAttribute("claimList", claims);
+        for (ClaimInfo claim : claims) {
+            switch (claim.getResult()) {
+                case "Approved":
+                    approved++;
+                    break;
+                case "Rejected":
+                    rejected++;
+                    break;
+                case "To be confirmed":
+                    unsure++;
+                    break;
+                default:
+                    unprocessed++;
+                    break;
+            }
+        }
+        model.addAttribute("approved", approved);
+        model.addAttribute("rejected", rejected);
+        model.addAttribute("unsure", unsure);
+        model.addAttribute("unprocessed", unprocessed);
         user.setLoginDate(new Date());
         securityDataService.updateUser(user);
         return "employee/employee";

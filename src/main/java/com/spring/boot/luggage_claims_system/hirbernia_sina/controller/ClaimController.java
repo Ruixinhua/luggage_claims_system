@@ -37,6 +37,11 @@ public class ClaimController {
         return "redirect:/claim/write";
     }
 
+    @GetMapping("/policy")
+    public String policy() {
+
+        return "claim/policy";
+    }
     /**
      * @param model
      * @return
