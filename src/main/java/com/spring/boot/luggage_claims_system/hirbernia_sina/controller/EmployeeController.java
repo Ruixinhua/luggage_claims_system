@@ -74,19 +74,22 @@ public class EmployeeController {
         model.addAttribute("employee", user);
         model.addAttribute("claimList", claims);
         for (ClaimInfo claim : claims) {
-            switch (claim.getResult()) {
-                case "Approved":
-                    approved++;
-                    break;
-                case "Rejected":
-                    rejected++;
-                    break;
-                case "To be confirmed":
-                    unsure++;
-                    break;
-                default:
-                    unprocessed++;
-                    break;
+            if (claim.getResult() == null) unprocessed++;
+            else {
+                switch (claim.getResult()) {
+                    case "Approved":
+                        approved++;
+                        break;
+                    case "Rejected":
+                        rejected++;
+                        break;
+                    case "To be confirmed":
+                        unsure++;
+                        break;
+                    default:
+                        unprocessed++;
+                        break;
+                }
             }
         }
         model.addAttribute("approved", approved);

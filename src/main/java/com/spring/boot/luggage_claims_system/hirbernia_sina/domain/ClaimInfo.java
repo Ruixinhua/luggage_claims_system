@@ -43,7 +43,7 @@ public class ClaimInfo implements Serializable {
     private String details;
 
     @Column
-    private Date date;
+    private Date submitDate;
 
     @Column
     private String result;

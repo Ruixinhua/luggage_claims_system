@@ -3,6 +3,7 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
     <meta charset="utf-8">
+    <!--<meta http-equiv="refresh" content="1">-->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
@@ -106,7 +107,7 @@
                 <tr th:each="claim : ${claimList}">
                     <td th:text="${claim.serialNo}"></td>
                     <td th:text="${claim.flightNo}"></td>
-                    <td th:text="${claim.date}"></td>
+                    <td th:text="${claim.submitDate}"></td>
                     <td th:if="${claim.employeeId}" th:text="'Checked by '+${employee.nickname}"></td>
                     <td th:if="not ${claim.employeeId}">
 						<i18n-pad i18nid="NoEmployeeChecked">No employee checked</i18n-pad>
@@ -146,7 +147,7 @@
         });
         setInterval(function () {
             Push();
-        }, 10000);
+        }, 1000);
 
         function Push() {
             var optionJson = [];
@@ -166,7 +167,7 @@
                     for (var i = 0; i < data.length; i++) {
                         var checkedBy = "";
                         var view = "";
-                        if (optionJson[i].nickname) {
+                        if (optionJson[i].nickname != null && optionJson[i].result !== null) {
                             checkedBy = "Checked by " + optionJson[i].nickname;
                             view = optionJson[i].result;
                         } else {

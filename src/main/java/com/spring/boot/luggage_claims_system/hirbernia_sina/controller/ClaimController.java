@@ -1,9 +1,6 @@
 package com.spring.boot.luggage_claims_system.hirbernia_sina.controller;
 
-import com.spring.boot.luggage_claims_system.hirbernia_sina.domain.ClaimInfo;
-import com.spring.boot.luggage_claims_system.hirbernia_sina.domain.Result;
-import com.spring.boot.luggage_claims_system.hirbernia_sina.domain.UserInfo;
-import com.spring.boot.luggage_claims_system.hirbernia_sina.domain.WriteInfo;
+import com.spring.boot.luggage_claims_system.hirbernia_sina.domain.*;
 import com.spring.boot.luggage_claims_system.hirbernia_sina.service.SecurityDataService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
@@ -17,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.io.IOException;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author Liu Dairui
@@ -38,8 +36,10 @@ public class ClaimController {
     }
 
     @GetMapping("/policy")
-    public String policy() {
-
+    public String policy(Authentication authentication, Model model) {
+        UserInfo customer = securityDataService.getUserByEmailAddress(authentication.getName());
+        List<Policy> policies = securityDataService.getAllPoliciesByCustomerId(customer.getId());
+        model.addAttribute("policies", policies);
         return "claim/policy";
     }
     /**
@@ -73,7 +73,7 @@ public class ClaimController {
         ClaimInfo claimInfo = new ClaimInfo(writeInfo.getSerialNo(), userInfo.getId(), writeInfo.getBillingAddress(),
                 writeInfo.getFlightNo(), writeInfo.getLuggageType(), 0L, writeInfo.getDetails(), new Date(),null);
         System.out.println(claimInfo);
-        claimInfo.setDate(new Date());
+        claimInfo.setSubmitDate(new Date());
         securityDataService.saveAndUpdateClaim(claimInfo);
         model.addAttribute("customer", userInfo);
         return "claim/finish";
@@ -82,9 +82,6 @@ public class ClaimController {
     @GetMapping("/details")
     public String claimDetail(@RequestParam("serialNo") Long serialNo, Authentication authentication, Model model) {
         ClaimInfo claimInfo = securityDataService.getClaimById(serialNo);
-        UserInfo employeeDB = securityDataService.getUserByEmailAddress(authentication.getName());
-        claimInfo.setEmployeeId(employeeDB.getId());
-        securityDataService.saveAndUpdateClaim(claimInfo);
         UserInfo userInfo = securityDataService.getUserById(claimInfo.getCustomerId());
         WriteInfo writeInfo = new WriteInfo(userInfo.getFirstName(), userInfo.getLastName(), userInfo.getPassport(),
                 claimInfo.getSerialNo(), userInfo.getPhoneNumber(), userInfo.getEmailAddress(), claimInfo.getBillingAddress(),
@@ -96,7 +93,7 @@ public class ClaimController {
     }
 
     @PostMapping("/result")
-    public String sendResult(@ModelAttribute("result") Result result) {
+    public String sendResult(@ModelAttribute("result") Result result, Authentication authentication) {
         System.out.println(result);
         ClaimInfo claimInfo = securityDataService.getClaimById(result.getSerialNo());
         String feedback = "We have received your application.\n";
@@ -122,6 +119,9 @@ public class ClaimController {
         }
         try {
             emailSender(result, feedback);
+            securityDataService.saveAndUpdateClaim(claimInfo);
+            UserInfo employeeDB = securityDataService.getUserByEmailAddress(authentication.getName());
+            claimInfo.setEmployeeId(employeeDB.getId());
             securityDataService.saveAndUpdateClaim(claimInfo);
         } catch (IOException e) {
             e.printStackTrace();

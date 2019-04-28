@@ -68,20 +68,20 @@
 
     </div>
     <div class="col-sm-3 col-md-2 sidebar">
-        <ul class="list list-group" id="daohang">
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-                <i18n-pad i18nid="Solved">solved</i18n-pad>
-                <span class="badge badge-primary badge-pill">14</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-                <i18n-pad i18nid="Processing">processing</i18n-pad>
-                <span class="badge badge-primary badge-pill">2</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-                <i18n-pad i18nid="Pending">pending</i18n-pad>
-                <span class="badge badge-primary badge-pill">1</span>
-            </li>
-        </ul>
+        <!--<ul class="list list-group" id="daohang">-->
+        <!--<li class="list-group-item d-flex justify-content-between align-items-center">-->
+        <!--<i18n-pad i18nid="Solved">solved</i18n-pad>-->
+        <!--<span class="badge badge-primary badge-pill">14</span>-->
+        <!--</li>-->
+        <!--<li class="list-group-item d-flex justify-content-between align-items-center">-->
+        <!--<i18n-pad i18nid="Processing">processing</i18n-pad>-->
+        <!--<span class="badge badge-primary badge-pill">2</span>-->
+        <!--</li>-->
+        <!--<li class="list-group-item d-flex justify-content-between align-items-center">-->
+        <!--<i18n-pad i18nid="Pending">pending</i18n-pad>-->
+        <!--<span class="badge badge-primary badge-pill">1</span>-->
+        <!--</li>-->
+        <!--</ul>-->
     </div>
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
@@ -184,7 +184,8 @@
                 <textarea class="form-control" id="reason" name="reason" th:value="*{reason}" rows="3"></textarea>
             </div>
             <button type="submit" class="btn btn-primary" i18nid="Submit">Submit</button>
-            <button type="button" class="btn btn-primary" i18nid="Back">Back</button>
+            <button type="button" class="btn btn-primary" i18nid="Back" onclick="javascript:history.go(-1);">Back
+            </button>
         </form>
 
     </div>

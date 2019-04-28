@@ -54,7 +54,7 @@ public class SecurityAuthenticationSuccessHandler extends SavedRequestAwareAuthe
         logger.info("Authorities{}", authentication.getAuthorities().toString());
         /** Jump to the specified page*/
         if (!authentication.getAuthorities().contains(new SimpleGrantedAuthority("EMPLOYEE"))) {
-            new DefaultRedirectStrategy().sendRedirect(request, response, "/claim/write");
+            new DefaultRedirectStrategy().sendRedirect(request, response, "/claim/policy");
         } else {
             new DefaultRedirectStrategy().sendRedirect(request, response, "/employee/employee");
         }

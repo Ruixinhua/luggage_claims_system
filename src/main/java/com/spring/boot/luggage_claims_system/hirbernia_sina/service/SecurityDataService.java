@@ -31,10 +31,24 @@ public class SecurityDataService {
     @Autowired
     private RolePermissionRepository rolePermissionRepository;
 
+    @Autowired
+    private PolicyRepository policyRepository;
+
     public ClaimInfo saveAndUpdateClaim(ClaimInfo claimInfo) {
         return claimRepository.saveAndFlush(claimInfo);
     }
 
+    public List<ClaimInfo> getAllClaimsByCustomerId(Long customerId) {
+        return claimRepository.getAllByCustomerId(customerId);
+    }
+
+    public Policy getPolicyById(Long id) {
+        return policyRepository.findById(id).orElse(null);
+    }
+
+    public List<Policy> getAllPoliciesByCustomerId(Long customerId) {
+        return policyRepository.getAllByCustomerId(customerId);
+    }
     public UserInfo saveUser(UserInfo userInfo) {
         if (emailExist(userInfo.getEmailAddress())) {
             return null;
@@ -56,11 +70,11 @@ public class SecurityDataService {
     }
 
     public ClaimInfo getClaimById(Long serialNo) {
-        return claimRepository.getOne(serialNo);
+        return claimRepository.findById(serialNo).orElse(null);
     }
 
     public UserInfo getUserById(Long userId) {
-        return userRepository.getOne(userId);
+        return userRepository.findById(userId).orElse(null);
     }
 
     public UserInfo getUserByEmailAddress(String userAddress) {

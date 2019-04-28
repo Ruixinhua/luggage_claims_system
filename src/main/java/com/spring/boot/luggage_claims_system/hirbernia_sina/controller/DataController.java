@@ -3,21 +3,17 @@ package com.spring.boot.luggage_claims_system.hirbernia_sina.controller;
 import com.alibaba.fastjson.JSONObject;
 import com.spring.boot.luggage_claims_system.hirbernia_sina.authentication.UserAuthenticationProvider;
 import com.spring.boot.luggage_claims_system.hirbernia_sina.domain.ClaimInfo;
+import com.spring.boot.luggage_claims_system.hirbernia_sina.domain.Policy;
 import com.spring.boot.luggage_claims_system.hirbernia_sina.domain.UserInfo;
 import com.spring.boot.luggage_claims_system.hirbernia_sina.service.SecurityDataService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 
 /**
@@ -36,7 +32,7 @@ public class DataController {
     @PostMapping(value = "/api/userInfo", produces = "application/json;charset=UTF-8")
     public Object getUser(@RequestBody JSONObject jsonParam) {
         String username = jsonParam.get("emailAddress").toString();
-        System.out.println(jsonParam.get("emailAddress"));
+//        System.out.println(jsonParam.get("emailAddress"));
         return securityDataService.getUserByEmailAddress(username);
     }
 
@@ -51,24 +47,66 @@ public class DataController {
             map.put("flightNo", claim.getFlightNo());
             map.put("billingAddress", claim.getBillingAddress());
             map.put("details", claim.getDetails());
-            map.put("date", claim.getDate().toString());
+            map.put("date", claim.getSubmitDate().toString());
             map.put("result", claim.getResult());
             UserInfo employee = securityDataService.getUserById(claim.getEmployeeId());
             if (employee != null) {
                 map.put("nickname", employee.getNickname());
             } else {
-                map.put("nickname", "0");
+                map.put("nickname", null);
             }
             results.add(map);
         }
         return results;
     }
 
-//    public
+    private UserInfo getUserByEmail(JSONObject jsonParam) {
+        String username = jsonParam.get("emailAddress").toString();
+        return securityDataService.getUserByEmailAddress(username);
+    }
+
+    private Policy getOnePolicy(JSONObject jsonParam) {
+        Long serialNo = Long.parseLong(jsonParam.get("serialNo").toString());
+        return securityDataService.getPolicyById(serialNo);
+    }
 
     @PostMapping(value = "/api/writeClaim")
-    public ResponseEntity<String> writeClaim(@RequestBody JSONObject jsonParam) {
+    public Map<String, String> writeClaim(@RequestBody JSONObject jsonParam) {
+        Map<String, String> response = new HashMap<>();
+        UserInfo user = getUserByEmail(jsonParam);
+        if (user == null) {
+            response.put("msg", "the user is not exist");
+            response.put("code", "403");
+            return response;
+        }
+        Long serialNo = Long.parseLong(jsonParam.get("serialNo").toString());
+        Policy policy = getOnePolicy(jsonParam);
+        logger.info("writeClaim[{}]", policy);
+        if (policy == null) {
+            response.put("msg", "the policy is not exist");
+            response.put("code", "403");
+            return response;
+        }
+        String billingAddress = jsonParam.get("billingAddress").toString();
+        String details = jsonParam.get("details").toString();
+        String lostLuggage = jsonParam.get("lostLuggage").toString();
+        ClaimInfo claimInfo = new ClaimInfo(serialNo, user.getId(), billingAddress, policy.getFlightNo(), lostLuggage,
+                0l, details, new Date(), null);
+        ClaimInfo temp = securityDataService.saveAndUpdateClaim(claimInfo);
+        if (temp == null) {
+            response.put("msg", "fail to insert claim");
+            response.put("code", "500");
+            return response;
+        }
+        response.put("msg", "success");
+        response.put("code", "200");
+        return response;
+    }
 
-        return new ResponseEntity<>("success", HttpStatus.OK);
+    @PostMapping(value = "/api/policy")
+    public List<Policy> getPolicy(@RequestBody JSONObject jsonParam) {
+        UserInfo user = getUserByEmail(jsonParam);
+        List<Policy> policies = securityDataService.getAllPoliciesByCustomerId(user.getId());
+        return new ArrayList<>(policies);
     }
 }
