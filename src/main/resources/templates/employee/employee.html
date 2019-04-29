@@ -165,7 +165,7 @@
                             view = optionJson[i].result;
                         } else {
                             checkedBy = "No employee checked";
-                            href = "／claim/details(serialNo=" + optionJson[i].serialNo + ")";
+                            href = "/claim/details?serialNo=" + optionJson[i].serialNo;
                             view = "<a href='" + href + "'> view more </a>";
                         }
                         str += "<tr>" +
