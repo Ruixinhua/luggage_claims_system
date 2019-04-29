@@ -157,7 +157,7 @@
 
                 </div>
 
-                <div class="list-group">
+                <div class="list-group" th:each="policy : ${policies}">
                     <a href="#" class="myborder list-group-item list-group-item-action lis">
                         <table>
 
@@ -167,7 +167,7 @@
                                 <td height="10"></td>
                             </tr>
                             <tr>
-                                <th height="20" width="40">Serial No</th>
+                                <th height="20" width="80">Serial No</th>
                                 <th width="100" i18nid="FlightNo">Flight No</th>
                                 <th width="380" colspan="2" i18nid="InsuranceType">Insurance Type</th>
                                 <th width="180" i18nid="PolicyHolder">Policy Holder</th>
@@ -178,7 +178,7 @@
 
                             </tr>
                             </thead>
-                            <tr class="mb-1" th:each="policy : ${policies}">
+                            <tr class="mb-1">
                                 <td th:text="${policy.serialNo}"></td>
                                 <td th:text="${policy.flightNo}"></td>
                                 <td colspan="2" i18nid="BaggageType" th:text="${policy.insuranceType}"></td>
@@ -201,7 +201,7 @@
                                 <th i18nid="PiecesOfLuggage">Pieces of Luggage</th>
 
                             </tr>
-                            <tr th:each="policy : ${policies}">
+                            <tr>
                                 <td></td>
                                 <td height="20" th:text="${policy.policyType}"></td>
                                 <td th:text="${policy.validateFrom}"></td>
@@ -226,9 +226,16 @@
 <script src="../js/ie10-viewport-bug-workaround.js"></script>
 <script src="../js/offcanvas.js"></script>
 
+
+<script type="text/javascript" src="../js/jquery.i18n.properties.js"></script>
+<script type="text/javascript" src="../js/jquery.cookie.js"></script>
+<script type="text/javascript" src="../js/loadi18n.js"></script>
+
 <script type="text/javascript">
     $(document).ready(function () {
-        console.log($(".lis").html())
+
+        var LangcodeFromCookie = getLanguageCode();
+        loadProperties(LangcodeFromCookie);
         $(".ext").hide();
         $("#daohang li").each(function () {
             $(this).mouseover(function () {
@@ -254,9 +261,6 @@
 
 </script>
 
-<script type="text/javascript" src="../js/jquery.i18n.properties.js"></script>
-<script type="text/javascript" src="../js/jquery.cookie.js"></script>
-<script type="text/javascript" src="../js/loadi18n.js"></script>
 </body>
 </html>
 
