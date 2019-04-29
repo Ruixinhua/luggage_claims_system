@@ -28,7 +28,7 @@
     <script src="../js/jquery.min.js"></script>
 
     <link href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/jquery.mCustomScrollbar.min.css" />
+    <link rel="stylesheet" href="../css/jquery.mCustomScrollbar.min.css"/>
     <link rel="stylesheet" href="../css/custom.css">
     <script src="../js/jquery.min.js"></script>
     <script>window.jQuery || document.write('<js/jquery.min.js"><\/script>')</script>
@@ -70,7 +70,7 @@
                     <img class="img-responsive img-rounded" src="assets/img/userInfo.jpg" alt="">
                 </div> -->
                 <div class="userInfo-info">
-                    <span class="userInfo-name">Yang <strong>Qingqiong</strong></span>
+                    <span class="userInfo-name"><strong th:text="${customer.nickname}"></strong></span>
                     <span class="userInfo-role" i18nid="Customer">Customer</span>
                     <div class="userInfo-status">
                         <a href="#"><span class="label label-success" i18nid="Online">Online</span></a>
@@ -88,9 +88,11 @@
             <div class="sidebar-menu">
                 <ul>
                     <li class="header-menu"><span i18nid="MyPolicy">My Policy</span></li>
-                    <li><a href="/claim/write"><i class="fa fa-tv"></i><span i18nid="MyPurchase">My Purchase</span></a></li>
+                    <li><a href="/claim/policy"><i class="fa fa-tv"></i><span i18nid="MyPurchase">My Purchase</span></a>
+                    </li>
                     <li class="sidebar-dropdown">
-                        <a href="#"><i class="fa fa-bar-chart-o"></i><span i18nid="MyClaims">My Claims</span></a>
+                        <a href="/claim/claims"><i class="fa fa-bar-chart-o"></i><span
+                                i18nid="MyClaims">My Claims</span></a>
                         <div class="sidebar-submenu">
                             <ul>
                                 <li><a href="#" i18nid="Processing">Processing<span class="badge">2</span></a></li>
@@ -98,7 +100,8 @@
                             </ul>
                         </div>
                     </li>
-                    <li><a href="#"><i class="fa fa-diamond"></i><span i18nid="MyProfile">My Profile</span></a></li>
+                    <li><a href="/customer/profile"><i class="fa fa-diamond"></i><span
+                            i18nid="MyProfile">My Profile</span></a></li>
 
                 </ul>
             </div><!-- sidebar-menu  -->
@@ -144,13 +147,14 @@
                         <li><a></a></li>
                         <li><a></a></li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-haspopup="true"
                                aria-expanded="false" i18nid="Me">Me
                                 <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a href="#claim" i18nid="MyClaims">My Claims</a></li>
-                                <li><a href="#purchase" i18nid="MyPurchase">My purchase</a></li>
+                                <li><a href="/claim/policy" i18nid="MyPurchase">My purchase</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li><a href="#profile" i18nid="MyProfile">My profile</a></li>
                             </ul>
@@ -169,22 +173,23 @@
                     <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
                 </p>
                 <div class="jumbotron" id="edit">
-                    <h1 class="head1" i18nid="WriteInfo">Write informations</h1>
-                    <p class="head2" i18nid="RequireInfo">Please write down informations requried below to complete your
+                    <h1 class="head1" i18nid="WriteInfo">Write information</h1>
+                    <p class="head2" i18nid="RequireInfo">Please write down information required below to complete your
                         claim.</p>
                 </div>
                 <div class="rows">
                     <form class="form-signin " enctype="multipart/form-data" id="form1" action="/claim/finish"
                           method="post"
-                          th:object="${write}"
+                          th:object="${customer}"
                     >
                         <h2 class="form-signin-heading" i18nid="PlsWriteInfo">Please write informations</h2>
                         <p i18nid="FirstName">First Name</p>
                         <label for="inputFirstName" class="sr-only">First Name</label>
                         <div class="box">
                             <i class="icon-search"></i>
-                            <input type="text" id="inputFirstName" i18nid_placeholder="EnterFirstnameTip" class="form-control"
-                                   name="firstName" th:value="*{firstName}" placeholder="Please enter your firstname"
+                            <input type="text" id="inputFirstName" i18nid_placeholder="EnterFirstnameTip"
+                                   class="form-control"
+                                   name="firstName" th:value="*{firstName}" placeholder="Please enter your first name"
                                    maxlength="25" required disabled>
 
                         </div>
@@ -192,7 +197,8 @@
                         <label for="inputLastName" class="sr-only">Last Name</label>
                         <div class="box">
                             <i class="icon-search"></i>
-                            <input type="text" id="inputLastName" i18nid_placeholder="EnterLastNameTip" class="form-control"
+                            <input type="text" id="inputLastName" i18nid_placeholder="EnterLastNameTip"
+                                   class="form-control"
                                    name="lastName" th:value="*{lastName}" placeholder="Please enter your last name"
                                    maxlength="25" required disabled>
                         </div>
@@ -201,8 +207,9 @@
                         <label for="inputClaimNo" class="sr-only">SerialNo</label>
                         <div class="box">
                             <i class="icon-search"></i>
-                            <input type="text" id="inputClaimNo" i18nid_placeholder="EnterClaimNoTip" class="form-control"
-                                   name="serialNo" th:value="*{serialNo}"
+                            <input type="text" id="inputClaimNo" i18nid_placeholder="EnterClaimNoTip"
+                                   class="form-control"
+                                   name="serialNo" th:value="${policy.serialNo}"
                                    placeholder="Please enter your insurance's serial number" maxlength="20" required
                                    disabled>
                         </div>
@@ -210,7 +217,8 @@
                         <!--<label for="inputPhone" class="sr-only"> Phone</label>-->
                         <div class="box">
                             <i class="icon-search"></i>
-                            <input type="tel" id="inputPhone" i18nid_placeholder="EnterPhoneNoTip" i18nid_title="RequireAreaNum"
+                            <input type="tel" id="inputPhone" i18nid_placeholder="EnterPhoneNoTip"
+                                   i18nid_title="RequireAreaNum"
                                    class="form-control" name="phoneNumber" data-toggle="tooltip"
                                    title="You must include your area number" th:value="*{phoneNumber}"
                                    placeholder="Please include the area number e.g.86-1234567" maxlength="20" required
@@ -222,7 +230,8 @@
                             <i class="icon-search"></i>
                             <input type="email" id="inputEmail" i18nid_title="RequireValidEmail"
                                    i18nid_placeholder="EnterEmailTip" class="form-control" name="emailAddress"
-                                   data-toggle="tooltip" title="Be sure to enter the correct mailbox" th:value="*{emailAddress}"
+                                   data-toggle="tooltip" title="Be sure to enter the correct mailbox"
+                                   th:value="*{emailAddress}"
                                    placeholder="Please enter your email address" maxlength="50" required disabled>
                         </div>
                         <p i18nid="FlightNo">Flight No.</p>
@@ -231,7 +240,8 @@
                             <i class="icon-search"></i>
                             <input type="text" id="inputFLight" i18nid_placeholder="EnterFlightNoTip"
                                    class="form-control"
-                                   name="flightNo" th:value="*{flightNo}" placeholder="Please enter your flight number"
+                                   name="flightNo" th:value="${policy.flightNo}"
+                                   placeholder="Please enter your flight number"
                                    maxlength="20" disabled>
 
                         </div>
@@ -243,7 +253,7 @@
                                    class="form-control"
                                    name="passport" th:value="*{passport}"
                                    placeholder="Please enter your passport number"
-                                   maxlength="20" autofocus>
+                                   maxlength="20" autofocus disabled>
                         </div>
                         <p i18nid="BillingAdress">Billing Address</p>
                         <label for="inputBilling" class="sr-only">Billing Address</label>
@@ -252,7 +262,7 @@
                             <input type="text" id="inputBilling" i18nid_placeholder="EnterBillingAddrTip"
                                    i18nid_title="RequireCorrectBillingAddr" class="form-control" name="billingAddress"
                                    data-toggle="tooltip" title="Be sure to enter the correct billing address"
-                                   th:value="*{billingAddress}" placeholder="Please enter your billing address" maxlength="100"
+                                   placeholder="Please enter your billing address" maxlength="100"
                                    required>
                         </div>
 
@@ -271,8 +281,9 @@
                         <label for="inputDetail" class="sr-only"> Detail</label>
                         <div class="box">
                             <i class="icon-search"></i>
-                            <textarea id="inputDetail" class="form-control" i18nid_placeholder="EnterDetailTip" name="details"
-                                      th:value="*{details}" placeholder="Please describe your lost luggage in 80 worlds"
+                            <textarea id="inputDetail" class="form-control" i18nid_placeholder="EnterDetailTip"
+                                      name="details"
+                                      placeholder="Please describe your lost luggage in 80 worlds"
                                       rows="7" maxlength="80"></textarea>
                         </div>
                         <p i18nid="UpdateImgTip">Please upload images of your luggage and flight tickets</p>
@@ -284,7 +295,8 @@
                                        data-min-file-count="2" data-theme="fas">
                             </div>
                         </div>
-                        <button class="btn btn-lg btn-primary btn-block" type="submit" id="button1" i18nid="Submit">Submit
+                        <button class="btn btn-lg btn-primary btn-block" type="submit" id="button1" i18nid="Submit">
+                            Submit
                         </button>
                     </form>
                 </div><!--/row-->
@@ -345,10 +357,10 @@
             $(this).blur(function (e) {
                 var onlyalphbet = "";
                 var language = getLanguageCode();
-                if(language == 'en'){
+                if (language == 'en') {
                     onlyalphbet = /^[a-zA-Z]+$/;
                 }
-                if(language == 'zh'){
+                if (language == 'zh') {
                     onlyalphbet = /^[\u4e00-\u9fa5]+$/;
                 }
                 var phone_pattern = /^[0-9]{2,6}-[0-9]{6,12}$/;

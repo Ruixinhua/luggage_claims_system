@@ -2,9 +2,12 @@ package com.spring.boot.luggage_claims_system.hirbernia_sina.controller;
 
 import com.spring.boot.luggage_claims_system.hirbernia_sina.domain.*;
 import com.spring.boot.luggage_claims_system.hirbernia_sina.service.SecurityDataService;
+import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -43,15 +46,32 @@ public class ClaimController {
         return "claim/policy";
     }
     /**
-     * @param model
+     * @param
      * @return
      */
-    @GetMapping("/write")
-    public String write(Model model) {
-        model.addAttribute("write", new WriteInfo());
+    @GetMapping(value = "/write")
+//    @Secured(value = "EMPLOYEE")
+//    @PreAuthorize("hasAuthority('EMPLOYEE')")
+    public String write() {
+        return "redirect:/claim/policy";
+    }
+
+    @GetMapping("/writeClaim")
+    public String writeClaim(@RequestParam("serialNo") Long serialNo, Authentication authentication, Model model) {
+        Policy policy = securityDataService.getPolicyById(serialNo);
+        UserInfo customer = securityDataService.getUserByEmailAddress(authentication.getName());
+        model.addAttribute("policy", policy);
+        model.addAttribute("customer", customer);
         return "claim/write";
     }
 
+    @GetMapping("claims")
+    public String getAllClaims(Model model, Authentication authentication) {
+        UserInfo customer = securityDataService.getUserByEmailAddress(authentication.getName());
+        List<ClaimInfo> claims = securityDataService.getAllClaimsByCustomerId(customer.getId());
+        model.addAttribute("claims", claims);
+        return "claim/claims";
+    }
     @PostMapping("/finish")
     public String create(@Valid @ModelAttribute("write") WriteInfo writeInfo, BindingResult bindingResult, Model model,
                          Authentication authentication) {

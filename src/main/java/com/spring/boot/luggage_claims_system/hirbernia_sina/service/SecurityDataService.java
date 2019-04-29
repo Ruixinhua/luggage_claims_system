@@ -42,6 +42,13 @@ public class SecurityDataService {
         return claimRepository.getAllByCustomerId(customerId);
     }
 
+    public List<ClaimInfo> getAllClaimsByEmployeeId(Long employeeId) {
+        return claimRepository.getAllByEmployeeId(employeeId);
+    }
+
+    public List<ClaimInfo> getAllClaimsByEmployeeIdIsNot(Long employeeId) {
+        return claimRepository.getAllByEmployeeIdIsNot(employeeId);
+    }
     public Policy getPolicyById(Long id) {
         return policyRepository.findById(id).orElse(null);
     }
@@ -49,6 +56,7 @@ public class SecurityDataService {
     public List<Policy> getAllPoliciesByCustomerId(Long customerId) {
         return policyRepository.getAllByCustomerId(customerId);
     }
+
     public UserInfo saveUser(UserInfo userInfo) {
         if (emailExist(userInfo.getEmailAddress())) {
             return null;

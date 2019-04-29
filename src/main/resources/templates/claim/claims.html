@@ -50,7 +50,7 @@
                 <li><a href="/index" i18nid="Home">Home</a></li>
                 <li><a href="about.html" i18nid="AboutUs">About us</a></li>
                 <li><a href="shop.html" i18nid="ShopProducts">Shop products</a></li>
-                <li><a href="claims.html" i18nid="ClaimSettlements">Claim settlements</a></li>
+                <li><a href="/claim/policy" i18nid="ClaimSettlements">Claim settlements</a></li>
                 <li><a href="contact.html" i18nid="ContactUs">Contact us</a></li>
                 <li><a href="#news" i18nid="News">News</a></li>
                 <li><a></a></li>
@@ -69,8 +69,8 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                        aria-expanded="true" i18nid="Me">Me <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li class="active"><a href="claims.html"  i18nid="MyClaims">My claims</a></li>
-                        <li><a href="seeclaim.html"  i18nid="MyPurchase">My purchase</a></li>
+                        <li class="active"><a href="/claim/claims" i18nid="MyClaims">My claims</a></li>
+                        <li><a href="/claim/policy" i18nid="MyPurchase">My purchase</a></li>
                         <li role="separator" class="divider"></li>
                         <li><a href="#profile"  i18nid="MyProfile">My profile</a></li>
                     </ul>
@@ -93,8 +93,8 @@
             <p i18nid="ChooseClaimTip">Please choose the claims that you have announced.</p>
         </div>
         <div class="row">
-            <ul>
-                <!--<li th:each="claim: ${claimList}">-->
+            <!--<ul>-->
+            <!--<li th:each="claim: ${claims}">-->
                 <!--<div class="col-xs-6 col-lg-4" id="info">-->
                 <!--<h2 th:text="${claim.insuranceName}">Flight Insurance</h2>-->
                 <!--<p th:text="${claim.insuranceType}">Type: Luggage Insurance A</p>-->
@@ -106,7 +106,7 @@
                 <!--<p><a class="btn btn-default" href="claimdetail.html" role="button">See details &raquo;</a></p>-->
                 <!--</div>&lt;!&ndash;/.col-xs-6.col-lg-4&ndash;&gt;-->
                 <!--</li>-->
-            </ul>
+            <!--</ul>-->
 
 
         </div><!--/row-->

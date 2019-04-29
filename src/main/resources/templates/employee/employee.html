@@ -100,7 +100,7 @@
                     <td th:text="${claim.serialNo}"></td>
                     <td th:text="${claim.flightNo}"></td>
                     <td th:text="${claim.submitDate}"></td>
-                    <td th:if="${claim.employeeId}" th:text="'Checked by '+${employee.nickname}"></td>
+                    <td th:if="${claim.employeeId}" th:text="'Checked by employee ID '+${claim.employeeId}"></td>
                     <td th:if="not ${claim.employeeId}">
                         <i18n-pad i18nid="NoEmployeeChecked">No employee checked</i18n-pad>
                     </td>
@@ -160,8 +160,8 @@
                     for (var i = 0; i < data.length; i++) {
                         var checkedBy = "";
                         var view = "";
-                        if (optionJson[i].nickname != null && optionJson[i].result !== null) {
-                            checkedBy = "Checked by " + optionJson[i].nickname;
+                        if (!optionJson[i].employeeId == 0 && optionJson[i].result !== null) {
+                            checkedBy = "Checked by employee ID " + optionJson[i].employeeId;
                             view = optionJson[i].result;
                         } else {
                             checkedBy = "No employee checked";
@@ -185,10 +185,10 @@
 
         $(function () {
             $('#processed').click(function () {
-                Push(0);
+                Push(1);
             });
             $('#unprocessed').click(function () {
-                Push(1);
+                Push(0);
             });
 
         });

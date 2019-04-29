@@ -13,4 +13,8 @@ import java.util.List;
 @Repository
 public interface ClaimRepository extends JpaRepository<ClaimInfo, Long> {
     List<ClaimInfo> getAllByCustomerId(Long customerId);
+
+    List<ClaimInfo> getAllByEmployeeId(Long employeeId);
+
+    List<ClaimInfo> getAllByEmployeeIdIsNot(Long employeeId);
 }

@@ -40,7 +40,18 @@ public class DataController {
     public List<Map<String, String>> getClaims(@RequestBody JSONObject jsonParam) {
 //        System.out.println(jsonParam);
         List<Map<String, String>> results = new ArrayList<>();
-        List<ClaimInfo> claims = securityDataService.getAllClaims();
+        List<ClaimInfo> claims;
+        int request;
+        if (jsonParam.get("request") instanceof Integer) {
+            request = Integer.parseInt(jsonParam.get("request").toString());
+            if (request == 0) {
+                claims = securityDataService.getAllClaimsByEmployeeId(0L);
+            } else {
+                claims = securityDataService.getAllClaimsByEmployeeIdIsNot(0L);
+            }
+        } else {
+            return results;
+        }
         for (ClaimInfo claim : claims) {
             Map<String, String> map = new HashMap<>();
             map.put("serialNo", claim.getSerialNo().toString());
@@ -49,12 +60,7 @@ public class DataController {
             map.put("details", claim.getDetails());
             map.put("date", claim.getSubmitDate().toString());
             map.put("result", claim.getResult());
-            UserInfo employee = securityDataService.getUserById(claim.getEmployeeId());
-            if (employee != null) {
-                map.put("nickname", employee.getNickname());
-            } else {
-                map.put("nickname", null);
-            }
+            map.put("employeeId", claim.getEmployeeId().toString());
             results.add(map);
         }
         return results;
