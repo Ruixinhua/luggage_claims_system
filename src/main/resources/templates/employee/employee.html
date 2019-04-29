@@ -70,21 +70,13 @@
     </div>
     <div class="col-sm-3 col-md-2 sidebar">
         <ul class="list list-group" id="daohang">
-            <li class="list-group-item d-flex justify-content-between align-items-center">
+            <li class="list-group-item d-flex justify-content-between align-items-center" id="unprocessed">
                 <i18n-pad i18nid="Unprocessed">Unprocessed</i18n-pad>
                 <span class="badge badge-primary badge-pill" th:text="${unprocessed}">0</span>
             </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-                <i18n-pad i18nid="Approved">Approved</i18n-pad>
+            <li class="list-group-item d-flex justify-content-between align-items-center" id="processed">
+                <i18n-pad i18nid="Approved">Processed</i18n-pad>
                 <span class="badge badge-primary badge-pill" th:text="${approved}">0</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-                <i18n-pad i18nid="Rejected">Rejected</i18n-pad>
-                <span class="badge badge-primary badge-pill" th:text="${rejected}">0</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-                <i18n-pad i18nid="ToBeConfirmed">To be confirmed</i18n-pad>
-                <span class="badge badge-primary badge-pill" th:text="${unsure}">0</span>
             </li>
         </ul>
     </div>
@@ -110,8 +102,8 @@
                     <td th:text="${claim.submitDate}"></td>
                     <td th:if="${claim.employeeId}" th:text="'Checked by '+${employee.nickname}"></td>
                     <td th:if="not ${claim.employeeId}">
-						<i18n-pad i18nid="NoEmployeeChecked">No employee checked</i18n-pad>
-					</td>
+                        <i18n-pad i18nid="NoEmployeeChecked">No employee checked</i18n-pad>
+                    </td>
                     <td th:if="not ${claim.employeeId}"><a
                             th:href="@{/claim/details(serialNo=${claim.getSerialNo()})}">
                         <i18n-pad i18nid="ViewMore">view more</i18n-pad> </a></td>
@@ -145,18 +137,19 @@
                 $(this).removeClass("active");
             });
         });
-        setInterval(function () {
-            Push();
-        }, 1000);
+        // setInterval(function () {
+        //     Push();
+        // }, 1000);
 
-        function Push() {
+
+        function Push(i) {
             var optionJson = [];
             $.ajax({
                 type: "post",
                 async: true,
                 url: "/api/claims",
                 contentType: "application/json",
-                data: JSON.stringify({"test": "test"}),
+                data: JSON.stringify({"request": i}),
                 beforeSend: function () {
                 },
                 success: function (data) {
@@ -185,9 +178,20 @@
                         // $("#tabledata").append(str);
                     }
                     $("#tabledata").html(str);
+                    console.log("success");
                 }
             });
         }
+
+        $(function () {
+            $('#processed').click(function () {
+                Push(0);
+            });
+            $('#unprocessed').click(function () {
+                Push(1);
+            });
+
+        });
     });
 
 </script>
