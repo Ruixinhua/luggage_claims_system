@@ -132,3 +132,7 @@ body {
     margin-top: 120px;
   }
 }
+
+.mr-auto, .mx-auto {
+    margin-right: auto !important;
+}
