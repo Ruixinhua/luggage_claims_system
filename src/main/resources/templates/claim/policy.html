@@ -77,7 +77,8 @@
                     <li><a href="/claim/write"><i class="fa fa-tv"></i><span i18nid="MyPurchase">My Purchase</span></a>
                     </li>
                     <li class="sidebar-dropdown">
-                        <a href="#"><i class="fa fa-bar-chart-o"></i><span i18nid="MyClaims">My Claims</span></a>
+                        <a href="/claim/claims"><i class="fa fa-bar-chart-o"></i><span
+                                i18nid="MyClaims">My Claims</span></a>
                         <div class="sidebar-submenu">
                             <ul>
                                 <li><a href="#" i18nid="Processing">Processing<span class="badge">2</span></a></li>
@@ -85,7 +86,8 @@
                             </ul>
                         </div>
                     </li>
-                    <li><a href="#"><i class="fa fa-diamond"></i><span i18nid="MyProfile">My Profile</span></a></li>
+                    <li><a href="/customer/profile"><i class="fa fa-diamond"></i><span
+                            i18nid="MyProfile">My Profile</span></a></li>
 
                 </ul>
             </div><!-- sidebar-menu  -->
@@ -128,19 +130,19 @@
                         <li><a></a></li>
                         <li><a></a></li>
                         <li><a></a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                               aria-haspopup="true"
-                               aria-expanded="true" i18nid="Me">Me <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li class="active"><a href="/claim/claims"
-                                                      i18nid="MyClaims">My claims</a></li>
-                                <li><a href="/claim/policy"
-                                       i18nid="MyPurchase">My purchase</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li><a href="/customer/profile" i18nid="MyProfile">My profile</a></li>
-                            </ul>
-                        </li>
+                        <!--<li class="dropdown">-->
+                        <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"-->
+                        <!--aria-haspopup="true"-->
+                        <!--aria-expanded="true" i18nid="Me">Me <span class="caret"></span></a>-->
+                        <!--<ul class="dropdown-menu">-->
+                        <!--<li class="active"><a href="/claim/claims"-->
+                        <!--i18nid="MyClaims">My claims</a></li>-->
+                        <!--<li><a href="/claim/policy"-->
+                        <!--i18nid="MyPurchase">My purchase</a></li>-->
+                        <!--<li role="separator" class="divider"></li>-->
+                        <!--<li><a href="/customer/profile" i18nid="MyProfile">My profile</a></li>-->
+                        <!--</ul>-->
+                        <!--</li>-->
                     </ul>
                 </div>
             </div>
@@ -184,7 +186,8 @@
                                 <td colspan="2" i18nid="BaggageType" th:text="${policy.insuranceType}"></td>
                                 <td th:text="${policy.policyHolder}"></td>
                                 <td colspan="2">
-                                    <a type="button" class="btn btn-outline-primary" i18nid="ApplyCompensation"
+                                    <a type="button" class="btn btn-detail btn-outline-primary"
+                                       i18nid="ApplyCompensation"
                                        th:href="@{/claim/writeClaim(serialNo=${policy.serialNo})}">
                                         Click me to apply for compensation
                                     </a>
@@ -262,6 +265,5 @@
 
 </script>
 
-</body>
 </html>
 

@@ -312,3 +312,12 @@
 {
     background: #657692;
 }
+
+.userInfo-role {
+    color: grey;
+    margin-left: 10px;
+}
+
+.userInfo-name {
+    color: white;
+}

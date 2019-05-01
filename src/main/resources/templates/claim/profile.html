@@ -46,7 +46,7 @@
 </head>
 
 <body>
-<div class="page-wrapper toggled">
+<div class="page-wrapper">
     <nav class="sidebar-wrapper" id="sidebar">
         <div class="sidebar-content">
             <a href="#" id="toggle-sidebar"><i class="fa fa-bars"></i></a>
@@ -85,7 +85,7 @@
                             </ul>
                         </div>
                     </li>
-                    <li><a href="#"><i class="fa fa-tv"></i><span>My Profile</span></a></li>
+                    <li><a href="/customer/profile"><i class="fa fa-tv"></i><span>My Profile</span></a></li>
 
                 </ul>
             </div><!-- sidebar-menu  -->
@@ -132,19 +132,19 @@
                         <li><a></a></li>
                         <li><a></a></li>
                         <li><a></a></li>
-                        <li class="dropdown">
-                            <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown"
-                               href="#"
-                               i18nid="Me" role="button">Me
-                                <span class="caret"></span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="/claim/claims" i18nid="MyClaims">My Claims</a></li>
-                                <li><a href="/claim/policy" i18nid="MyPurchase">My purchase</a></li>
-                                <li class="divider" role="separator"></li>
-                                <li><a href="/customer/profile" i18nid="MyProfile">My profile</a></li>
-                            </ul>
-                        </li>
+                        <!--<li class="dropdown">-->
+                        <!--<a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown"-->
+                        <!--href="#"-->
+                        <!--i18nid="Me" role="button">Me-->
+                        <!--<span class="caret"></span>-->
+                        <!--</a>-->
+                        <!--<ul class="dropdown-menu">-->
+                        <!--<li><a href="/claim/claims" i18nid="MyClaims">My Claims</a></li>-->
+                        <!--<li><a href="/claim/policy" i18nid="MyPurchase">My purchase</a></li>-->
+                        <!--<li class="divider" role="separator"></li>-->
+                        <!--<li><a href="/customer/profile" i18nid="MyProfile">My profile</a></li>-->
+                        <!--</ul>-->
+                        <!--</li>-->
                     </ul>
                 </div><!-- /.nav-collapse -->
             </div><!-- /.container -->
@@ -219,6 +219,7 @@
                         <hr class="divider">
 
                         <button class="btn btn-primary btn-save" i18nid="Submit" type="submit">save</button>
+                        <button class="btn btn-primary btn-save" onclick="javascript:history.go(-1);">Back</button>
 
                     </form>
 
