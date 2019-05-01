@@ -9,6 +9,7 @@ import com.spring.boot.luggage_claims_system.hirbernia_sina.service.SecurityData
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,10 +25,9 @@ import java.util.*;
 public class DataController {
     Logger logger = LoggerFactory.getLogger(this.getClass());
     @Autowired
-    private SecurityDataService securityDataService;
-    @Autowired
     UserAuthenticationProvider userAuth;
-
+    @Autowired
+    private SecurityDataService securityDataService;
 
     @PostMapping(value = "/api/userInfo", produces = "application/json;charset=UTF-8")
     public Object getUser(@RequestBody JSONObject jsonParam) {
@@ -36,7 +36,7 @@ public class DataController {
         return securityDataService.getUserByEmailAddress(username);
     }
 
-    @PostMapping(value = "/api/claims", produces = "application/json;charset=UTF-8")
+    @PostMapping(value = "/api/process", produces = "application/json;charset=UTF-8")
     public List<Map<String, String>> getClaims(@RequestBody JSONObject jsonParam) {
 //        System.out.println(jsonParam);
         List<Map<String, String>> results = new ArrayList<>();
@@ -64,6 +64,14 @@ public class DataController {
             results.add(map);
         }
         return results;
+    }
+
+    @PostMapping(value = "/api/claims", produces = "application/json;charset=UTF-8")
+    public List<ClaimInfo> getCustomerClaims(@RequestBody JSONObject jsonParam, Authentication authentication) {
+//        System.out.println(jsonParam);
+        String emailAddress = jsonParam.get("emailAddress").toString();
+        UserInfo customer = securityDataService.getUserByEmailAddress(emailAddress);
+        return securityDataService.getAllClaimsByCustomerId(customer.getId());
     }
 
     private UserInfo getUserByEmail(JSONObject jsonParam) {

@@ -62,6 +62,7 @@
                     </ul>
                     <ul class="nav navbar-nav" style="float:right;">
                         <li sec:authorize="hasAuthority('EMPLOYEE')"><a href="/employee/employee" th:text="${username}"></a>
+                        <li sec:authorize="hasAuthority('CUSTOMER')"><a href="/claim/policy" th:text="${username}"></a>
                         </li>
                         <li sec:authorize="isAuthenticated()"><a href="/logout" i18nid="Logout">Logout</a></li>
                         <li sec:authorize="not isAuthenticated()"><a href="/signin" i18nid="Login">Login</a></li>

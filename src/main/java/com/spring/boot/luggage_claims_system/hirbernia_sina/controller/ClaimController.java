@@ -72,6 +72,11 @@ public class ClaimController {
         model.addAttribute("claims", claims);
         return "claim/claims";
     }
+
+    @PostMapping("upload")
+    public void uploadFile() {
+
+    }
     @PostMapping("/finish")
     public String create(@Valid @ModelAttribute("write") WriteInfo writeInfo, BindingResult bindingResult, Model model,
                          Authentication authentication) {
