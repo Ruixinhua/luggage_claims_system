@@ -1,0 +1,19 @@
+{
+  "name": "Hibernia-Sino API Documentation",
+  "version": "1.0.0",
+  "title": "Hibernia-Sino",
+  "url": "http://localhost:8080",
+  "sampleUrl": "http://localhost:8080",
+  "template": {
+    "forceLanguage": "en-us"
+  },
+  "template": {
+    "withCompare": true,
+    "withGenerator": true
+  },
+  "template": {
+    "jQueryAjaxSetup": {
+      "contentType": "application/json"
+    }
+  }
+}

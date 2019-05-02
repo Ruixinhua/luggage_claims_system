@@ -36,6 +36,44 @@ public class DataController {
         return securityDataService.getUserByEmailAddress(username);
     }
 
+    /**
+     * @api {POST} /api/process get claims
+     * @apiVersion 1.0.0
+     * @apiName get specific claims
+     * @apiGroup api
+     * @apiDescription employee can get processed claims or unprocessed claims
+     * @apiParam request 1 for processed, 0 for unprocessed
+     * @apiSuccess {Object[]} results all of claims
+     * @apiSuccess {String} results.serialNo serial no of claim
+     * @apiSuccess {String} results.flightNo flight no
+     * @apiSuccess {String} results.billingAddress billing address
+     * @apiSuccess {String} results.details details of apply for a claim
+     * @apiSuccess {String} results.date submit date of claim
+     * @apiSuccess {String} results.result the result of claim
+     * @apiSuccess {String} results.employeeId the employee who deal with the claim
+     * @apiSuccessExample {json}
+     * Response-Example:
+     * [
+     * {
+     * "date": "2019-04-11 20:23:24.0",
+     * "result": "Approved",
+     * "flightNo": "Hibernia-Sino",
+     * "nickname": "refrrir",
+     * "details": "lost luggage",
+     * "billingAddress": "BJUT",
+     * "serialNo": "12512324"
+     * },
+     * {
+     * "date": "2019-04-18 21:12:12.0",
+     * "result": "To be confirmed",
+     * "flightNo": "Hibernia-Sino",
+     * "nickname": "refrrir",
+     * "details": "lost luggage",
+     * "billingAddress": "BJUT",
+     * "serialNo": "13531254"
+     * }
+     * ]
+     */
     @PostMapping(value = "/api/process", produces = "application/json;charset=UTF-8")
     public List<Map<String, String>> getClaims(@RequestBody JSONObject jsonParam) {
 //        System.out.println(jsonParam);
@@ -84,6 +122,33 @@ public class DataController {
         return securityDataService.getPolicyById(serialNo);
     }
 
+    /**
+     * @api {POST} /api/writeClaim write claim
+     * @apiVersion 1.0.0
+     * @apiName write claim
+     * @apiGroup api
+     * @apiDescription customer submit claim
+     * @apiParam emailAddress email address of customer
+     * @apiParam serialNo the serialNo of policy
+     * @apiParam billingAddress billing address of customer
+     * @apiParam details the details of customer
+     * @apiParam lostLuggage the luggage what is loss of customer
+     * @apiParamExample Request-Example:
+     * {
+     * "emailAddress":"12315@163.com",
+     * "serialNo":36021758,
+     * "billingAddress":"BJUT",
+     * "details":"test",
+     * "lostLuggage":"bag"
+     * }
+     * @apiSuccess {String} msg the message about result
+     * @apiSuccess {String} code
+     * @apiSuccessExample {json}
+     * Response-Example-1:
+     * {"msg":"the policy is not exist","code":"403"}
+     * Response-Example-2:
+     * {"msg":"success","code":"200"}
+     */
     @PostMapping(value = "/api/writeClaim")
     public Map<String, String> writeClaim(@RequestBody JSONObject jsonParam) {
         Map<String, String> response = new HashMap<>();

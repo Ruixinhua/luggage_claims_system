@@ -21,6 +21,14 @@ public class CustomerController {
     @Autowired
     private SecurityDataService securityDataService;
 
+    /**
+     * @api {GET} /customer/profile profile get
+     * @apiVersion 1.0.0
+     * @apiName get profile of customer
+     * @apiGroup customer
+     * @apiDescription the interface of get profile of customer
+     * @apiSuccess success true
+     */
     @GetMapping("profile")
     public String getProfile(Model model, Authentication authentication) {
         UserInfo customer = securityDataService.getUserByEmailAddress(authentication.getName());
@@ -28,6 +36,20 @@ public class CustomerController {
         return "claim/profile";
     }
 
+    /**
+     * @api {GET} /customer/update profile update
+     * @apiVersion 1.0.0
+     * @apiName update profile of customer
+     * @apiGroup customer
+     * @apiDescription the interface of update profile of customer
+     * @apiParam firstName the firstName of customer
+     * @apiParam lastName the lastName of customer
+     * @apiParam phoneNumber the phoneNumber of customer
+     * @apiParam emailAddress the emailAddress of customer
+     * @apiParam nickName the nickName of customer
+     * @apiParam passport the passport of customer
+     * @apiSuccess success true
+     */
     @PostMapping("update")
     public String updateProfile(Model model, Authentication authentication, UserInfo customer) {
         UserInfo old = securityDataService.getUserByEmailAddress(authentication.getName());

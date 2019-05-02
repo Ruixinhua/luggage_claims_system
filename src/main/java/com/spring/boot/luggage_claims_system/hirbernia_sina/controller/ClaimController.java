@@ -38,6 +38,13 @@ public class ClaimController {
         return "redirect:/claim/write";
     }
 
+    /**
+     * @api {GET} /claim/policy get all policies
+     * @apiVersion 1.0.0
+     * @apiName get policies
+     * @apiGroup claim
+     * @apiSuccess success true
+     */
     @GetMapping("/policy")
     public String policy(Authentication authentication, Model model) {
         UserInfo customer = securityDataService.getUserByEmailAddress(authentication.getName());
@@ -56,6 +63,25 @@ public class ClaimController {
         return "redirect:/claim/policy";
     }
 
+    /**
+     * @api {GET} /claim/writeClaim write claim
+     * @apiVersion 1.0.0
+     * @apiName get write page
+     * @apiGroup claim
+     * @apiDescription the interface of accessing write page
+     * @apiParam serialNo the serialNo of policy
+     * @apiParamExample {json}
+     * Request-Example 1:
+     * {
+     * "serialNo":86437509
+     * }
+     * @apiSuccess success true
+     * @apiErrorExample {json} Error-Response:
+     * HTTP/1.1 404 Not Found
+     * {
+     * "error": "UserNotFound"
+     * }
+     */
     @GetMapping("/writeClaim")
     public String writeClaim(@RequestParam("serialNo") Long serialNo, Authentication authentication, Model model) {
         Policy policy = securityDataService.getPolicyById(serialNo);
@@ -77,6 +103,26 @@ public class ClaimController {
     public void uploadFile() {
 
     }
+
+    /**
+     * @api {GET} /claim/writeClaim get write page
+     * @apiVersion 1.0.0
+     * @apiName get write page
+     * @apiGroup claim
+     * @apiDescription the interface of accessing write page
+     * @apiParam serialNo the serialNo of policy
+     * @apiParamExample {json}
+     * Request-Example 1:
+     * {
+     * "serialNo":86437509
+     * }
+     * @apiSuccess success true
+     * @apiErrorExample {json} Error-Response:
+     * HTTP/1.1 404 Not Found
+     * {
+     * "error": "UserNotFound"
+     * }
+     */
     @PostMapping("/finish")
     public String create(@Valid @ModelAttribute("write") WriteInfo writeInfo, BindingResult bindingResult, Model model,
                          Authentication authentication) {
@@ -103,7 +149,25 @@ public class ClaimController {
         model.addAttribute("customer", userInfo);
         return "claim/finish";
     }
-
+    /**
+     * @api {GET} /claim/details details of claim
+     * @apiVersion 1.0.0
+     * @apiName get details of claim
+     * @apiGroup claim
+     * @apiDescription the interface of get details of claim
+     * @apiParam serialNo the serialNo of claim
+     * @apiParamExample {json}
+     * Request-Example 1:
+     * {
+     *      "serialNo":86437509
+     * }
+     * @apiSuccess success true
+     * @apiErrorExample {json} Error-Response:
+     *     HTTP/1.1 404 Not Found
+     *     {
+     *       "error": "UserNotFound"
+     *     }
+     */
     @GetMapping("/details")
     public String claimDetail(@RequestParam("serialNo") Long serialNo, Authentication authentication, Model model) {
         ClaimInfo claimInfo = securityDataService.getClaimById(serialNo);
@@ -117,6 +181,24 @@ public class ClaimController {
         return "employee/claimdetail";
     }
 
+    /**
+     * @api {POST} /claim/result deal with claim
+     * @apiVersion 1.0.0
+     * @apiName deal with claim
+     * @apiGroup claim
+     * @apiDescription the interface of deal with claim in employee end
+     * @apiParam feedback the result of dealing with claim
+     * @apiParam reason the reason for the result
+     * @apiParam emailAddress the email address of customer
+     * @apiParamExample {json}
+     * Request-Example 1:
+     * {
+     *      "feedback":"Approved",
+     *      "reason":"reasonable to claim",
+     *      "emailAddress":"temp@test.com"
+     * }
+     * @apiSuccess success true
+     */
     @PostMapping("/result")
     public String sendResult(@ModelAttribute("result") Result result, Authentication authentication) {
         System.out.println(result);
