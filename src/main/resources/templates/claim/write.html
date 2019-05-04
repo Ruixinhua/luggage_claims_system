@@ -291,7 +291,8 @@
 
                         <div class="form-group">
                             <div class="file-loading">
-                                <input id="file-1" type="file" multiple class="file" data-overwrite-initial="false"
+                                <input id="file-1" type="file" multiple class="file" name="file"
+                                       data-overwrite-initial="false"
                                        data-min-file-count="2" data-theme="fas">
                             </div>
                         </div>
@@ -331,7 +332,7 @@
     // });
     $("#file-1").fileinput({
         theme: 'fas',
-        uploadUrl: 'claim/upload', // you must set a valid URL here else you will get an error
+        uploadUrl: 'upload', // you must set a valid URL here else you will get an error
         showUpload: false, //是否显示上传按钮               
         allowedFileExtensions: ['jpg', 'png', 'gif'],
         overwriteInitial: false,

@@ -34,6 +34,16 @@ public class SecurityDataService {
     @Autowired
     private PolicyRepository policyRepository;
 
+    @Autowired
+    private FileRepository fileRepository;
+
+    public FileManager saveAndUpdateFile(FileManager file) {
+        return fileRepository.save(file);
+    }
+
+    public List<FileManager> getFileByCustomerId(Long customerId) {
+        return fileRepository.getAllByCustomerId(customerId);
+    }
     public ClaimInfo saveAndUpdateClaim(ClaimInfo claimInfo) {
         return claimRepository.saveAndFlush(claimInfo);
     }

@@ -2,22 +2,24 @@ package com.spring.boot.luggage_claims_system.hirbernia_sina.controller;
 
 import com.spring.boot.luggage_claims_system.hirbernia_sina.domain.*;
 import com.spring.boot.luggage_claims_system.hirbernia_sina.service.SecurityDataService;
-import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.security.access.annotation.Secured;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+import java.io.File;
 import java.io.IOException;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * @author Liu Dairui
@@ -52,6 +54,7 @@ public class ClaimController {
         model.addAttribute("policies", policies);
         return "claim/policy";
     }
+
     /**
      * @param
      * @return
@@ -99,9 +102,56 @@ public class ClaimController {
         return "claim/claims";
     }
 
-    @PostMapping("upload")
-    public void uploadFile() {
+    @RequestMapping("/upload")
+    @ResponseBody
+    public String handleFileUpload(HttpServletRequest request, Authentication authentication) {
+        MultipartHttpServletRequest params = ((MultipartHttpServletRequest) request);
+        List<MultipartFile> files = ((MultipartHttpServletRequest) request)
+                .getFiles("file");
+        MultipartFile file = null;
+        File directory = new File("");
+        try {
+            System.out.println(directory.getCanonicalPath());//获取标准的路径
+            System.out.println(directory.getAbsolutePath());//获取绝对路径
+        } catch (IOException e) {
+        }
+        UserInfo customer = securityDataService.getUserByEmailAddress(authentication.getName());
+        for (int i = 0; i < files.size(); ++i) {
 
+            file = files.get(i);
+            if (!file.isEmpty()) {
+                try {
+                    String fileName = Objects.requireNonNull(file.getOriginalFilename()).toLowerCase();
+                    if (!fileName.endsWith(".jpg") && !fileName.endsWith(".png") && !fileName.endsWith(".gif")) {
+                        return "Upload fail, you need to upload jpg, png or gif file";
+                    }
+                    System.out.println(fileName);
+                    String pathName = "/Users/ruixinhua/Documents/" + customer.getId() + "/" + fileName;
+                    File dest = new File(pathName);
+                    if (dest.exists()) {
+                        System.out.println("the file has uploaded");
+                        return "the file has uploaded";
+                    }
+                    if (!dest.getParentFile().exists()) {
+                        boolean result = dest.getParentFile().mkdirs();
+                        if (!result) {
+                            System.out.println("fail to create directory");
+                            return "fail to create directory";
+                        }
+                    }
+                    file.transferTo(dest);
+                    securityDataService.saveAndUpdateFile(new FileManager(null, pathName, customer.getId()));
+                    System.out.println("transfer success");
+                } catch (Exception e) {
+                    return "You failed to upload " + i + " => "
+                            + e.getMessage();
+                }
+            } else {
+                return "You failed to upload " + i
+                        + " because the file was empty.";
+            }
+        }
+        return "upload successful";
     }
 
     /**
@@ -134,21 +184,22 @@ public class ClaimController {
         }
 //        System.out.println(writeInfo);
         UserInfo userInfo;
-        if(authentication != null){
+        if (authentication != null) {
             userInfo = securityDataService.getUserByEmailAddress(authentication.getName());
-        }else {
+        } else {
             // TODO: remove, for post testing
             userInfo = securityDataService.getUserByEmailAddress(writeInfo.getEmailAddress());
         }
 //        System.out.println(userInfo);
         ClaimInfo claimInfo = new ClaimInfo(writeInfo.getSerialNo(), userInfo.getId(), writeInfo.getBillingAddress(),
-                writeInfo.getFlightNo(), writeInfo.getLuggageType(), 0L, writeInfo.getDetails(), new Date(),null);
+                writeInfo.getFlightNo(), writeInfo.getLuggageType(), 0L, writeInfo.getDetails(), new Date(), null);
         System.out.println(claimInfo);
         claimInfo.setSubmitDate(new Date());
         securityDataService.saveAndUpdateClaim(claimInfo);
         model.addAttribute("customer", userInfo);
         return "claim/finish";
     }
+
     /**
      * @api {GET} /claim/details details of claim
      * @apiVersion 1.0.0
@@ -159,14 +210,14 @@ public class ClaimController {
      * @apiParamExample {json}
      * Request-Example 1:
      * {
-     *      "serialNo":86437509
+     * "serialNo":86437509
      * }
      * @apiSuccess success true
      * @apiErrorExample {json} Error-Response:
-     *     HTTP/1.1 404 Not Found
-     *     {
-     *       "error": "UserNotFound"
-     *     }
+     * HTTP/1.1 404 Not Found
+     * {
+     * "error": "UserNotFound"
+     * }
      */
     @GetMapping("/details")
     public String claimDetail(@RequestParam("serialNo") Long serialNo, Authentication authentication, Model model) {
@@ -175,9 +226,11 @@ public class ClaimController {
         WriteInfo writeInfo = new WriteInfo(userInfo.getFirstName(), userInfo.getLastName(), userInfo.getPassport(),
                 claimInfo.getSerialNo(), userInfo.getPhoneNumber(), userInfo.getEmailAddress(), claimInfo.getBillingAddress(),
                 claimInfo.getFlightNo(), claimInfo.getLostLuggage(), claimInfo.getDetails());
+        List<FileManager> files = securityDataService.getFileByCustomerId(userInfo.getId());
         model.addAttribute("customerId", claimInfo.getCustomerId());
         model.addAttribute("write", writeInfo);
         model.addAttribute("result", new Result());
+        model.addAttribute("files", files);
         return "employee/claimdetail";
     }
 
@@ -193,9 +246,9 @@ public class ClaimController {
      * @apiParamExample {json}
      * Request-Example 1:
      * {
-     *      "feedback":"Approved",
-     *      "reason":"reasonable to claim",
-     *      "emailAddress":"temp@test.com"
+     * "feedback":"Approved",
+     * "reason":"reasonable to claim",
+     * "emailAddress":"temp@test.com"
      * }
      * @apiSuccess success true
      */
