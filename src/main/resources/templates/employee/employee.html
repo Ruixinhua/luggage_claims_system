@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+>
 <head>
     <meta charset="utf-8">
     <!--<meta http-equiv="refresh" content="1">-->
@@ -106,8 +106,11 @@
                     </td>
                     <td th:if="not ${claim.employeeId}"><a
                             th:href="@{/claim/details(serialNo=${claim.getSerialNo()})}">
-                        <i18n-pad i18nid="ViewMore">view more</i18n-pad> </a></td>
-                    <td th:if="${claim.employeeId}" th:text="${claim.result}"> <i18n-pad i18nid="Checked">checked</i18n-pad> </td>
+                        <i18n-pad i18nid="ViewMore">view more</i18n-pad>
+                    </a></td>
+                    <td th:if="${claim.employeeId}" th:text="${claim.result}">
+                        <i18n-pad i18nid="Checked">checked</i18n-pad>
+                    </td>
                 </tr>
                 </tbody>
             </table>

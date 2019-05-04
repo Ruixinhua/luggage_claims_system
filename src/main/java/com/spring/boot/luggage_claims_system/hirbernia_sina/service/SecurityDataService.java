@@ -48,6 +48,9 @@ public class SecurityDataService {
         return claimRepository.saveAndFlush(claimInfo);
     }
 
+    public Policy saveAndUpdatePolicy(Policy policy) {
+        return policyRepository.save(policy);
+    }
     public List<ClaimInfo> getAllClaimsByCustomerId(Long customerId) {
         return claimRepository.getAllByCustomerId(customerId);
     }

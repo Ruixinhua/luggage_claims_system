@@ -56,7 +56,7 @@
                     <img class="img-responsive img-rounded" src="assets/img/userInfo.jpg" alt="">
                 </div>
                 <div class="userInfo-info">
-                    <span class="userInfo-name">Yang <strong>Qingqiong</strong></span>
+                    <span class="userInfo-name"><strong th:text="${customer.nickname}"></strong></span>
                     <span class="userInfo-role" i18nid="Customer">Customer</span>
                     <div class="userInfo-status">
                         <a href="#"><span class="label label-success" i18nid="Online">Online</span></a>
@@ -154,8 +154,8 @@
                     <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
                 </p>
                 <div class="jumbotron" id="seetop">
-                    <h1 i18nid="ChooseYourClaims">Choose your claim</h1>
-                    <p i18nid="ChooseClaimTip">Please choose the claim you have registered.</p>
+                    <h1 i18nid="ChooseYourClaims">Check your claim</h1>
+                    <!--<p i18nid="ChooseClaimTip">You can check all claims.</p>-->
 
                 </div>
 

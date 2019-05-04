@@ -56,9 +56,22 @@ public class ClaimController {
         UserInfo customer = securityDataService.getUserByEmailAddress(authentication.getName());
         List<Policy> policies = securityDataService.getAllPoliciesByCustomerId(customer.getId());
         model.addAttribute("policies", policies);
+        model.addAttribute("customer", customer);
         return "claim/policy";
     }
 
+    @GetMapping("/renew")
+    public String renewPolicy(@RequestParam("serialNo") Long serialNo) {
+        Policy policy = securityDataService.getPolicyById(serialNo);
+        Date now = new Date();
+        Date end = policy.getValidateTo();
+        Calendar rightNow = Calendar.getInstance();
+        rightNow.setTime(end);
+        rightNow.add(Calendar.DAY_OF_YEAR, 2);
+        policy.setValidateTo(rightNow.getTime());
+        securityDataService.saveAndUpdatePolicy(policy);
+        return "redirect:/claim/policy";
+    }
     /**
      * @param
      * @return
@@ -98,13 +111,15 @@ public class ClaimController {
         return "claim/write";
     }
 
-    @GetMapping("claims")
+    @GetMapping("/claims")
     public String getAllClaims(Model model, Authentication authentication) {
         UserInfo customer = securityDataService.getUserByEmailAddress(authentication.getName());
         List<ClaimInfo> claims = securityDataService.getAllClaimsByCustomerId(customer.getId());
         model.addAttribute("claims", claims);
+        model.addAttribute("customer", customer);
         return "claim/claims";
     }
+
 
     @RequestMapping("/upload")
     @ResponseBody

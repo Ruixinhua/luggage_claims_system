@@ -56,7 +56,7 @@
                     <img class="img-responsive img-rounded" src="assets/img/userInfo.jpg" alt="">
                 </div>
                 <div class="userInfo-info">
-                    <span class="userInfo-name">Yang <strong>Qingqiong</strong></span>
+                    <span class="userInfo-name"><strong th:text="${customer.nickname}"></strong></span>
                     <span class="userInfo-role" i18nid="Customer">Customer</span>
                     <div class="userInfo-status">
                         <a href="#"><span class="label label-success" i18nid="Online">Online</span></a>
@@ -185,35 +185,40 @@
                                 <td th:text="${policy.flightNo}"></td>
                                 <td colspan="2" i18nid="BaggageType" th:text="${policy.insuranceType}"></td>
                                 <td th:text="${policy.policyHolder}"></td>
-                                <td colspan="2">
+                                <td colspan="2" rowspan="2" align="right">
                                     <a type="button" class="btn btn-detail btn-outline-primary"
                                        i18nid="ApplyCompensation"
                                        th:href="@{/claim/writeClaim(serialNo=${policy.serialNo})}">
-                                        Click me to apply for compensation
+                                        Apply
                                     </a>
                                 </td>
                             </tr>
                             </tbody>
                             <tbody class="ext">
                             <tr>
-                                <th height="40"></th>
+                                <!--<th height="40"></th>-->
                                 <th height="40" i18nid="SingleOrReturn">Single/Return</th>
-                                <th i18nid="ValidateFrom">Validate From</th>
-                                <th i18nid="ValidateTo">Validate To</th>
                                 <th i18nid="From">From</th>
                                 <th i18nid="To">To</th>
                                 <th i18nid="PiecesOfLuggage">Pieces of Luggage</th>
-
+                                <th i18nid="ValidateFrom">Validate From</th>
+                                <th i18nid="ValidateTo">Validate To</th>
+                                <td rowspan="2" align="right">
+                                    <a type="button" class="btn btn-detail btn-outline-primary"
+                                       i18nid="RenewPolicy"
+                                       th:href="@{/claim/renew(serialNo=${policy.serialNo})}">
+                                        Renew
+                                    </a>
+                                </td>
                             </tr>
                             <tr>
-                                <td></td>
+                                <!--<td></td>-->
                                 <td height="20" th:text="${policy.policyType}"></td>
-                                <td th:text="${policy.validateFrom}"></td>
-                                <td th:text="${policy.validateTo}"></td>
                                 <td th:text="${policy.placeFrom}"></td>
                                 <td th:text="${policy.placeTo}"></td>
-                                <td th:text="${policy.piecesOfLuggage}"></td>
-
+                                <td th:text="${policy.piecesOfLuggage}" align="center"></td>
+                                <td th:text="${policy.validateFrom}" class="validateFrom"></td>
+                                <td th:text="${policy.validateTo}" class="validateTo"></td>
                             </tr>
 
                             </tbody>
@@ -259,8 +264,6 @@
                 $(".lis .ext").slideUp();
             });
         });
-
-
     });
 
 </script>
