@@ -21,7 +21,7 @@ public class FileManager {
     @Column
     private String fileName;
     @Column
-    private Long customerId;
+    private Long serialNo;
 
     protected FileManager() {
 

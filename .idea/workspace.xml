@@ -2,37 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac41a1f6-9b90-4ab4-9b41-aa05e04a75c8" name="Default Changelist" comment="Add role, permission, and sql script.">
-      <change afterPath="$PROJECT_DIR$/fake.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/about.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/contact.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/shop.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/register.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/result.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/signin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileChanges/last-build.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/vcs-1/gc.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/authentication/HSUserDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/authentication/HSUserDetails.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/authentication/UserAuthenticationProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/authentication/UserAuthenticationProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/config/WebMvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/config/WebMvcConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/config/WebSecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/controller/ClaimController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/controller/ClaimController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/domain/ClaimInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/domain/ClaimInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/domain/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/domain/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/domain/UserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/domain/UserInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/service/HSUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/service/HSUserDetailsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/domain/FileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/domain/FileManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/repository/FileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/repository/FileRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/service/SecurityDataService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/service/SecurityDataService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/about.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/claim/policy.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/claim/policy.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/claim/write.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/claim/write.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/contact.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/shop.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/employee/claimdetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/employee/claimdetail.html" afterDir="false" />
     </list>
     <list id="05be7ca4-9a57-43b3-9b48-345739b3af7c" name="Revert: Add files via upload" comment="" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -79,7 +59,14 @@
         <item name="hibernia_sino@188.131.243.196" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="hibernia_sino: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="user: table" type="285a2a93:MysqlImplModel$Table" />
+        <item name="image: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="hibernia_sino@188.131.243.196" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="hibernia_sino: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="role_permissions: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -132,44 +119,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/controller/MainController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="26" column="22" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/fake.sql">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/controller/ClaimController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="81" column="14" selection-start-line="81" selection-start-column="14" selection-end-line="81" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/register.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="86" column="63" selection-start-line="86" selection-start-column="63" selection-end-line="86" selection-end-column="63" />
-              <folding>
-                <element signature="n#style#0;n#span#1;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/domain/Role.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="19" column="55" selection-start-line="19" selection-start-column="55" selection-end-line="19" selection-end-column="55" />
+            <state relative-caret-position="132">
+              <caret line="131" column="48" lean-forward="true" selection-start-line="131" selection-start-column="48" selection-end-line="131" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -178,10 +132,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/domain/ClaimInfo.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/controller/DataController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="523">
-              <caret line="46" selection-start-line="46" selection-end-line="46" />
+            <state relative-caret-position="-197">
+              <caret line="55" column="8" selection-start-line="55" selection-start-column="8" selection-end-line="55" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -192,8 +146,24 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/service/SecurityDataService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-215">
-              <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+            <state relative-caret-position="173">
+              <caret line="44" column="57" selection-start-line="44" selection-start-column="57" selection-end-line="44" selection-end-column="57" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1124#1125#0" expanded="true" />
+                <element signature="e#1190#1191#0" expanded="true" />
+                <element signature="method#getAllPoliciesByCustomerId#0;class#SecurityDataService#0" />
+                <element signature="method#saveUser#0;class#SecurityDataService#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/domain/FileManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-10">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -202,22 +172,40 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/service/HSUserDetailsService.java">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/employee/claimdetail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="30" selection-start-line="30" selection-end-line="30" />
+            <state relative-caret-position="228">
+              <caret line="168" column="53" selection-start-line="168" selection-start-column="53" selection-end-line="168" selection-end-column="53" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/employee/employee.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="74">
+              <caret line="98" column="29" selection-start-line="98" selection-start-column="29" selection-end-line="98" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/claim/write.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="161">
+              <caret line="345" column="23" selection-start-line="345" selection-start-column="21" selection-end-line="345" selection-end-column="23" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#17540#17546#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/authentication/UserAuthenticationProvider.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/repository/FileRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="117">
-              <caret line="31" column="81" selection-start-line="31" selection-start-column="81" selection-end-line="31" selection-end-column="81" />
+            <state relative-caret-position="210">
+              <caret line="14" column="54" selection-start-line="14" selection-start-column="54" selection-end-line="14" selection-end-column="54" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -231,36 +219,43 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
+      <find>optionJson</find>
+      <find>reje</find>
+      <find>Push</find>
+      <find>Me</find>
+      <find>Date</find>
+      <find>map</find>
+      <find>setInterval</find>
+      <find>disabled</find>
+      <find>claimList</find>
+      <find>RequireInfo</find>
+      <find>Info</find>
+      <find>MyProfile</find>
+      <find>value=&quot;email@example.com&quot;</find>
+      <find>passport</find>
+      <find>Nick</find>
+      <find>Passpo</find>
+      <find>navbar-toggle</find>
+      <find>lost</find>
+      <find>│   │  </find>
+      <find>│   │ </find>
+      <find>rootLocation</find>
+      <find>claim/upload</find>
+      <find>Not Found</find>
+      <find>unexpected</find>
+      <find>upload su</find>
+      <find>filema</find>
+      <find>fiel</find>
+      <find>file</find>
+      <find>findRolePermissionByRolesId</find>
       <find>id</find>
-      <find>href=&quot;</find>
-      <find>*</find>
-      <find>name=&quot;</find>
-      <find>claimInfo.</find>
-      <find>$</find>
-      <find>identity</find>
-      <find>claimNo</find>
-      <find>h1</find>
-      <find>luggage</find>
-      <find>value=</find>
-      <find>emailContent</find>
-      <find>swi</find>
-      <find>English</find>
-      <find>daohang</find>
-      <find>employeeRepository</find>
-      <find>policy</find>
-      <find>CustomerInfo</find>
-      <find>List</find>
-      <find>../</find>
-      <find>name should not null</find>
-      <find>VAuthenticationProvider</find>
-      <find>Hibernate:</find>
     </findStrings>
     <replaceStrings>
       <replace>identity</replace>
@@ -277,66 +272,74 @@
       <replace>feedback</replace>
       <replace>UserInfo</replace>
       <replace>Set</replace>
+      <replace>user</replace>
+      <replace>optionJson[i]</replace>
+      <replace>      </replace>
+      <replace>   </replace>
+      <replace>     </replace>
     </replaceStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/controller</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="RESET_MODE" value="KEEP" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/controller/UserController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/domain/User.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/employee/register_test.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/employee/claimdetail.html" />
-        <option value="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/RedisSessionConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/repository/ClaimRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/config/SecurityConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/repository/EmployeeRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/domain/EmailInfo.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/employee/register.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/claim/write.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/claim/claims.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/claim/finish.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/claim/seeclaim.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/employee/employee.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/employee/result.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/employee/signin.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/claim/claimdetail.html" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/loadi18n.js" />
-        <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/domain/Result.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/domain/WriteInfo.java" />
-        <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/repository/CustomerRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/domain/CustomerInfo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/authentication/EmployeeDetails.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/service/EmployeeDetailsService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/domain/EmployeeInfo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/repository/UserRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/domain/Permission.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/repository/RoleRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/repository/PermissionRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/controller/EmployeeController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/index.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/domain/ClaimInfo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/controller/ClaimController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/result.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/domain/UserInfo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/service/SecurityDataService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/authentication/HSUserDetails.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/config/WebMvcConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/service/HSUserDetailsService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/config/WebSecurityConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/signin.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/authentication/UserAuthenticationProvider.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/register.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/domain/Role.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/controller/MainController.java" />
         <option value="$PROJECT_DIR$/fake.sql" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/controller/MainController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/HirberniaSinaApplication.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/config/FastJsonHttpMessageConverterEx.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/config/WebMvcConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/config/WebMvcConfigurer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/authentication/UserAuthenticationProvider.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/authentication/UserAuthenticationFilter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/authentication/AuthenticationBean.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/config/WebSecurityConfig.java" />
+        <option value="$PROJECT_DIR$/policy.sql" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/authentication/SecurityAuthenticationSuccessHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/claim/profileNav.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/profileNav.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/commom/profileNav.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/repository/PolicyRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/domain/Policy.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/domain/ClaimInfo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/controller/EmployeeController.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/claim/policy.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/claim/claims.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/i18n/strings_en.properties" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/i18n/strings_zh.properties" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/claim/profile.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/index.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/service/StorageService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/service/FileSystemStorageService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/service/StorageProperties.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/service/StorageException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/service/StorageFileNotFoundException.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/employee/employee.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/storage/FileSystemStorageService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/config/SwaggerConfig.java" />
+        <option value="$PROJECT_DIR$/apidoc.json" />
+        <option value="$PROJECT_DIR$/apidoc.sh" />
+        <option value="$PROJECT_DIR$/apidoc/dev/apidoc.json" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/controller/CustomerController.java" />
+        <option value="$PROJECT_DIR$/tree.txt" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/repository/ClaimRepository.java" />
+        <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/controller/DataController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/storage/StorageProperties.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/claim/write.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/domain/FileManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/repository/FileRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/service/SecurityDataService.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/employee/claimdetail.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/controller/ClaimController.java" />
       </list>
     </option>
   </component>
@@ -358,35 +361,75 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="hibernia_sino" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hirbernia_sina" type="b2602c69:ProjectViewProjectNode" />
               <item name="hibernia_sino" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="hibernia_sino" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hirbernia_sina" type="b2602c69:ProjectViewProjectNode" />
               <item name="hibernia_sino" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="hibernia_sino" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hirbernia_sina" type="b2602c69:ProjectViewProjectNode" />
               <item name="hibernia_sino" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
-              <item name="hibernia_sino" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hirbernia_sina" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hibernia_sino" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hirbernia_sina" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hibernia_sino" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="hirbernia_sina" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hirbernia_sina" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hibernia_sino" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="hirbernia_sina" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hirbernia_sina" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hibernia_sino" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="hirbernia_sina" type="462c0819:PsiDirectoryNode" />
+              <item name="domain" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hirbernia_sina" type="b2602c69:ProjectViewProjectNode" />
               <item name="hibernia_sino" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="hibernia_sino" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hirbernia_sina" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hibernia_sino" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hirbernia_sina" type="b2602c69:ProjectViewProjectNode" />
               <item name="hibernia_sino" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
@@ -394,7 +437,16 @@
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="hibernia_sino" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hirbernia_sina" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hibernia_sino" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="claim" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hirbernia_sina" type="b2602c69:ProjectViewProjectNode" />
               <item name="hibernia_sino" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
@@ -406,6 +458,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -425,20 +478,24 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/templates/commom" />
+      <recent name="$PROJECT_DIR$/src/main/resources/templates" />
+      <recent name="$PROJECT_DIR$/src/main/resources/templates/claim" />
+      <recent name="$PROJECT_DIR$/src/main/resources/static" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/service" />
       <recent name="$PROJECT_DIR$/src/main/resources/templates" />
       <recent name="$PROJECT_DIR$/src/main/resources/templates/claim" />
       <recent name="$PROJECT_DIR$/src/main/resources/templates/employee" />
       <recent name="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/repository" />
-      <recent name="$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/domain" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources/templates" />
-      <recent name="$PROJECT_DIR$/src/main/resources/static" />
-      <recent name="$PROJECT_DIR$/src/main/resources/templates/claim" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.spring.boot.luggage_claims_system.hirbernia_sina.authentication" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -540,6 +597,24 @@
       <workItem from="1554888195818" duration="189000" />
       <workItem from="1554888430752" duration="20689000" />
       <workItem from="1555132079908" duration="13777000" />
+      <workItem from="1555900279403" duration="1126000" />
+      <workItem from="1556071354656" duration="17412000" />
+      <workItem from="1556118676701" duration="217000" />
+      <workItem from="1556158179085" duration="4457000" />
+      <workItem from="1556172374774" duration="6230000" />
+      <workItem from="1556354702830" duration="15190000" />
+      <workItem from="1556417337444" duration="213000" />
+      <workItem from="1556461322909" duration="7057000" />
+      <workItem from="1556470567324" duration="451000" />
+      <workItem from="1556502851282" duration="2704000" />
+      <workItem from="1556548449416" duration="7910000" />
+      <workItem from="1556588679685" duration="13571000" />
+      <workItem from="1556705392037" duration="1962000" />
+      <workItem from="1556708545462" duration="9119000" />
+      <workItem from="1556800891378" duration="69000" />
+      <workItem from="1556801086033" duration="442000" />
+      <workItem from="1556801829833" duration="425000" />
+      <workItem from="1556802312305" duration="14500000" />
     </task>
     <task id="LOCAL-00001" summary="Add validation for register and login">
       <created>1554280202868</created>
@@ -604,11 +679,74 @@
       <option name="project" value="LOCAL" />
       <updated>1554989934504</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Add authentication for android.">
+      <created>1556118764226</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1556118764227</updated>
+    </task>
+    <task id="LOCAL-00011" summary="fix problem of ajax function">
+      <created>1556190247783</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1556190247783</updated>
+    </task>
+    <task id="LOCAL-00012" summary="add json response for android app.">
+      <created>1556359890678</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1556359890678</updated>
+    </task>
+    <task id="LOCAL-00013" summary="improve function.">
+      <created>1556470424637</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1556470424637</updated>
+    </task>
+    <task id="LOCAL-00014" summary="update profile, update write.">
+      <created>1556556898127</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1556556898127</updated>
+    </task>
+    <task id="LOCAL-00015" summary="fix a small bug">
+      <created>1556558053221</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1556558053221</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Fix some bug, and add swagger api, file system can't work temporarily.">
+      <created>1556686530710</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1556686530713</updated>
+    </task>
+    <task id="LOCAL-00017" summary="explain api document">
+      <created>1556802129609</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1556802129609</updated>
+    </task>
+    <task id="LOCAL-00018" summary="add file manager controller">
+      <created>1556937420826</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1556937420827</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="152844000" />
+    <option name="totallyTimeSpent" value="262584000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -621,8 +759,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49633253" visible="true" weight="0.23828755" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49633253" visible="true" weight="0.24232633" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -632,33 +771,34 @@
       <window_info id="Web" order="7" sideWeight="0.5036675" side_tool="true" weight="0.28029078" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32846716" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.62520194" weight="0.32328767" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.6082391" visible="true" weight="0.34246576" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49919224" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49919224" weight="0.32846716" />
-      <window_info anchor="bottom" id="Build" order="7" weight="0.30547947" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49919224" weight="0.32739726" />
+      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.49919224" weight="0.30547947" />
       <window_info anchor="bottom" id="Spring" order="8" sideWeight="0.49919224" weight="0.32876712" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49757674" weight="0.29589042" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4927302" weight="0.30136988" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.4361874" side_tool="true" weight="0.3479452" />
-      <window_info active="true" anchor="bottom" id="Messages" order="12" sideWeight="0.5710824" visible="true" weight="0.32739726" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.39176092" side_tool="true" weight="0.33835617" />
+      <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.5912762" weight="0.32739726" />
       <window_info anchor="bottom" id="Java Enterprise" order="13" sideWeight="0.49919224" weight="0.32846716" />
       <window_info anchor="bottom" id="Database Changes" order="14" sideWeight="0.49919224" weight="0.32876712" />
-      <window_info anchor="bottom" id="Version Control" order="15" sideWeight="0.5638126" weight="0.3931507" />
-      <window_info anchor="bottom" id="Problems" order="16" weight="0.32739726" />
-      <window_info anchor="bottom" id="Database Console" order="17" weight="0.32846716" />
+      <window_info anchor="bottom" id="Version Control" order="15" sideWeight="0.5541195" weight="0.29589042" />
+      <window_info anchor="bottom" id="Problems" order="16" sideWeight="0.4927302" weight="0.32739726" />
+      <window_info anchor="bottom" id="Database Console" order="17" weight="0.32739726" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24959612" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Maven" order="3" weight="0.32956383" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Gradle" order="6" weight="0.32875606" />
-      <window_info anchor="right" id="Database" order="7" visible="true" weight="0.16720517" />
+      <window_info anchor="right" id="Gradle" order="6" weight="0.20436187" />
+      <window_info anchor="right" id="Database" order="7" visible="true" weight="0.19466881" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info anchor="right" id="Theme Preview" order="9" />
       <window_info anchor="right" id="Bean Validation" order="10" weight="0.32956383" />
+      <window_info anchor="right" id="SciView" order="11" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -708,13 +848,21 @@
     <MESSAGE value="Add validation for register and login" />
     <MESSAGE value="add redirect mapping" />
     <MESSAGE value="employee can check claim" />
-    <MESSAGE value="fix a small bug" />
     <MESSAGE value="when employee deal with the claim, an email will be sent to customer." />
     <MESSAGE value="change path to &quot;/js/i18n&quot;" />
     <MESSAGE value="format code" />
     <MESSAGE value="Add part of authentication." />
     <MESSAGE value="Add role, permission, and sql script." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add role, permission, and sql script." />
+    <MESSAGE value="Add authentication for android." />
+    <MESSAGE value="fix problem of ajax function" />
+    <MESSAGE value="add json response for android app." />
+    <MESSAGE value="improve function." />
+    <MESSAGE value="update profile, update write." />
+    <MESSAGE value="fix a small bug" />
+    <MESSAGE value="Fix some bug, and add swagger api, file system can't work temporarily." />
+    <MESSAGE value="explain api document" />
+    <MESSAGE value="add file manager controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="add file manager controller" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="antWorkspaceConfiguration">
@@ -722,247 +870,34 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.6/2908ec27909c1929a9f2e031e4ae27e54d268860/lombok-1.18.6-sources.jar!/lombok/AllArgsConstructor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="41" column="18" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gradlew">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="32" column="54" selection-start-line="32" selection-start-column="54" selection-end-line="32" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/domain/Result.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/about.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="48" column="24" lean-forward="true" selection-start-line="48" selection-start-column="24" selection-end-line="48" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/loadi18n.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="60" column="28" selection-start-line="60" selection-start-column="28" selection-end-line="60" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/claim/policy.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="33" column="37" lean-forward="true" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="37" />
+        <state relative-caret-position="2040">
+          <caret line="136" column="60" selection-start-line="136" selection-start-column="60" selection-end-line="136" selection-end-column="60" />
         </state>
       </provider>
     </entry>
-    <entry file="das://ea78c75b-5a31-409e-b58b-0014df051f27/schema/hibernia_sino/table/claim">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/repository/CustomerRepository.java" />
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.security/spring-security-core/5.1.4.RELEASE/471a9157eb19b4cbe5881a74a8b8ac621d07f0ad/spring-security-core-5.1.4.RELEASE-sources.jar!/org/springframework/security/core/userdetails/UserDetails.java">
+    <entry file="file://$PROJECT_DIR$/createDB.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="59" column="11" selection-start-line="59" selection-start-column="11" selection-end-line="59" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/controller/CustomerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://ea78c75b-5a31-409e-b58b-0014df051f27/schema/hibernia_sino/table/employee" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/domain/WriteInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="92">
+          <caret line="90" column="26" selection-start-line="90" selection-start-column="16" selection-end-line="90" selection-end-column="26" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-jpa/2.1.5.RELEASE/3039db3b3041913b57092ce7fa8bb43ca1d5b214/spring-data-jpa-2.1.5.RELEASE-sources.jar!/org/springframework/data/jpa/repository/JpaRepository.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/claim/profile.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="97" column="6" selection-start-line="97" selection-start-column="6" selection-end-line="97" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/repository/UserRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="53" selection-start-line="13" selection-start-column="53" selection-end-line="13" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/repository/RoleRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="66" selection-start-line="13" selection-start-column="66" selection-end-line="13" selection-end-column="66" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-autoconfigure/2.1.3.RELEASE/6df39e2fbf8757ce2bf084909224e7e78f315ec7/spring-boot-autoconfigure-2.1.3.RELEASE-sources.jar!/org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="504" column="43" selection-start-line="504" selection-start-column="43" selection-end-line="504" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/HirberniaSinaApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-          <folding>
-            <element signature="e#291#292#0" expanded="true" />
-            <element signature="e#366#367#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/repository/PermissionRepository.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/repository/ClaimRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELP.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/employee/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="10" column="39" lean-forward="true" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
-          <folding>
-            <element signature="n#style#0;n#span#1;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/favicon.ico">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/employee/signin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-863">
-          <caret line="41" column="53" selection-start-line="41" selection-start-column="53" selection-end-line="41" selection-end-column="53" />
+        <state relative-caret-position="455">
+          <caret line="204" column="51" selection-start-line="204" selection-start-column="51" selection-end-line="204" selection-end-column="51" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="879">
-          <caret line="63" column="38" selection-start-line="63" selection-start-column="38" selection-end-line="63" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/controller/EmployeeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-173">
-          <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/controller/ClaimController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="65">
-          <caret line="58" column="94" selection-start-line="58" selection-start-column="94" selection-end-line="58" selection-end-column="94" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-autoconfigure/2.1.3.RELEASE/6df39e2fbf8757ce2bf084909224e7e78f315ec7/spring-boot-autoconfigure-2.1.3.RELEASE-sources.jar!/org/springframework/boot/autoconfigure/orm/jpa/JpaBaseConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="136" column="50" selection-start-line="136" selection-start-column="50" selection-end-line="136" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/domain/Permission.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="27" column="41" selection-start-line="27" selection-start-column="41" selection-end-line="27" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.security/spring-security-config/5.1.4.RELEASE/2868102dfd12fd9a8dc5425d825e82e07eadd131/spring-security-config-5.1.4.RELEASE-sources.jar!/org/springframework/security/config/annotation/web/AbstractRequestMatcherRegistry.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="113" column="32" lean-forward="true" selection-start-line="113" selection-start-column="32" selection-end-line="113" selection-end-column="32" />
-          <folding>
-            <element signature="e#4190#4191#0" expanded="true" />
-            <element signature="e#4266#4267#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/src.zip!/java/security/Principal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="71" column="18" selection-start-line="71" selection-start-column="18" selection-end-line="71" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.security/spring-security-core/5.1.4.RELEASE/471a9157eb19b4cbe5881a74a8b8ac621d07f0ad/spring-security-core-5.1.4.RELEASE-sources.jar!/org/springframework/security/core/userdetails/UserDetailsService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="34" column="17" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/authentication/HSUserDetails.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="52" column="73" selection-start-line="52" selection-start-column="73" selection-end-line="52" selection-end-column="73" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="223">
+          <caret line="64" column="119" selection-start-line="64" selection-start-column="119" selection-end-line="64" selection-end-column="119" />
         </state>
       </provider>
     </entry>
@@ -973,132 +908,105 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/claim/write.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="27" column="37" lean-forward="true" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="37" />
+    <entry file="das://ea78c75b-5a31-409e-b58b-0014df051f27/schema/hibernia_sino/table/claim">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/result.html">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/claim/claims.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-221">
-          <caret line="98" column="59" selection-start-line="98" selection-start-column="59" selection-end-line="98" selection-end-column="59" />
+        <state relative-caret-position="235">
+          <caret line="109" selection-start-line="109" selection-end-line="109" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/config/WebMvcConfig.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/inputFile/fileinput.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
+        <state relative-caret-position="188">
+          <caret line="5503" column="40" selection-start-line="5503" selection-start-column="40" selection-end-line="5503" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apidoc/index.html" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/HirberniaSinaApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/config/WebSecurityConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="30" column="64" selection-start-line="30" selection-start-column="64" selection-end-line="30" selection-end-column="64" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/signin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="93" selection-start-line="93" selection-end-line="93" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/authentication/UserAuthenticationProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="31" column="81" selection-start-line="31" selection-start-column="81" selection-end-line="31" selection-end-column="81" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#366#367#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/service/HSUserDetailsService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
+        <state relative-caret-position="179">
+          <caret line="28" column="17" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/config/SwaggerConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="86" column="63" selection-start-line="86" selection-start-column="63" selection-end-line="86" selection-end-column="63" />
-          <folding>
-            <element signature="n#style#0;n#span#1;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/domain/UserInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="61">
-          <caret line="25" column="4" lean-forward="true" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/domain/ClaimInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="523">
-          <caret line="46" selection-start-line="46" selection-end-line="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="17" column="36" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/domain/Role.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="19" column="55" selection-start-line="19" selection-start-column="55" selection-end-line="19" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://ea78c75b-5a31-409e-b58b-0014df051f27/schema/hibernia_sino/table/role">
+    <entry file="das://ea78c75b-5a31-409e-b58b-0014df051f27/schema/hibernia_sino/table/policy">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
         </state>
       </provider>
     </entry>
-    <entry file="das://ea78c75b-5a31-409e-b58b-0014df051f27/schema/hibernia_sino/table/permission">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
+    <entry file="file://$PROJECT_DIR$/apidoc.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="11" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="42" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/service/SecurityDataService.java">
+    <entry file="file://$PROJECT_DIR$/apidoc/dev/apidoc.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-215">
-          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+        <state relative-caret-position="45">
+          <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/repository/PermissionRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/controller/CustomerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-241">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tree.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/controller/EmployeeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="900">
+          <caret line="74" column="43" selection-start-line="74" selection-start-column="43" selection-end-line="74" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1107,18 +1015,265 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/controller/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="26" column="22" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
+        <state relative-caret-position="120">
+          <caret line="21" column="11" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fake.sql">
+    <entry file="file://$PROJECT_DIR$/apidoc.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="81" column="14" selection-start-line="81" selection-start-column="14" selection-end-line="81" selection-end-column="14" />
+        <state relative-caret-position="255">
+          <caret line="17" column="149" selection-start-line="17" selection-start-column="149" selection-end-line="17" selection-end-column="149" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/authentication/HSUserDetails.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-509">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="32" column="73" selection-start-line="32" selection-start-column="73" selection-end-line="32" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/storage/StorageService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/storage/StorageFileNotFoundException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/storage/StorageException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/src.zip!/java/nio/file/Paths.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="37" column="19" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/storage/StorageProperties.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="35" lean-forward="true" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/storage/FileSystemStorageService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="54" column="47" selection-start-line="54" selection-start-column="35" selection-end-line="54" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/inputFile/locales/LANG.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="36" column="40" selection-start-line="36" selection-start-column="40" selection-end-line="36" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/5.1.5.RELEASE/46673f1424ad8dc3a9fc39a96730e1ee2663fc18/spring-web-5.1.5.RELEASE-sources.jar!/org/springframework/web/multipart/MultipartFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="130" column="9" selection-start-line="130" selection-start-column="9" selection-end-line="130" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/authentication/UserAuthenticationProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/repository/ClaimRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="36" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-beans/5.1.5.RELEASE/65b8846a1d79cfff2bcd44e0d40c5f95c5cb2d14/spring-beans-5.1.5.RELEASE-sources.jar!/org/springframework/beans/factory/support/BeanDefinitionValueResolver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="326" selection-start-line="326" selection-end-line="326" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-beans/5.1.5.RELEASE/65b8846a1d79cfff2bcd44e0d40c5f95c5cb2d14/spring-beans-5.1.5.RELEASE-sources.jar!/org/springframework/beans/factory/annotation/AutowiredAnnotationBeanPostProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="592" selection-start-line="592" selection-end-line="592" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/domain/UserInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="27" column="4" lean-forward="true" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/config/WebSecurityConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="41" column="13" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/domain/ClaimInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="19" column="7" lean-forward="true" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/domain/RolePermission.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/repository/RolePermissionRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="69" selection-start-line="9" selection-start-column="69" selection-end-line="9" selection-end-column="69" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://ea78c75b-5a31-409e-b58b-0014df051f27/schema/hibernia_sino/table/role_permissions">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/repository/FileRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="54" selection-start-line="14" selection-start-column="54" selection-end-line="14" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/employee/employee.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="74">
+          <caret line="98" column="29" selection-start-line="98" selection-start-column="29" selection-end-line="98" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/controller/DataController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-197">
+          <caret line="55" column="8" selection-start-line="55" selection-start-column="8" selection-end-line="55" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/claim/write.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="345" column="23" selection-start-line="345" selection-start-column="21" selection-end-line="345" selection-end-column="23" />
+          <folding>
+            <element signature="e#17540#17546#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/employee/claimdetail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="168" column="53" selection-start-line="168" selection-start-column="53" selection-end-line="168" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/service/SecurityDataService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="44" column="57" selection-start-line="44" selection-start-column="57" selection-end-line="44" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1124#1125#0" expanded="true" />
+            <element signature="e#1190#1191#0" expanded="true" />
+            <element signature="method#getAllPoliciesByCustomerId#0;class#SecurityDataService#0" />
+            <element signature="method#saveUser#0;class#SecurityDataService#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/domain/FileManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-10">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://ea78c75b-5a31-409e-b58b-0014df051f27/schema/hibernia_sino/table/image">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/boot/luggage_claims_system/hirbernia_sina/controller/ClaimController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="131" column="48" lean-forward="true" selection-start-line="131" selection-start-column="48" selection-end-line="131" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1185,7 +1340,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>com.spring.boot.luggage_claims_system.hirbernia_sina</last-edited>
+          <last-edited>main|com.spring.boot.luggage_claims_system.hirbernia_sina</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

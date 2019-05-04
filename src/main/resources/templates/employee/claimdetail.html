@@ -161,12 +161,12 @@
             <div class="form-group row">
                 <label for="detail" class="col-sm-2 col-form-label" i18nid="Detail">Detail:</label>
                 <div class="col-sm-10">
-                    <input type="text" readonly class="form-control-plaintext empty" id="detail" th:value="*{details}">
+                    <input type="textA" readonly class="form-control-plaintext empty" id="detail" th:value="*{details}">
                 </div>
             </div>
             <div class="form-group row">
                 <div class="col-sm-10" th:each="file : ${files}">
-                    <img th:src="@{${file.fileName}}"/>
+                    <img th:src="@{${file.fileName}}" width="200px" height="250px"/>
                 </div>
             </div>
         </form>

@@ -41,8 +41,8 @@ public class SecurityDataService {
         return fileRepository.save(file);
     }
 
-    public List<FileManager> getFileByCustomerId(Long customerId) {
-        return fileRepository.getAllByCustomerId(customerId);
+    public List<FileManager> getFileBySerialNo(Long serialNo) {
+        return fileRepository.getAllBySerialNo(serialNo);
     }
     public ClaimInfo saveAndUpdateClaim(ClaimInfo claimInfo) {
         return claimRepository.saveAndFlush(claimInfo);

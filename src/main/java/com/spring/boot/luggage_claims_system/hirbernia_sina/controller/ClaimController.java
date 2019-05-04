@@ -17,9 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.io.File;
 import java.io.IOException;
-import java.util.Date;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 /**
  * @author Liu Dairui
@@ -34,6 +32,12 @@ public class ClaimController {
 
     @Autowired
     private JavaMailSender mailSender;
+
+    public static boolean isValidFileName(String fileName) {
+        if (fileName == null || fileName.length() > 255) return false;
+        else
+            return fileName.matches("[^\\s\\\\/:\\*\\?\\\"<>\\|](\\x20|[^\\s\\\\/:\\*\\?\\\"<>\\|])*[^\\s\\\\/:\\*\\?\\\"<>\\|\\.]$");
+    }
 
     @GetMapping
     public String claim() {
@@ -104,10 +108,14 @@ public class ClaimController {
 
     @RequestMapping("/upload")
     @ResponseBody
-    public String handleFileUpload(HttpServletRequest request, Authentication authentication) {
+    public Map<String, String> handleFileUpload(HttpServletRequest request, Authentication authentication) {
         MultipartHttpServletRequest params = ((MultipartHttpServletRequest) request);
+        Map<String, String> result = new HashMap<>();
+        result.put("success", "false");
         List<MultipartFile> files = ((MultipartHttpServletRequest) request)
                 .getFiles("file");
+        String serialNo = request.getParameter("id");
+        System.out.println(serialNo);
         MultipartFile file = null;
         File directory = new File("");
         try {
@@ -121,37 +129,49 @@ public class ClaimController {
             file = files.get(i);
             if (!file.isEmpty()) {
                 try {
-                    String fileName = Objects.requireNonNull(file.getOriginalFilename()).toLowerCase();
+                    String fileName = Objects.requireNonNull(file.getOriginalFilename()).toLowerCase().replace(" ", "");
                     if (!fileName.endsWith(".jpg") && !fileName.endsWith(".png") && !fileName.endsWith(".gif")) {
-                        return "Upload fail, you need to upload jpg, png or gif file";
+                        result.put("msg", "Upload fail, you need to upload jpg, png or gif file");
+                        return result;
                     }
                     System.out.println(fileName);
-                    String pathName = "/Users/ruixinhua/Documents/" + customer.getId() + "/" + fileName;
-                    File dest = new File(pathName);
+                    if (!isValidFileName(fileName)) {
+                        result.put("msg", "file name is not valid");
+                        return result;
+                    }
+                    String pathName = "../images/" + serialNo + "/" + fileName;
+                    String destPath = directory.getAbsolutePath() + "/src/main/resources/static/images/"
+                            + serialNo + "/" + fileName;
+                    File dest = new File(destPath);
                     if (dest.exists()) {
-                        System.out.println("the file has uploaded");
-                        return "the file has uploaded";
+//                        System.out.println("the file has uploaded");
+                        result.put("msg", "the file has uploaded");
+                        return result;
                     }
                     if (!dest.getParentFile().exists()) {
-                        boolean result = dest.getParentFile().mkdirs();
-                        if (!result) {
-                            System.out.println("fail to create directory");
-                            return "fail to create directory";
+                        boolean temp = dest.getParentFile().mkdirs();
+                        if (!temp) {
+//                            System.out.println("fail to create directory");
+                            result.put("msg", "fail to create directory");
+                            return result;
                         }
                     }
+
                     file.transferTo(dest);
-                    securityDataService.saveAndUpdateFile(new FileManager(null, pathName, customer.getId()));
+                    securityDataService.saveAndUpdateFile(new FileManager(null, pathName, Long.parseLong(serialNo)));
                     System.out.println("transfer success");
                 } catch (Exception e) {
-                    return "You failed to upload " + i + " => "
-                            + e.getMessage();
+                    result.put("msg", "You failed to upload " + i + " => " + e.getMessage());
+                    return result;
                 }
             } else {
-                return "You failed to upload " + i
-                        + " because the file was empty.";
+                result.put("msg", "You failed to upload " + i + " because the file was empty.");
+                return result;
             }
         }
-        return "upload successful";
+        result.replace("success", "true");
+        result.put("msg", "upload successful");
+        return result;
     }
 
     /**
@@ -226,7 +246,7 @@ public class ClaimController {
         WriteInfo writeInfo = new WriteInfo(userInfo.getFirstName(), userInfo.getLastName(), userInfo.getPassport(),
                 claimInfo.getSerialNo(), userInfo.getPhoneNumber(), userInfo.getEmailAddress(), claimInfo.getBillingAddress(),
                 claimInfo.getFlightNo(), claimInfo.getLostLuggage(), claimInfo.getDetails());
-        List<FileManager> files = securityDataService.getFileByCustomerId(userInfo.getId());
+        List<FileManager> files = securityDataService.getFileBySerialNo(serialNo);
         model.addAttribute("customerId", claimInfo.getCustomerId());
         model.addAttribute("write", writeInfo);
         model.addAttribute("result", new Result());

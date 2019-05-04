@@ -12,5 +12,5 @@ import java.util.List;
  */
 @Repository
 public interface FileRepository extends JpaRepository<FileManager, Long> {
-    List<FileManager> getAllByCustomerId(Long customerId);
+    List<FileManager> getAllBySerialNo(Long serialNo);
 }
