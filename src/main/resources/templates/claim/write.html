@@ -349,6 +349,13 @@
         slugCallback: function (filename) {
             return filename.replace('(', '_').replace(']', '_');
         }
+    }).on("fileuploaded", function (event, data) {
+        console.log(data);
+        if (data.response.success == 'false') {
+            $(".file-drop-zone").append("<div class='kv-fileinput-error file-error-message'></div>");
+            $(".file-drop-zone").find(".kv-fileinput-error").html(data.response.msg);
+            $(".file-drop-zone").find(".kv-fileinput-error").fadeOut(5000);
+        }
     });
 
     $(document).ready(function () {

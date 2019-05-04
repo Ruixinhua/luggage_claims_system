@@ -67,22 +67,18 @@
     <div class="row">
 
     </div>
-    <div class="col-sm-3 col-md-2 sidebar">
+    <!--<div class="col-sm-3 col-md-2 sidebar">-->
         <!--<ul class="list list-group" id="daohang">-->
-        <!--<li class="list-group-item d-flex justify-content-between align-items-center">-->
-        <!--<i18n-pad i18nid="Solved">solved</i18n-pad>-->
-        <!--<span class="badge badge-primary badge-pill">14</span>-->
-        <!--</li>-->
-        <!--<li class="list-group-item d-flex justify-content-between align-items-center">-->
-        <!--<i18n-pad i18nid="Processing">processing</i18n-pad>-->
-        <!--<span class="badge badge-primary badge-pill">2</span>-->
-        <!--</li>-->
-        <!--<li class="list-group-item d-flex justify-content-between align-items-center">-->
-        <!--<i18n-pad i18nid="Pending">pending</i18n-pad>-->
-        <!--<span class="badge badge-primary badge-pill">1</span>-->
-        <!--</li>-->
+    <!--<li class="list-group-item d-flex justify-content-between align-items-center" id="unprocessed">-->
+    <!--<i18n-pad i18nid="Unprocessed">Unprocessed</i18n-pad>-->
+    <!--<span class="badge badge-primary badge-pill" th:text="${unprocessed}">0</span>-->
+    <!--</li>-->
+    <!--<li class="list-group-item d-flex justify-content-between align-items-center" id="processed">-->
+    <!--<i18n-pad i18nid="Approved">Processed</i18n-pad>-->
+    <!--<span class="badge badge-primary badge-pill" th:text="${approved}">0</span>-->
+    <!--</li>-->
         <!--</ul>-->
-    </div>
+    <!--</div>-->
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
         <h2 class="sub-header" i18nid="ClaimDetail">Claim Detail</h2>
@@ -90,78 +86,78 @@
             <div class="form-group row">
                 <label for="customerId" class="col-sm-2 col-form-label" i18nid="CustomerId">Customer ID:</label>
                 <div class="col-sm-10">
-                    <input type="text" readonly class="form-control-plaintext empty" id="customerId"
-                           th:value="${customerId}" value="email@example.com">
+                    <p type="text" readonly class="form-control-plaintext empty" id="customerId"
+                       th:text="${customerId}" value="email@example.com"></p>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="passportNo" class="col-sm-2 col-form-label" i18nid="PassportNo">Passport Number:</label>
                 <div class="col-sm-10">
-                    <input type="text" readonly class="form-control-plaintext empty" id="passportNo"
-                           th:value="*{passport}" value="email@example.com">
+                    <p type="text" readonly class="form-control-plaintext empty" id="passportNo"
+                       th:text="*{passport}" value="email@example.com"></p>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="firstName" class="col-sm-2 col-form-label" i18nid="FirstName">First Name:</label>
                 <div class="col-sm-10">
-                    <input type="text" readonly class="form-control-plaintext empty" id="firstName"
-                           th:value="*{firstName}" value="email@example.com">
+                    <p type="text" readonly class="form-control-plaintext empty" id="firstName"
+                       th:text="*{firstName}" value="email@example.com"></p>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="lastName" class="col-sm-2 col-form-label" i18nid="LastName">Last Name:</label>
                 <div class="col-sm-10">
-                    <input type="text" readonly class="form-control-plaintext empty" id="lastName"
-                           th:value="*{lastName}" value="email@example.com">
+                    <p type="text" readonly class="form-control-plaintext empty" id="lastName"
+                       th:text="*{lastName}" value="email@example.com"></p>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="PhoneNo" class="col-sm-2 col-form-label" i18nid="PhoneNo">Phone Number:</label>
                 <div class="col-sm-10">
-                    <input type="text" readonly class="form-control-plaintext empty" id="PhoneNo"
-                           th:value="*{phoneNumber}" value="email@example.com">
+                    <p type="text" readonly class="form-control-plaintext empty" id="PhoneNo"
+                       th:text="*{phoneNumber}" value="email@example.com"></p>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="emailAddress" class="col-sm-2 col-form-label" i18nid="EmailAddress">Email Address:</label>
                 <div class="col-sm-10">
-                    <input type="text" readonly class="form-control-plaintext empty" id="emailAddress"
-                           th:value="*{emailAddress}" value="email@example.com">
+                    <p type="text" readonly class="form-control-plaintext empty" id="emailAddress"
+                       th:text="*{emailAddress}" value="email@example.com"></p>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="claimId" class="col-sm-2 col-form-label" i18nid="ClaimId">Claim ID:</label>
                 <div class="col-sm-10">
-                    <input type="text" readonly class="form-control-plaintext empty" id="claimId" th:value="*{serialNo}"
-                           value="email@example.com">
+                    <p type="text" readonly class="form-control-plaintext empty" id="claimId" th:text="*{serialNo}"
+                       value="email@example.com"></p>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="billingAddress" class="col-sm-2 col-form-label" i18nid="BillingAddress">Billing
                     Address:</label>
                 <div class="col-sm-10">
-                    <input type="text" readonly class="form-control-plaintext empty" id="billingAddress"
-                           th:value="*{billingAddress}" value="email@example.com">
+                    <p type="text" readonly class="form-control-plaintext empty" id="billingAddress"
+                       th:text="*{billingAddress}" value="email@example.com"></p>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="flightNo" class="col-sm-2 col-form-label" i18nid="FlightNo">Flight Number:</label>
                 <div class="col-sm-10">
-                    <input type="text" readonly class="form-control-plaintext empty" id="flightNo"
-                           th:value="*{flightNo}" value="email@example.com">
+                    <p type="text" readonly class="form-control-plaintext empty" id="flightNo"
+                       th:text="*{flightNo}" value="email@example.com"></p>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="luggageType" class="col-sm-2 col-form-label" i18nid="LuggageType">Luggage Type:</label>
                 <div class="col-sm-10">
-                    <input type="text" readonly class="form-control-plaintext empty" id="luggageType"
-                           th:value="*{luggageType}" value="email@example.com">
+                    <p type="text" readonly class="form-control-plaintext empty" id="luggageType"
+                       th:text="*{luggageType}" value="email@example.com"></p>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="detail" class="col-sm-2 col-form-label" i18nid="Detail">Detail:</label>
                 <div class="col-sm-10">
-                    <input type="textA" readonly class="form-control-plaintext empty" id="detail" th:value="*{details}">
+                    <p type="textA" readonly class="form-control-plaintext empty" id="detail" th:text="*{details}"></p>
                 </div>
             </div>
             <div class="form-group row">
