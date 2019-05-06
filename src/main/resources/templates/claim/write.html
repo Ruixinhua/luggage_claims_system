@@ -130,7 +130,8 @@
                         <li><a href="../shop.html" i18nid="ShopProducts">Shop products</a></li>
                         <li class="active"><a href="/claim/write" i18nid="ClaimSettlements">Claim settlements</a></li>
                         <li><a href="../contact.html" i18nid="ContactUs">Contact us</a></li>
-                        <li><a href="#news" i18nid="News">News</a></li>
+                            
+                        <li><a href="news.html" i18nid="News">News</a></li>
                         <li><a></a></li>
                         <li><a></a></li>
                         <li><a></a></li>
@@ -180,17 +181,17 @@
                 <div class="rows">
                     <form class="form-signin " enctype="multipart/form-data" id="form1" action="/claim/finish"
                           method="post"
-                          th:object="${customer}"
+                          th:object="${write}"
                     >
                         <h2 class="form-signin-heading" i18nid="PlsWriteInfo">Please write informations</h2>
                         <p i18nid="FirstName">First Name</p>
                         <label for="inputFirstName" class="sr-only">First Name</label>
                         <div class="box">
                             <i class="icon-search"></i>
-                            <input type="text" id="inputFirstName" i18nid_placeholder="EnterFirstnameTip"
+                            <input typpolicye="text" id="inputFirstName" i18nid_placeholder="EnterFirstnameTip"
                                    class="form-control"
                                    name="firstName" th:value="*{firstName}" placeholder="Please enter your first name"
-                                   maxlength="25" required disabled>
+                                   maxlength="25" required readonly>
 
                         </div>
                         <p i18nid="LastName">Last Name</p>
@@ -200,7 +201,7 @@
                             <input type="text" id="inputLastName" i18nid_placeholder="EnterLastNameTip"
                                    class="form-control"
                                    name="lastName" th:value="*{lastName}" placeholder="Please enter your last name"
-                                   maxlength="25" required disabled>
+                                   maxlength="25" required readonly>
                         </div>
 
                         <p i18nid="SerialNo">Serial No.</p>
@@ -209,9 +210,9 @@
                             <i class="icon-search"></i>
                             <input type="text" id="inputClaimNo" i18nid_placeholder="EnterClaimNoTip"
                                    class="form-control"
-                                   name="serialNo" th:value="${policy.serialNo}"
+                                   name="serialNo" th:value="*{serialNo}"
                                    placeholder="Please enter your insurance's serial number" maxlength="20" required
-                                   disabled>
+                                   readonly>
                         </div>
                         <p i18nid="PhoneNo">Phone No.</p>
                         <!--<label for="inputPhone" class="sr-only"> Phone</label>-->
@@ -222,7 +223,7 @@
                                    class="form-control" name="phoneNumber" data-toggle="tooltip"
                                    title="You must include your area number" th:value="*{phoneNumber}"
                                    placeholder="Please include the area number e.g.86-1234567" maxlength="20" required
-                                   disabled>
+                                   readonly>
                         </div>
                         <p i18nid="EmailAddress">Email Address</p>
                         <label for="inputEmail" class="sr-only">Email</label>
@@ -232,7 +233,7 @@
                                    i18nid_placeholder="EnterEmailTip" class="form-control" name="emailAddress"
                                    data-toggle="tooltip" title="Be sure to enter the correct mailbox"
                                    th:value="*{emailAddress}"
-                                   placeholder="Please enter your email address" maxlength="50" required disabled>
+                                   placeholder="Please enter your email address" maxlength="50" required readonly>
                         </div>
                         <p i18nid="FlightNo">Flight No.</p>
                         <label for="inputFlight" class="sr-only"> FLightNo</label>
@@ -240,9 +241,9 @@
                             <i class="icon-search"></i>
                             <input type="text" id="inputFLight" i18nid_placeholder="EnterFlightNoTip"
                                    class="form-control"
-                                   name="flightNo" th:value="${policy.flightNo}"
+                                   name="flightNo" th:value="*{flightNo}"
                                    placeholder="Please enter your flight number"
-                                   maxlength="20" disabled>
+                                   maxlength="20" readonly>
 
                         </div>
                         <p i18nid="PassportNo">Passport No.</p>
@@ -253,7 +254,7 @@
                                    class="form-control"
                                    name="passport" th:value="*{passport}"
                                    placeholder="Please enter your passport number"
-                                   maxlength="20" autofocus disabled>
+                                   maxlength="20" autofocus readonly>
                         </div>
                         <p i18nid="BillingAdress">Billing Address</p>
                         <label for="inputBilling" class="sr-only">Billing Address</label>
@@ -263,6 +264,7 @@
                                    i18nid_title="RequireCorrectBillingAddr" class="form-control" name="billingAddress"
                                    data-toggle="tooltip" title="Be sure to enter the correct billing address"
                                    placeholder="Please enter your billing address" maxlength="100"
+                                   th:value="*{billingAddress}"
                                    required>
                         </div>
 
@@ -282,7 +284,7 @@
                         <div class="box">
                             <i class="icon-search"></i>
                             <textarea id="inputDetail" class="form-control" i18nid_placeholder="EnterDetailTip"
-                                      name="details"
+                                      name="details" th:value="*{details}"
                                       placeholder="Please describe your lost luggage in 80 worlds"
                                       rows="7" maxlength="80"></textarea>
                         </div>

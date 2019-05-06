@@ -117,7 +117,8 @@
                         <li><a href="../shop.html" i18nid="ShopProducts">Shop products</a></li>
                         <li><a href="/claim/policy" i18nid="ClaimSettlements">Claim settlements</a></li>
                         <li><a href="../contact.html" i18nid="ContactUs">Contact us</a></li>
-                        <li><a href="#news" i18nid="News">News</a></li>
+                            
+                        <li><a href="news.html" i18nid="News">News</a></li>
                         <li><a></a></li>
                         <li><a></a></li>
                         <li><a></a></li>
@@ -154,8 +155,8 @@
                     <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
                 </p>
                 <div class="jumbotron" id="seetop">
-                    <h1 i18nid="ChooseYourClaims">Choose your policy</h1>
-                    <p i18nid="ChooseClaimTip">Please choose the insurance policy you have bought.</p>
+                    <h1 i18nid="ChooseYourPolicy">Choose your policy</h1>
+                    <p i18nid="ChoosePolicyTip">Please choose the insurance policy you have bought.</p>
 
                 </div>
 
@@ -185,11 +186,17 @@
                                 <td th:text="${policy.flightNo}"></td>
                                 <td colspan="2" i18nid="BaggageType" th:text="${policy.insuranceType}"></td>
                                 <td th:text="${policy.policyHolder}"></td>
-                                <td colspan="2" rowspan="2" align="right">
+                                <td colspan="2" rowspan="2" align="right" th:if="not ${policy.isClaimed}">
                                     <a type="button" class="btn btn-detail btn-outline-primary"
                                        i18nid="ApplyCompensation"
                                        th:href="@{/claim/writeClaim(serialNo=${policy.serialNo})}">
                                         Apply
+                                    </a>
+                                </td>
+                                <td colspan="2" rowspan="2" align="right" th:if="${policy.isClaimed}">
+                                    <a type="button" class="btn btn-detail btn-outline-primary"
+                                       i18nid="Check" href="/claim/claims">
+                                        Check
                                     </a>
                                 </td>
                             </tr>
@@ -200,7 +207,7 @@
                                 <th height="40" i18nid="SingleOrReturn">Single/Return</th>
                                 <th i18nid="From">From</th>
                                 <th i18nid="To">To</th>
-                                <th i18nid="PiecesOfLuggage">Pieces of Luggage</th>
+                                <th i18nid="PiecesOfLuggage" align="center" width="100px">Pieces of Luggage</th>
                                 <th i18nid="ValidateFrom">Validate From</th>
                                 <th i18nid="ValidateTo">Validate To</th>
                                 <td rowspan="2" align="right">

@@ -41,7 +41,23 @@ public class Policy {
     private String placeTo;
     @Column
     private int piecesOfLuggage;
-
+    @Column
+    private int isClaimed;
     protected Policy() {
+    }
+
+    public Policy(Policy old, int isClaimed) {
+        serialNo = old.serialNo;
+        customerId = old.customerId;
+        flightNo = old.flightNo;
+        insuranceType = old.insuranceType;
+        policyHolder = old.policyHolder;
+        policyType = old.policyType;
+        validateFrom = old.validateFrom;
+        validateTo = old.validateTo;
+        placeFrom = old.placeFrom;
+        placeTo = old.placeTo;
+        piecesOfLuggage = old.piecesOfLuggage;
+        this.isClaimed = isClaimed;
     }
 }

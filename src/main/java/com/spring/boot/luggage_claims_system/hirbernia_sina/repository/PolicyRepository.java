@@ -12,5 +12,5 @@ import java.util.List;
  */
 @Repository
 public interface PolicyRepository extends JpaRepository<Policy, Long> {
-    List<Policy> getAllByCustomerId(Long customerId);
+    List<Policy> getAllByCustomerIdOrderByValidateFromAsc(Long customerId);
 }

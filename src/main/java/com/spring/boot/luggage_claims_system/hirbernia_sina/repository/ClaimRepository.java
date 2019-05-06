@@ -12,9 +12,12 @@ import java.util.List;
  */
 @Repository
 public interface ClaimRepository extends JpaRepository<ClaimInfo, Long> {
-    List<ClaimInfo> getAllByCustomerId(Long customerId);
 
-    List<ClaimInfo> getAllByEmployeeId(Long employeeId);
+    List<ClaimInfo> getAllByCustomerIdOrderBySubmitDateAsc(Long customerId);
 
-    List<ClaimInfo> getAllByEmployeeIdIsNot(Long employeeId);
+    List<ClaimInfo> getAllByEmployeeIdOrderBySubmitDateAsc(Long employeeId);
+
+    List<ClaimInfo> getAllByEmployeeIdIsNotOrderBySubmitDateAsc(Long employeeId);
+
+    List<ClaimInfo> getAllByOrderBySubmitDateAsc();
 }

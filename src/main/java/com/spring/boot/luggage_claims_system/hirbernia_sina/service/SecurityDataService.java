@@ -44,30 +44,38 @@ public class SecurityDataService {
     public List<FileManager> getFileBySerialNo(Long serialNo) {
         return fileRepository.getAllBySerialNo(serialNo);
     }
+
+    public void deleteFileById(Long id) {
+        fileRepository.deleteById(id);
+    }
     public ClaimInfo saveAndUpdateClaim(ClaimInfo claimInfo) {
-        return claimRepository.saveAndFlush(claimInfo);
+        return claimRepository.save(claimInfo);
     }
 
     public Policy saveAndUpdatePolicy(Policy policy) {
         return policyRepository.save(policy);
     }
     public List<ClaimInfo> getAllClaimsByCustomerId(Long customerId) {
-        return claimRepository.getAllByCustomerId(customerId);
+        return claimRepository.getAllByCustomerIdOrderBySubmitDateAsc(customerId);
     }
 
-    public List<ClaimInfo> getAllClaimsByEmployeeId(Long employeeId) {
-        return claimRepository.getAllByEmployeeId(employeeId);
+    public List<ClaimInfo> getAllClaimsByOrderBySubmitDateAsc() {
+        return claimRepository.getAllByOrderBySubmitDateAsc();
     }
 
-    public List<ClaimInfo> getAllClaimsByEmployeeIdIsNot(Long employeeId) {
-        return claimRepository.getAllByEmployeeIdIsNot(employeeId);
+    public List<ClaimInfo> getAllClaimsOrderedByEmployeeId(Long employeeId) {
+        return claimRepository.getAllByEmployeeIdOrderBySubmitDateAsc(employeeId);
+    }
+
+    public List<ClaimInfo> getAllClaimsOrderedByEmployeeIdIsNot(Long employeeId) {
+        return claimRepository.getAllByEmployeeIdIsNotOrderBySubmitDateAsc(employeeId);
     }
     public Policy getPolicyById(Long id) {
         return policyRepository.findById(id).orElse(null);
     }
 
     public List<Policy> getAllPoliciesByCustomerId(Long customerId) {
-        return policyRepository.getAllByCustomerId(customerId);
+        return policyRepository.getAllByCustomerIdOrderByValidateFromAsc(customerId);
     }
 
     public UserInfo saveUser(UserInfo userInfo) {

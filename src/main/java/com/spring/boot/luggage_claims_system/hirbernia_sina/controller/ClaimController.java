@@ -26,7 +26,7 @@ import java.util.*;
 @Controller
 @RequestMapping("/claim")
 public class ClaimController {
-
+    private String baseDir = "/Users/ruixinhua/images";
     @Autowired
     private SecurityDataService securityDataService;
 
@@ -106,7 +106,10 @@ public class ClaimController {
     public String writeClaim(@RequestParam("serialNo") Long serialNo, Authentication authentication, Model model) {
         Policy policy = securityDataService.getPolicyById(serialNo);
         UserInfo customer = securityDataService.getUserByEmailAddress(authentication.getName());
-        model.addAttribute("policy", policy);
+        WriteInfo info = new WriteInfo(customer.getFirstName(), customer.getLastName(), customer.getPassport(),
+                policy.getSerialNo(), customer.getPhoneNumber(), customer.getEmailAddress(), "",
+                policy.getFlightNo(), policy.getPolicyType(), "");
+        model.addAttribute("write", info);
         model.addAttribute("customer", customer);
         return "claim/write";
     }
@@ -132,12 +135,12 @@ public class ClaimController {
         String serialNo = request.getParameter("id");
         System.out.println(serialNo);
         MultipartFile file = null;
-        File directory = new File("");
-        try {
-            System.out.println(directory.getCanonicalPath());//获取标准的路径
-            System.out.println(directory.getAbsolutePath());//获取绝对路径
-        } catch (IOException e) {
-        }
+//        File directory = new File("");
+//        try {
+//            System.out.println(directory.getCanonicalPath());//获取标准的路径
+//            System.out.println(directory.getAbsolutePath());//获取绝对路径
+//        } catch (IOException e) {
+//        }
         UserInfo customer = securityDataService.getUserByEmailAddress(authentication.getName());
         for (int i = 0; i < files.size(); ++i) {
 
@@ -154,9 +157,8 @@ public class ClaimController {
                         result.put("msg", "file name is not valid");
                         return result;
                     }
-                    String pathName = "../images/" + serialNo + "/" + fileName;
-                    String destPath = directory.getAbsolutePath() + "/src/main/resources/static/images/"
-                            + serialNo + "/" + fileName;
+                    String pathName = "/" + serialNo + "/" + fileName;
+                    String destPath = baseDir + pathName;
                     File dest = new File(destPath);
                     if (dest.exists()) {
 //                        System.out.println("the file has uploaded");
@@ -209,28 +211,26 @@ public class ClaimController {
      * }
      */
     @PostMapping("/finish")
-    public String create(@Valid @ModelAttribute("write") WriteInfo writeInfo, BindingResult bindingResult, Model model,
+    public String create(@Valid @ModelAttribute("policy") WriteInfo writeInfo, BindingResult bindingResult, Model model,
                          Authentication authentication) {
         // TODO: justify the identity of user
         if (bindingResult.hasErrors()) {
-            model.addAttribute("write", writeInfo);
+            model.addAttribute("policy", writeInfo);
             model.addAttribute("error", bindingResult.getFieldError().getDefaultMessage());
             return "claim/write";
         }
-//        System.out.println(writeInfo);
+        System.out.println(writeInfo);
+
         UserInfo userInfo;
-        if (authentication != null) {
-            userInfo = securityDataService.getUserByEmailAddress(authentication.getName());
-        } else {
-            // TODO: remove, for post testing
-            userInfo = securityDataService.getUserByEmailAddress(writeInfo.getEmailAddress());
-        }
+        userInfo = securityDataService.getUserByEmailAddress(authentication.getName());
 //        System.out.println(userInfo);
         ClaimInfo claimInfo = new ClaimInfo(writeInfo.getSerialNo(), userInfo.getId(), writeInfo.getBillingAddress(),
                 writeInfo.getFlightNo(), writeInfo.getLuggageType(), 0L, writeInfo.getDetails(), new Date(), null);
-        System.out.println(claimInfo);
+//        System.out.println(claimInfo);
         claimInfo.setSubmitDate(new Date());
         securityDataService.saveAndUpdateClaim(claimInfo);
+        Policy old = securityDataService.getPolicyById(claimInfo.getSerialNo());
+        securityDataService.saveAndUpdatePolicy(new Policy(old, 1));
         model.addAttribute("customer", userInfo);
         return "claim/finish";
     }
@@ -262,10 +262,18 @@ public class ClaimController {
                 claimInfo.getSerialNo(), userInfo.getPhoneNumber(), userInfo.getEmailAddress(), claimInfo.getBillingAddress(),
                 claimInfo.getFlightNo(), claimInfo.getLostLuggage(), claimInfo.getDetails());
         List<FileManager> files = securityDataService.getFileBySerialNo(serialNo);
+        List<FileManager> non_empty_files = new ArrayList<>();
+        for (FileManager file : files) {
+            File dest = new File(baseDir + file.getFileName());
+            if (dest.exists()) {
+                System.out.println(file.getFileName() + " exist");
+                non_empty_files.add(file);
+            }
+        }
         model.addAttribute("customerId", claimInfo.getCustomerId());
         model.addAttribute("write", writeInfo);
         model.addAttribute("result", new Result());
-        model.addAttribute("files", files);
+        model.addAttribute("files", non_empty_files);
         return "employee/claimdetail";
     }
 

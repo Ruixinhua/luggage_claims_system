@@ -83,9 +83,9 @@ public class DataController {
         if (jsonParam.get("request") instanceof Integer) {
             request = Integer.parseInt(jsonParam.get("request").toString());
             if (request == 0) {
-                claims = securityDataService.getAllClaimsByEmployeeId(0L);
+                claims = securityDataService.getAllClaimsOrderedByEmployeeId(0L);
             } else {
-                claims = securityDataService.getAllClaimsByEmployeeIdIsNot(0L);
+                claims = securityDataService.getAllClaimsOrderedByEmployeeIdIsNot(0L);
             }
         } else {
             return results;
@@ -172,6 +172,8 @@ public class DataController {
         ClaimInfo claimInfo = new ClaimInfo(serialNo, user.getId(), billingAddress, policy.getFlightNo(), lostLuggage,
                 0l, details, new Date(), null);
         ClaimInfo temp = securityDataService.saveAndUpdateClaim(claimInfo);
+        Policy newPolicy = new Policy(policy, 1);
+        securityDataService.saveAndUpdatePolicy(newPolicy);
         if (temp == null) {
             response.put("msg", "fail to insert claim");
             response.put("code", "500");

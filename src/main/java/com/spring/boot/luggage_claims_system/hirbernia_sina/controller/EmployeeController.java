@@ -69,7 +69,7 @@ public class EmployeeController {
     @GetMapping("/employee")
     public String employeeHomepage(Authentication authentication, Model model) {
         UserInfo user = securityDataService.getUserByEmailAddress(authentication.getName());
-        List<ClaimInfo> claims = securityDataService.getAllClaims();
+        List<ClaimInfo> claims = securityDataService.getAllClaimsByOrderBySubmitDateAsc();
         int approved = 0, rejected = 0, unsure = 0, unprocessed = 0;
         model.addAttribute("employee", user);
         model.addAttribute("claimList", claims);

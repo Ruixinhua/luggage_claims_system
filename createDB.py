@@ -12,15 +12,15 @@ def insertPolicy(total):
     user_list = RandomUser.generate_users(total, {'nat': 'us'})
     for i in range(total):
         serial_no = list('0123456789')
-        serial_no = ''.join(serial_no[:8])
         random.shuffle(serial_no)
+        serial_no = int(''.join(serial_no[:8]))
         place_from = "Beijing" if random.randint(0, 1) else "Dublin"
         place_to = "Dublin" if place_from is "Beijing" else "Beijing"
         policy_type = "Single" if random.randint(0, 1) else "Return"
         validate_from = datetime(2019, random.randint(1, 12), random.randint(1, 15), random.randint(0, 23),
                                  random.randint(0, 59))
         validate_to = validate_from + timedelta(days=random.randint(1, 3))
-        customer_id = random.randint(1, 100)
+        customer_id = random.randint(51, 100)
         temp = list('0123456789')
         random.shuffle(temp)
         flight_no = "BD" + ''.join(temp[:6]) if place_from is "Beijing" else "DB" + ''.join(temp[:6])
@@ -30,10 +30,10 @@ def insertPolicy(total):
         print(serial_no, place_from, place_to, validate_from, validate_to, customer_id, flight_no,
               policy_holder, insurance_type, pieces_of_luggage)
         sql = "INSERT INTO policy (serial_no, place_from,place_to,policy_type,validate_from,validate_to,customer_id," \
-              "flight_no,policy_holder,insurance_type,pieces_of_luggage) VALUES ('%d', '%s','%s','%s','%s','%s','%d','%s'," \
-              "'%s','%s','%d')" % (serial_no, place_from, place_to, policy_type, validate_from,
-                                   validate_to, customer_id, flight_no, policy_holder, insurance_type,
-                                   pieces_of_luggage)
+              "flight_no,policy_holder,insurance_type,pieces_of_luggage,is_claimed) VALUES ('%d', '%s','%s','%s','%s','%s','%d','%s'," \
+              "'%s','%s','%d','%d')" % (serial_no, place_from, place_to, policy_type, validate_from,
+                                        validate_to, customer_id, flight_no, policy_holder, insurance_type,
+                                        pieces_of_luggage, 0)
         cursor.execute(sql)
     connection.commit()
     connection.close()
@@ -50,30 +50,36 @@ def insertPolicyAndClaim(total):
         place_from = "Beijing" if random.randint(0, 1) else "Dublin"
         place_to = "Dublin" if place_from is "Beijing" else "Beijing"
         policy_type = "Single" if random.randint(0, 1) else "Return"
-        validate_from = datetime(random.randint(2010, 2019), random.randint(1, 4), random.randint(1, 25), random.randint(0, 23),
+        validate_from = datetime(2019, random.randint(1, 4), random.randint(1, 25), random.randint(0, 23),
                                  random.randint(0, 59))
         validate_to = validate_from + timedelta(days=random.randint(1, 3))
-        customer_id = random.randint(1, 100)
+        customer_id = random.randint(51, 100)
         temp = list('0123456789')
         random.shuffle(temp)
         flight_no = "BD" + ''.join(temp[:6]) if place_from is "Beijing" else "DB" + ''.join(temp[:6])
         policy_holder = user_list[i].get_first_name() + " " + user_list[i].get_last_name()
         insurance_type = "Luggage Lost"
         pieces_of_luggage = random.randint(1, 10)
+        if random.randint(0, 1):
+            employee_id = random.randint(1, 50)
+            result = "Approved" if random.randint(0, 1) else "Rejected"
+        else:
+            employee_id = 0
+            result = "Unprocessed"
         print(serial_no, place_from, place_to, validate_from, validate_to, customer_id, flight_no,
               policy_holder, insurance_type, pieces_of_luggage)
         sql = "INSERT INTO policy (serial_no, place_from,place_to,policy_type,validate_from,validate_to,customer_id," \
-              "flight_no,policy_holder,insurance_type,pieces_of_luggage) VALUES ('%d', '%s','%s','%s','%s','%s','%d','%s'," \
-              "'%s','%s','%d')" % (serial_no, place_from, place_to, policy_type, validate_from,
-                                   validate_to, customer_id, flight_no, policy_holder, insurance_type,
-                                   pieces_of_luggage)
+              "flight_no,policy_holder,insurance_type,pieces_of_luggage,is_claimed) VALUES ('%d', '%s','%s','%s','%s','%s','%d','%s'," \
+              "'%s','%s','%d','%d')" % (serial_no, place_from, place_to, policy_type, validate_from,
+                                        validate_to, customer_id, flight_no, policy_holder, insurance_type,
+                                        pieces_of_luggage, 1)
         cursor.execute(sql)
         print(serial_no, user_list[i].get_street()+" "+user_list[i].get_city(), customer_id, validate_from,
                str(user_list[i].get_picture()), 0, flight_no)
-        sql = "INSERT INTO claim (serial_no, billing_address, customer_id, submit_date, details, employee_id, flight_no" \
-              ") VALUES ('%d','%s', '%d', '%s', '%s', '%d', '%s')" % \
-              (serial_no, user_list[i].get_street()+" "+user_list[i].get_city(), customer_id, validate_from,
-               str(user_list[i].get_picture()), 0, flight_no)
+        sql = "INSERT INTO claim (serial_no, billing_address, customer_id, submit_date, details, employee_id, flight_no, result" \
+              ") VALUES ('%d','%s', '%d', '%s', '%s', '%d', '%s', '%s')" % \
+              (serial_no, user_list[i].get_street() + " " + user_list[i].get_city(), customer_id, validate_from,
+               str(user_list[i].get_picture()), employee_id, flight_no, result)
         cursor.execute(sql)
     connection.commit()
     connection.close()
@@ -106,7 +112,9 @@ connection = pymysql.connect(host='188.131.243.196',
 cursor = connection.cursor()
 
 start_time = time.time()
-insertPolicyAndClaim(400)
+# insertPolicy(100)
+# insertPolicyAndClaim(100)
+insertUser(1000)
 end_time = time.time()
 total_time = end_time - start_time
-print('插入150条数据花费总时间为：' + str(total_time) + '秒')
+print('time cost: ' + str(total_time) + '秒')

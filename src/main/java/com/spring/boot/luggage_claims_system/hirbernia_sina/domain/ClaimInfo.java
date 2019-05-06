@@ -48,6 +48,6 @@ public class ClaimInfo implements Serializable {
     @Column
     private String result;
 
-    protected ClaimInfo() {
+    public ClaimInfo() {
     }
 }
