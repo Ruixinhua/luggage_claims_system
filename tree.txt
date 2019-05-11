@@ -1,0 +1,98 @@
+.
+├── HELP.md
+├── Readme.md
+├── src
+    └─ main
+        ├── java
+        │   └── com
+        │       └── spring
+        │           └── boot
+        │               └── luggage_claims_system
+        │                   └── hirbernia_sina
+        │                       ├── HirberniaSinaApplication.java
+        │                       ├── authentication
+        │                       │   ├── AuthenticationBean.java
+        │                       │   ├── HSUserDetails.java
+        │                       │   ├── SecurityAuthenticationSuccessHandler.java
+        │                       │   ├── UserAuthenticationFilter.java
+        │                       │   └── UserAuthenticationProvider.java
+        │                       ├── config
+        │                       │   ├── SwaggerConfig.java
+        │                       │   ├── WebMvcConfig.java
+        │                       │   └── WebSecurityConfig.java
+        │                       ├── controller
+        │                       │   ├── ClaimController.java
+        │                       │   ├── CustomerController.java
+        │                       │   ├── DataController.java
+        │                       │   ├── EmployeeController.java
+        │                       │   ├── ErrorController.java
+        │                       │   └── MainController.java
+        │                       ├── domain
+        │                       │   ├── ClaimInfo.java
+        │                       │   ├── Permission.java
+        │                       │   ├── Policy.java
+        │                       │   ├── Result.java
+        │                       │   ├── Role.java
+        │                       │   ├── RolePermission.java
+        │                       │   ├── UserInfo.java
+        │                       │   └── WriteInfo.java
+        │                       ├── repository
+        │                       │   ├── ClaimRepository.java
+        │                       │   ├── PermissionRepository.java
+        │                       │   ├── PolicyRepository.java
+        │                       │   ├── RolePermissionRepository.java
+        │                       │   ├── RoleRepository.java
+        │                       │   └── UserRepository.java
+        │                       ├── service
+        │                       │   ├── HSUserDetailsService.java
+        │                       │   └── SecurityDataService.java
+        │                       └── storage
+        │                           ├── FileSystemStorageService.java
+        │                           ├── StorageException.java
+        │                           ├── StorageFileNotFoundException.java
+        │                           ├── StorageProperties.java
+        │                           └── StorageService.java
+        └── resources
+            ├── application.properties
+            ├── static
+            │   ├── about.html
+            │   ├── contact.html
+            │   ├── css
+            │   │   ├── finishtop.jpeg
+            │   │   ├── right.png
+            │   │   ├── seetop.jpeg
+            │   │   ├── signbg.jpg
+            │   │   ├── signin.css
+            │   │   ├── slide1.jpg
+            │   │   ├── slide2.jpg
+            │   │   ├── slide3.jpg
+            │   │   └── wrong.png
+            │   ├── favicon.ico
+            │   ├── js
+            │   │   ├── custom.js
+            │   │   ├── i18n
+            │   │   │   ├── strings.properties
+            │   │   │   ├── strings_en.properties
+            │   │   │   └── strings_zh.properties
+            │   └── shop.html
+            └── templates
+                ├── claim
+                │   ├── claimdetail.html
+                │   ├── claims.html
+                │   ├── finish.html
+                │   ├── policy.html
+                │   ├── profile.html
+                │   ├── seeclaim.html
+                │   └── write.html
+                ├── employee
+                │   ├── claimdetail.html
+                │   ├── employee.html
+                │   └── result.html
+                ├── error.html
+                ├── index.html
+                ├── register.html
+                ├── result.html
+                └── signin.html
+
+
+61 directories, 331 files
