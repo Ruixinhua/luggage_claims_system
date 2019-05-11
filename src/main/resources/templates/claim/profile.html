@@ -75,7 +75,7 @@
             <div class="sidebar-menu">
                 <ul>
                     <li class="header-menu"><span>My Policy</span></li>
-                    <li><a href="/claim/policy"><i class="fa fa-tv"></i><span>My Purchase</span></a></li>
+                    <li><a href="c"><i class="fa fa-tv"></i><span>My Purchase</span></a></li>
                     <li class="sidebar-dropdown">
                         <a href="/claim/claims"><i class="fa fa-bar-chart-o"></i><span>My Claims</span></a>
                         <div class="sidebar-submenu">
@@ -173,6 +173,7 @@
                             <label class="col-sm-2 col-form-label" for="firstName" i18nid="FirstName">First
                                 Name:</label>
                             <div class="col-sm-10">
+                                <i class="icon-search2"></i>
                                 <input class="form-control" id="firstName" name="firstName" th:value="*{firstName}"
                                        type="text">
                             </div>
@@ -180,6 +181,7 @@
                         <div class="form-group row2">
                             <label class="col-sm-2 col-form-label" for="lastName" i18nid="LastName">Last Name:</label>
                             <div class="col-sm-10">
+                                <i class="icon-search2"></i>
                                 <input class="form-control" id="lastName" name="lastName" th:value="*{lastName}"
                                        type="text">
                             </div>
@@ -187,6 +189,7 @@
                         <div class="form-group row2">
                             <label class="col-sm-2 col-form-label" for="PhoneNo" i18nid="PhoneNo">Phone Number:</label>
                             <div class="col-sm-10">
+                                <i class="icon-search2"></i>
                                 <input class="form-control" id="PhoneNo" name="phoneNumber" th:value="*{phoneNumber}"
                                        type="text">
                             </div>
@@ -195,6 +198,7 @@
                             <label class="col-sm-2 col-form-label" for="emailAddress" i18nid="EmailAddress">Email
                                 Address:</label>
                             <div class="col-sm-10">
+                                <i class="icon-search2"></i>
                                 <input class="form-control" id="emailAddress" name="emailAddress"
                                        th:value="*{emailAddress}"
                                        type="text">
@@ -204,6 +208,7 @@
                             <label class="col-sm-2 col-form-label" for="nickName" i18nid="Nickname">Nick
                                 Name:</label>
                             <div class="col-sm-10">
+                                <i class="icon-search2"></i>
                                 <input class="form-control" id="nickName" name="nickname" th:value="*{nickname}"
                                        type="text">
                             </div>
@@ -212,6 +217,7 @@
                             <label class="col-sm-2 col-form-label" for="passportNo" i18nid="PassportNo">Passport
                                 Number:</label>
                             <div class="col-sm-10">
+                                <i class="icon-search2"></i>
                                 <input class="form-control" id="passportNo" name="passport" th:value="*{passport}"
                                        type="text">
                             </div>
@@ -219,8 +225,8 @@
                         <br>
                         <hr class="divider">
 
-                        <button class="btn btn-primary btn-save" i18nid="Submit" type="submit">save</button>
-                        <button class="btn btn-primary btn-save" onclick="javascript:history.go(-1);">Back</button>
+                        <button class="btn btn-primary btn-save" id="buttonsubmit" i18nid="Submit" type="submit">save
+                        </button>
 
                     </form>
 
@@ -248,144 +254,118 @@
 
 <script>
 
+    $(document).ready(function () {
 
-    // $(document).ready(function () {
 
+        $(function () {
+            $("[data-toggle='tooltip']").tooltip();
+        });
+        $("input").each(function () {
+            $(this).blur(function (e) {
+                var onlyalphbet = "";
+                var language = getLanguageCode();
+                if (language == 'en') {
+                    onlyalphbet = /^[a-zA-Z]+$/;
+                }
+                if (language == 'zh') {
+                    onlyalphbet = /^[\u4e00-\u9fa5]+$/;
+                }
+                var phone_pattern = /^[0-9()]{2,6}-[0-9-]{6,12}$/;
+                var email_pattern = /^([A-Za-z0-9_\-\.\u4e00-\u9fa5])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,8})$/;
+                if ($(this).attr('id') == 'firstName') {
+                    if (onlyalphbet.test($(this).val())) {
+                        $(this).parent().find('i').css("background-image", "url('../css/right.png')");
+                        $(this).parent().find('i').css("display", "inline-block");
+                        $(this).css("borderColor", '#ccc');
 
-    // $(function () {
-    //     $("[data-toggle='tooltip']").tooltip();
-    // });
-    // $("input").each(function () {
-    //     $(this).blur(function (e) {
-    //         var onlyalphbet = "";
-    //         var language = getLanguageCode();
-    //         if(language == 'en'){
-    //             onlyalphbet = /^[a-zA-Z]+$/;
-    //         }
-    //         if(language == 'zh'){
-    //             onlyalphbet = /^[\u4e00-\u9fa5]+$/;
-    //         }
-    //         var phone_pattern = /^[0-9]{2,6}-[0-9]{6,12}$/;
-    //         var email_pattern = /^([A-Za-z0-9_\-\.\u4e00-\u9fa5])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,8})$/;
-    //         if ($(this).attr('id') == 'inputFirstName') {
-    //             if (onlyalphbet.test($(this).val())) {
-    //                 $(this).parent().find('i').css("background-image", "url('../css/right.png')");
-    //                 $(this).parent().find('i').css("display", "inline-block");
-    //                 $(this).css("borderColor", '#ccc');
-    //
-    //             } else {
-    //                 $(this).parent().find('i').css("background-image", "url('../css/wrong.png')");
-    //                 $(this).parent().find('i').css("display", "inline-block");
-    //                 $(this).css("borderColor", '#db2029');
-    //             }
-    //         } else if ($(this).attr('id') == 'inputLastName') {
-    //             if (onlyalphbet.test($(this).val())) {
-    //                 $(this).parent().find('i').css("background-image", "url('../css/right.png')");
-    //                 $(this).parent().find('i').css("display", "inline-block");
-    //                 $(this).css("borderColor", '#ccc');
-    //
-    //             } else {
-    //                 $(this).parent().find('i').css("background-image", "url('../css/wrong.png')");
-    //                 $(this).parent().find('i').css("display", "inline-block");
-    //                 $(this).css("borderColor", '#db2029');
-    //             }
-    //         } else if ($(this).attr('id') == 'inputClaimNo') {
-    //             if (!isNaN($(this).val()) && $.trim($(this).val()).length != 0) {
-    //                 $(this).parent().find('i').css("background-image", "url('../css/right.png')");
-    //                 $(this).parent().find('i').css("display", "inline-block");
-    //                 $(this).css("borderColor", '#ccc');
-    //
-    //             } else {
-    //                 $(this).parent().find('i').css("background-image", "url('../css/wrong.png')");
-    //                 $(this).parent().find('i').css("display", "inline-block");
-    //                 $(this).css("borderColor", '#db2029');
-    //             }
-    //         } else if ($(this).attr('id') == 'inputPhone') {
-    //             if (phone_pattern.test($(this).val())) {
-    //                 $(this).parent().find('i').css("background-image", "url('../css/right.png')");
-    //                 $(this).parent().find('i').css("display", "inline-block");
-    //                 $(this).css("borderColor", '#ccc');
-    //
-    //             } else {
-    //                 $(this).parent().find('i').css("background-image", "url('../css/wrong.png')");
-    //                 $(this).parent().find('i').css("display", "inline-block");
-    //                 $(this).css("borderColor", '#db2029');
-    //             }
-    //         } else if ($(this).attr('id') == 'inputEmail') {
-    //             if (email_pattern.test($(this).val())) {
-    //                 $(this).parent().find('i').css("background-image", "url('../css/right.png')");
-    //                 $(this).parent().find('i').css("display", "inline-block");
-    //                 $(this).css("borderColor", '#ccc');
-    //
-    //             } else {
-    //                 $(this).parent().find('i').css("background-image", "url('../css/wrong.png')");
-    //                 $(this).parent().find('i').css("display", "inline-block");
-    //                 $(this).css("borderColor", '#db2029');
-    //             }
-    //         } else if ($(this).attr('id') == 'inputPassport' || $(this).attr('id') == 'inputBilling' || $(this).attr('id') == 'inputFLight') {
-    //             if ($(this).val() != "" || $.trim($(this).val()).length != 0) {
-    //                 $(this).parent().find('i').css("background-image", "url('../css/right.png')");
-    //                 $(this).parent().find('i').css("display", "inline-block");
-    //                 $(this).css("borderColor", '#ccc');
-    //
-    //             } else {
-    //                 $(this).parent().find('i').css("background-image", "url('../css/wrong.png')");
-    //                 $(this).parent().find('i').css("display", "inline-block");
-    //                 $(this).css("borderColor", '#db2029');
-    //             }
-    //         }
-    //     });
-    // });
-    // $("#inputDetail").blur(function (e) {
-    //     if ($.trim($(this).val()).length != 0) {
-    //         $(this).parent().find('i').css("background-image", "url('../css/right.png')");
-    //         $(this).parent().find('i').css("display", "inline-block");
-    //         $(this).css("borderColor", '#ccc');
-    //
-    //     } else {
-    //         $(this).parent().find('i').css("background-image", "url('../css/wrong.png')");
-    //         $(this).parent().find('i').css("display", "inline-block");
-    //         $(this).css("borderColor", '#db2029');
-    //     }
-    // });
-    // $("#button1").click(function (e) {
-    //     e.preventDefault();
-    //     $("input").css("borderColor", '#ccc')
-    //     var phone_pattern = /^[0-9]{2,6}-[0-9]{6,12}$/;
-    //     var email_pattern = /^([A-Za-z0-9_\-\.\u4e00-\u9fa5])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,8})$/;
-    //     var cansubmit;
-    //     cansubmit = true;
-    //     $("input[type='text'],input[type='text'],#inputDetail").each(function () {
-    //         if ($(this).val() == "" || $.trim($(this).val()).length == 0) {
-    //             $(this).css("borderColor", '#db2029');
-    //             cansubmit = false;
-    //         }
-    //     });
-    //     if (isNaN($("#inputClaimNo").val())) {
-    //         myFocus($("#inputClaimNo"));
-    //         cansubmit = false;
-    //     }
-    //     if (!phone_pattern.test($("#inputPhone").val())) {
-    //         myFocus($("#inputPhone"));
-    //         cansubmit = false;
-    //     }
-    //     if (!email_pattern.test($("#inputEmail").val())) {
-    //         myFocus($("#inputEmail"));
-    //         cansubmit = false;
-    //     }
-    //     if (cansubmit) {
-    //         $('#form1').submit();
-    //         return true;
-    //     } else {
-    //         return false;
-    //     }
-    //
-    // });
-    // });
+                    } else {
+                        $(this).parent().find('i').css("background-image", "url('../css/wrong.png')");
+                        $(this).parent().find('i').css("display", "inline-block");
+                        $(this).css("borderColor", '#db2029');
+                    }
+                } else if ($(this).attr('id') == 'lastName') {
+                    if (onlyalphbet.test($(this).val())) {
+                        $(this).parent().find('i').css("background-image", "url('../css/right.png')");
+                        $(this).parent().find('i').css("display", "inline-block");
+                        $(this).css("borderColor", '#ccc');
 
-    // function myFocus(ele) {
-    //     ele.css("borderColor", '#db2029');
-    // }
+                    } else {
+                        $(this).parent().find('i').css("background-image", "url('../css/wrong.png')");
+                        $(this).parent().find('i').css("display", "inline-block");
+                        $(this).css("borderColor", '#db2029');
+                    }
+                } else if ($(this).attr('id') == 'PhoneNo') {
+                    if (phone_pattern.test($(this).val())) {
+                        $(this).parent().find('i').css("background-image", "url('../css/right.png')");
+                        $(this).parent().find('i').css("display", "inline-block");
+                        $(this).css("borderColor", '#ccc');
+
+                    } else {
+                        $(this).parent().find('i').css("background-image", "url('../css/wrong.png')");
+                        $(this).parent().find('i').css("display", "inline-block");
+                        $(this).css("borderColor", '#db2029');
+                    }
+                } else if ($(this).attr('id') == 'emailAddress') {
+                    if (email_pattern.test($(this).val())) {
+                        $(this).parent().find('i').css("background-image", "url('../css/right.png')");
+                        $(this).parent().find('i').css("display", "inline-block");
+                        $(this).css("borderColor", '#ccc');
+
+                    } else {
+                        $(this).parent().find('i').css("background-image", "url('../css/wrong.png')");
+                        $(this).parent().find('i').css("display", "inline-block");
+                        $(this).css("borderColor", '#db2029');
+                    }
+                } else if ($(this).attr('id') == 'passportNo' || $(this).attr('id') == 'nickName') {
+                    if ($(this).val() != "" || $.trim($(this).val()).length != 0) {
+                        $(this).parent().find('i').css("background-image", "url('../css/right.png')");
+                        $(this).parent().find('i').css("display", "inline-block");
+                        $(this).css("borderColor", '#ccc');
+
+                    } else {
+                        $(this).parent().find('i').css("background-image", "url('../css/wrong.png')");
+                        $(this).parent().find('i').css("display", "inline-block");
+                        $(this).css("borderColor", '#db2029');
+                    }
+                }
+            });
+        });
+
+        $("#buttonsubmit").click(function (e) {
+            e.preventDefault();
+            $("input").css("borderColor", '#ccc')
+            var phone_pattern = /^[0-9()]{2,6}-[0-9-]{6,12}$/;
+            var email_pattern = /^([A-Za-z0-9_\-\.\u4e00-\u9fa5])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,8})$/;
+            var cansubmit;
+            cansubmit = true;
+            $("input[type='text'],input[type='text']").each(function () {
+                if ($(this).val() == "" || $.trim($(this).val()).length == 0) {
+                    $(this).css("borderColor", '#db2029');
+                    cansubmit = false;
+                }
+            });
+            if (!phone_pattern.test($("#PhoneNo").val())) {
+                myFocus($("#PhoneNo"));
+                cansubmit = false;
+            }
+            if (!email_pattern.test($("#emailAddress").val())) {
+                myFocus($("#emailAddress"));
+                cansubmit = false;
+            }
+            if (cansubmit) {
+                $('#form1').submit();
+                alert("you have saved successfully")
+                return true;
+            } else {
+                return false;
+            }
+
+        });
+    });
+
+    function myFocus(ele) {
+        ele.css("borderColor", '#db2029');
+    }
 </script>
 <script src="../js/jquery.i18n.properties.js" type="text/javascript"></script>
 <script src="../js/jquery.cookie.js" type="text/javascript"></script>
