@@ -59,6 +59,12 @@
                 <label for="inputPassword" class="sr-only" i18nid="Password">Password</label>
                 <input type="password" id="inputPassword" class="form-control" name="password" th:value="*{password}" i18nid_placeholder="Password"
                        placeholder="Password" required>
+                <div>
+                    <input type="text" id="inputVertification" class="form-control" name="vertification"
+                           placeholder="vertification code" disabled>
+                    <img id="verimg">
+                </div>
+
             </div>
             <div class="tab-pane fade" id="ios">
             </div>

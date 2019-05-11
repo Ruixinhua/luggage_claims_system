@@ -16,6 +16,14 @@ img{
   top: 20%;
   transform: translate(-50%, -50%);
 }
+
+#verimg {
+    float: left;
+    width: 46%;
+    height: 12%;
+    top: auto;
+    transform: translate(0, 0);
+}
 .nav-color{
   background-color: rgba(0,0,0,0.5);
 
@@ -61,10 +69,13 @@ img{
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
-.form-signin input[type="password"] {
+
+.form-signin input[type="text"] {
+    display: inline;
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+    width: 50%;
 }
 .foot{
   color: #FFFFFF;
