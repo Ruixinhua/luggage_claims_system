@@ -56,7 +56,12 @@
                  -->
                 <li><a href="/index" id="bar2" i18nid="Home">Home</a></li>
                 <li><a href="/logout" id="bar3" i18nid="Logout">Logout</a></li>
+
             </ul>
+            <form class="navbar-form navbar-right" onsubmit="return false">
+                <input type="text" class="form-control" placeholder="Search..." id="search">
+                <button class="btn btn-outline-success my-2 my-sm-0" id="searchbutton">Search</button>
+            </form>
             <!-- <form class="navbar-form navbar-right">
                 <input type="text" class="form-control" placeholder="Search...">
             </form> -->
@@ -90,7 +95,7 @@
                 <tr>
                     <th i18nid="SerialNo">Serial No</th>
                     <th i18nid="FlightNo">Flight No</th>
-                    <th i18nid="SubmitDate">Submit Date</th>
+                    <th i18nid="SubmitDate" id="rank">Submit Date</th>
                     <th i18nid="Status">Status</th>
                     <th i18nid="Result">Result</th>
                 </tr>
@@ -99,7 +104,7 @@
                 <tr th:each="claim : ${claimList}">
                     <td th:text="${claim.serialNo}"></td>
                     <td th:text="${claim.flightNo}"></td>
-                    <td th:text="${claim.submitDate}"></td>
+                    <td th:text="${claim.submitDate}" class="submitetime"></td>
                     <td th:if="${claim.employeeId}" th:text="'Checked by employee ID '+${claim.employeeId}"></td>
                     <td th:if="not ${claim.employeeId}">
                         <i18n-pad i18nid="NoEmployeeChecked">No employee checked</i18n-pad>
@@ -131,6 +136,88 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
+        var searchdata = $("#tabledata").html();
+
+        $("input[id=search]").change(function () {
+            search()
+        })
+        $("input[id=searchbutton]").click(function () {
+            search()
+        })
+        $("#rank").click(function () {
+            rank()
+        })
+
+        function search() {
+            var searchText = $("input[id=search]").val();
+            var $searchLi = "";
+            console.log(searchText)
+            if (searchText.trim() != "") {
+                $searchLi = $(searchdata).find('td:contains(' + searchText + ')').parent();
+                console.log($(searchdata).html())
+                $("#tabledata").html("");
+                $("#tabledata").html($searchLi).clone();
+                if ($searchLi.length <= 0) {
+                    alert("not find")
+                }
+            }
+            else {
+                alert("cannot be empty")
+            }
+
+        }
+
+        function rank() {
+            if ($("#rank").html() == 'Submit Date↑') {
+                rankresult = "";
+                var $rankitems = $("#tabledata").find("tr");
+                for (var i = $rankitems.length - 1; i >= 0; i--) {
+
+                    rankresult += "<tr>" + $rankitems.eq(i).html() + "</tr>";
+                }
+                $("#tabledata").html(rankresult);
+                $("#rank").html('Submit Date↓');
+            }
+
+            else {
+                var $rankitems = $("#tabledata").find(".submitetime");
+                var rankresult = "";
+                for (var i = 0; i < $rankitems.length; i++) {
+                    var big = praseDate($rankitems.eq(i).html());
+                    var bigindex = i;
+                    for (var j = i; j < $rankitems.length; j++) {
+                        var current = praseDate($rankitems.eq(j).html());
+                        if (current > big) {
+                            big = current;
+                            bigindex = j;
+                        }
+
+                    }
+                    // console.log(i)
+                    // console.log(bigindex)
+                    temp = $rankitems[i];
+                    $rankitems[i] = $rankitems[bigindex];
+                    $rankitems[bigindex] = temp;
+                    temp = "<tr>" + $($rankitems[i]).parent().html() + "</tr>";
+                    // console.log(temp);
+                    rankresult += temp;
+
+                }
+                $("#tabledata").html(rankresult);
+                $("#rank").html('Submit Date↑');
+            }
+
+
+        }
+
+        function praseDate(time) {
+            parts = time.split(" ");
+            fullyear = parts[0].split("-");
+            fulltime = parts[1].split(":");
+            var d = new Date(fullyear[0], fullyear[1], fullyear[2], fulltime[0], fulltime[1], 0);
+            return d;
+
+        }
 
         $("#daohang li").each(function () {
             $(this).mouseover(function () {

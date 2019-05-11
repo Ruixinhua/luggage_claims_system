@@ -32,6 +32,17 @@ footer {
     right: 3px;
 }
 
+.icon-search2 {
+    display: none;
+    background-image: url('right.png');
+    background-size: 16px;
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 7px;
+    right: 15px;
+}
 .jumbotron {
     color: #003366;
 }
