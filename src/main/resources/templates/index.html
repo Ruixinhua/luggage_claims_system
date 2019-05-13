@@ -56,7 +56,10 @@
                         <li class="active"><a href="#" id="Home" i18nid="Home">Home</a></li>
                          <li><a href="about.html" i18nid="AboutUs">About us</a></li>
                         <li><a href="shop.html" i18nid="ShopProducts">Shop products</a></li>
-                        <li><a href="/claim/write" i18nid="ClaimSettlements">Claim settlements</a></li>
+                        <li sec:authorize="hasAuthority('CUSTOMER')"><a href="/claim/write" i18nid="ClaimSettlements">Check
+                            policy</a></li>
+                        <li sec:authorize="hasAuthority('EMPLOYEE')"><a href="/employee/employee"
+                                                                        i18nid="DealClaims"></a>
                         <li><a href="contact.html" i18nid="ContactUs">Contact us</a></li>
                             
                         <li><a href="news.html" i18nid="News">News</a></li>

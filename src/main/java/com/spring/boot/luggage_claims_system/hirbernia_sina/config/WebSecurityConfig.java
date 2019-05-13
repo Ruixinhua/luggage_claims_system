@@ -1,9 +1,7 @@
 package com.spring.boot.luggage_claims_system.hirbernia_sina.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.spring.boot.luggage_claims_system.hirbernia_sina.authentication.SecurityAuthenticationSuccessHandler;
-import com.spring.boot.luggage_claims_system.hirbernia_sina.authentication.UserAuthenticationFilter;
-import com.spring.boot.luggage_claims_system.hirbernia_sina.authentication.UserAuthenticationProvider;
+import com.spring.boot.luggage_claims_system.hirbernia_sina.authentication.*;
 import com.spring.boot.luggage_claims_system.hirbernia_sina.service.HSUserDetailsService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -48,14 +46,18 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private SecurityAuthenticationSuccessHandler securityAuthenticationSuccessHandler;
     @Autowired
+    private SecurityAuthenticationFailureHandler securityAuthenticationFailureHandler;
+    @Autowired
     private ObjectMapper objectMapper;
+    @Autowired
+    private ValidateCodeFilter validateCodeFilter;
     private Logger logger = LoggerFactory.getLogger(getClass());
     /**
      * Define static resources that do not require filtering (equivalent to permitAll of HttpSecurity)
      */
     @Override
     public void configure(WebSecurity webSecurity) throws Exception {
-        webSecurity.ignoring().antMatchers("/css/**", "/js/**", "/shop.html", "/about.html", "/contact.html");
+        webSecurity.ignoring().antMatchers("/css/**", "/js/**", "/shop.html", "/about.html", "/contact.html", "/news.html");
     }
 
     @Bean
@@ -83,8 +85,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity
+                .addFilterBefore(validateCodeFilter, UsernamePasswordAuthenticationFilter.class)
                 .authorizeRequests()
-                .antMatchers("/", "/index", "/register", "/result", "/claim/finish", "/api/*").permitAll()
+                .antMatchers("/", "/index", "/register", "/result", "/claim/finish", "/api/*", "/code/image").permitAll()
                 .antMatchers("/employee/**").hasAuthority("EMPLOYEE")
                 // Authentication needs to be specified for some resources of the website
                 //.antMatchers("/admin/**").hasRole("ADMIN")
@@ -92,7 +95,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest().authenticated().and()
                 // Define the login page to which a user needs to log in
                 .formLogin().loginPage("/signin").usernameParameter("emailAddress")  //username
-                .passwordParameter("password").successHandler(securityAuthenticationSuccessHandler).failureUrl("/login-error").permitAll().and()
+                .passwordParameter("password").successHandler(securityAuthenticationSuccessHandler)
+                .failureHandler(securityAuthenticationFailureHandler).failureUrl("/login-error").permitAll().and()
                 // Define logout operation
                 .logout().logoutSuccessUrl("/signin?logout").permitAll().and()
                 .rememberMe().rememberMeParameter("remember").tokenValiditySeconds(604800).and()
