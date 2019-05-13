@@ -82,7 +82,7 @@
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
         <h2 class="sub-header" i18nid="ClaimDetail">Claim Detail</h2>
-        <form class="detail-form" th:object="${write}">
+        <form class="detail-form" th:object="${write}" id="form1">
             <div class="form-group row">
                 <label for="customerId" class="col-sm-2 col-form-label" i18nid="CustomerId">Customer ID:</label>
                 <div class="col-sm-10">
@@ -173,7 +173,8 @@
 
 
         <hr/>
-        <form class="detail-form" method="post" action="/claim/result" th:object="${result}">
+        <form class="detail-form" method="post" action="/claim/result" th:object="${result}"
+              onsubmit="return toAlert()">
             <input type="hidden" name="email" th:value="${write.emailAddress}">
             <input type="hidden" name="serialNo" th:value="${write.serialNo}">
             <div class="form-group">
@@ -188,8 +189,8 @@
                 <label for="reason" i18nid="Reason">Reason</label>
                 <textarea class="form-control" id="reason" name="reason" th:value="*{reason}" rows="3"></textarea>
             </div>
-            <button type="submit" class="btn btn-primary" i18nid="Submit">Submit</button>
-            <button type="button" class="btn btn-primary" i18nid="Back" onclick="javascript:history.go(-1);">Back
+            <button type="submit" id="submit" class="btn btn-primary" i18nid="Submit">Submit</button>
+            <!--<button type="button" class="btn btn-primary" i18nid="Back" onclick="javascript:history.go(-1);">Back-->
             </button>
         </form>
 
@@ -207,7 +208,17 @@
 <script src="../js/ie10-viewport-bug-workaround.js"></script>
 <script src="../js/offcanvas.js"></script>
 <script type="text/javascript">
+    function toAlert() {
+        alert("You have successfully processed a claim!")
+        return true;
+    }
+
     $(document).ready(function () {
+        // $("#submit").click(function(){
+        //     $("file-preview input").attr("disabled", true);
+        //     $("#form1").submit();
+        //
+        // });
         $("#daohang li").each(function () {
             $(this).mouseover(function () {
                 $(this).addClass("active");
