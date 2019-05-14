@@ -37,7 +37,7 @@ public class SecurityAuthenticationFailureHandler extends SimpleUrlAuthenticatio
         response.setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value());
         response.setContentType("application/json;charset=UTF-8");
         response.getWriter().write(objectMapper.writeValueAsString(exception.getMessage()));
-        new DefaultRedirectStrategy().sendRedirect(request, response, "/signin?error=" + exception.getMessage());
-//        new DefaultRedirectStrategy().sendRedirect(request, response, "/index");
+//        new DefaultRedirectStrategy().sendRedirect(request, response, "/signin?error=" + exception.getMessage());
+        new DefaultRedirectStrategy().sendRedirect(request, response, "/code_error");
     }
 }

@@ -87,7 +87,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         httpSecurity
                 .addFilterBefore(validateCodeFilter, UsernamePasswordAuthenticationFilter.class)
                 .authorizeRequests()
-                .antMatchers("/", "/index", "/register", "/result", "/claim/finish", "/api/*", "/code/image").permitAll()
+                .antMatchers("/", "/index", "/register", "/result", "/claim/finish", "/api/*", "/code/image", "/code_error").permitAll()
                 .antMatchers("/employee/**").hasAuthority("EMPLOYEE")
                 // Authentication needs to be specified for some resources of the website
                 //.antMatchers("/admin/**").hasRole("ADMIN")
@@ -96,7 +96,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 // Define the login page to which a user needs to log in
                 .formLogin().loginPage("/signin").usernameParameter("emailAddress")  //username
                 .passwordParameter("password").successHandler(securityAuthenticationSuccessHandler)
-                .failureHandler(securityAuthenticationFailureHandler).failureUrl("/login-error").permitAll().and()
+                .failureHandler(securityAuthenticationFailureHandler).failureUrl("/login_error").permitAll().and()
                 // Define logout operation
                 .logout().logoutSuccessUrl("/signin?logout").permitAll().and()
                 .rememberMe().rememberMeParameter("remember").tokenValiditySeconds(604800).and()

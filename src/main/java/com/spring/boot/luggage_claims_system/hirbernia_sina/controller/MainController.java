@@ -6,7 +6,6 @@ import com.spring.boot.luggage_claims_system.hirbernia_sina.domain.UserInfo;
 import com.spring.boot.luggage_claims_system.hirbernia_sina.service.SecurityDataService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.social.connect.web.SessionStrategy;
 import org.springframework.stereotype.Controller;
@@ -16,7 +15,6 @@ import org.springframework.web.bind.ServletRequestUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.context.request.ServletWebRequest;
 
 import javax.imageio.ImageIO;
@@ -92,14 +90,29 @@ public class MainController {
     }
 
     @GetMapping("/signin")
-    public String getLogin(Model model, @RequestParam(required = false, name = "error") String error) {
+    public String getLogin(Model model) {
         model.addAttribute("user", new UserInfo());
-        model.addAttribute("error", error);
+        model.addAttribute("login_error", false);
+        model.addAttribute("code_error", false);
         System.out.println("sign in");
-        System.out.println(error);
         return "signin";
     }
 
+    @GetMapping("/login_error")
+    public String loginError(UserInfo userInfo, Model model) {
+        model.addAttribute("user", userInfo);
+        model.addAttribute("code_error", false);
+        model.addAttribute("login_error", true);
+        return "signin";
+    }
+
+    @GetMapping("/code_error")
+    public String codeError(UserInfo userInfo, Model model) {
+        model.addAttribute("user", userInfo);
+        model.addAttribute("code_error", true);
+        model.addAttribute("login_error", false);
+        return "signin";
+    }
 
     @GetMapping("/code/image")
     public void createCode(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -170,10 +183,5 @@ public class MainController {
         int b = fc + random.nextInt(bc - fc);
         return new Color(r, g, b);
     }
-    @GetMapping("/login-error")
-    public String loginError(UserInfo userInfo, Model model) {
-        model.addAttribute("user", userInfo);
-        model.addAttribute("error", true);
-        return "signin";
-    }
+
 }
