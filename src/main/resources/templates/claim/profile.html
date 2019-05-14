@@ -28,7 +28,7 @@
     <script src="../js/ie-emulation-modes-warning.js"></script>
     <script src="../js/jquery.min.js"></script>
 
-    <link href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href="../css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
     <link href="../css/custom.css" rel="stylesheet">
     <script>window.jQuery || document.write('<js/jquery.min.js"><\/script>')</script>
@@ -76,15 +76,8 @@
                 <ul>
                     <li class="header-menu"><span>My Policy</span></li>
                     <li><a href="c"><i class="fa fa-tv"></i><span>My Purchase</span></a></li>
-                    <li class="sidebar-dropdown">
-                        <a href="/claim/claims"><i class="fa fa-bar-chart-o"></i><span>My Claims</span></a>
-                        <div class="sidebar-submenu">
-                            <ul>
-                                <li><a href="#">Processing<span class="badge">2</span></a></li>
-                                <li><a href="#">Solved</a></li>
-                            </ul>
-                        </div>
-                    </li>
+                    <li><a href="/claim/claims"><i class="fa fa-bar-chart-o"></i><span
+                            i18nid="MyClaims">My Claims</span></a></li>
                     <li><a href="/customer/profile"><i class="fa fa-tv"></i><span>My Profile</span></a></li>
 
                 </ul>
@@ -110,7 +103,7 @@
                     <a class="navbar-brand" href="/index"><img id="logo" src="../css/logo.jpeg"></a>
                 </div>
                 <div class="collapse navbar-collapse" id="navbar">
-                    <ul class="nav navbar-nav">
+                    <ul class="nav navbar-nav mr-auto">
                         <li><a href="/index" i18nid="Home">Home</a></li>
                         <li><a href="../about.html" i18nid="AboutUs">About us</a></li>
                         <li><a href="../shop.html" i18nid="ShopProducts">Shop products</a></li>
@@ -146,6 +139,9 @@
                         <!--<li><a href="/customer/profile" i18nid="MyProfile">My profile</a></li>-->
                         <!--</ul>-->
                         <!--</li>-->
+                    </ul>
+                    <ul class="nav navbar-nav" style="float:right;">
+                        <li><a i18nid="ChangeLang" onclick="switchLang()">Change Language</a></li>
                     </ul>
                 </div><!-- /.nav-collapse -->
             </div><!-- /.container -->
